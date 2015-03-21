@@ -74,7 +74,7 @@ class MyLocation(views.APIView):
         a = request.POST.get('lat')
         b = request.POST.get('lng')	
         speed = request.POST.get('speed')
-        if not speed or a or b:
+        if not speed or not a or not b:
             return response.Response("404")
 
         u = get_object_or_404(User, pk=request.user.id)
