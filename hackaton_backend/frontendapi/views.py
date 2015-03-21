@@ -31,9 +31,13 @@ class NearbyCarsList(generics.ListAPIView):
     def get_queryset(self):
         user = self.request.user
         distance = 0.100  # kilometers
-        return User.objects.filter(
-            previous_known_position__approx_distance_lt=(user.previous_known_position, distance)
-        ).exclude(user)
+        try:
+            return User.objects.filter(
+                previous_known_position__approx_distance_lt=(user.previous_known_position, distance)
+            ).exclude(user)
+        except:
+            return User.objects.none()
+
 
 
 class MyBehaviour(views.APIView):
