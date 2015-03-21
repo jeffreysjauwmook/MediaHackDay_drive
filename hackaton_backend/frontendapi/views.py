@@ -79,6 +79,7 @@ class MyLocation(views.APIView):
 
         u = get_object_or_404(User, pk=request.user.id)
         u.speed = speed
+        u.previous_known_position = u.last_known_position
         u.last_known_position = (float(a), float(b))
         u.save()
         return response.Response("Ok")
