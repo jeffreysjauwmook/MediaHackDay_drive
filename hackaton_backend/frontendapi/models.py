@@ -1,7 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, UserManager
 
 import geosimple
+
+
+class GeoUserManager(UserManager, geosimple.GeoManager):
+    pass
 
 
 class User(AbstractUser):
@@ -18,7 +22,7 @@ class User(AbstractUser):
         blank=True,
     )
 
-    geo_objects = geosimple.GeoManager()
+    geo_objects = GeoUserManager()
 
 
 class Message(models.Model):
