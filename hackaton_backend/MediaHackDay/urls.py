@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^as-api/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^as-api/v1.0/', include('autoscout.urls')),
-
+    url(r'^api/v1.0/', include('frontendapi.urls')),
 )
