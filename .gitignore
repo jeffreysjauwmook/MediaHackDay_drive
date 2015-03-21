@@ -9,3 +9,4 @@
 .idea/workspace.xml
 .idea/dictionaries/J_Sjauw_mook.xml
 *.pyc
+db.sqlite3
