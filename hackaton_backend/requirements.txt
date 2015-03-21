@@ -1,1 +1,3 @@
 Django
+https://github.com/dabapps/django-geosimple/archive/master.zip
+djangorestframework

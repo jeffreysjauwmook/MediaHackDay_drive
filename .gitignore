@@ -10,4 +10,5 @@
 .idea/dictionaries/J_Sjauw_mook.xml
 *.pyc
 db.sqlite3
-.sass-cache
+hackaton_backend/MediaHackDay/local_settings.py
+.sass-cache/
