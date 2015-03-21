@@ -1,0 +1,121 @@
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+
+
+/** 
+* double heading declaration : 
+* http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+*/
+
+/* Always add global align to headings */
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+    @include font(
+        $align: $heading-aligment
+    );
+    margin: 0;
+    font-weight: 100; // stops @fontface issue with font-weight
+}
+
+h1, 
+.alpha {
+    @if ($heading-h1-transform != null) {
+        @include font(
+            $font: $heading-h1-font, 
+            $size: $heading-h1-size, 
+            $transform: $heading-h1-transform 
+        );
+    }
+    @else {
+        @include font(
+            $font: $heading-h1-font, 
+            $size: $heading-h1-size
+        );
+    }
+}
+
+h2, 
+.beta {
+    @if ($heading-h2-transform != null) {
+        @include font(
+            $font: $heading-h2-font, 
+            $size: $heading-h2-size, 
+            $transform: $heading-h2-transform 
+        );
+    }
+    @else {
+        @include font(
+            $font: $heading-h2-font, 
+            $size: $heading-h2-size
+        );
+    }
+}
+
+h3, 
+.gamma {
+    @if ($heading-h3-transform != null) {
+        @include font(
+            $font: $heading-h3-font, 
+            $size: $heading-h3-size, 
+            $transform: $heading-h3-transform 
+        );
+    }
+    @else {
+        @include font(
+            $font: $heading-h3-font, 
+            $size: $heading-h3-size
+        );
+    }
+}
+
+h4, 
+.delta {
+    @if ($heading-h4-transform != null) {
+        @include font(
+            $font: $heading-h4-font, 
+            $size: $heading-h4-size, 
+            $transform: $heading-h4-transform 
+        );
+    }
+    @else {
+        @include font(
+            $font: $heading-h4-font, 
+            $size: $heading-h4-size
+        );
+    }
+}
+
+h5, 
+.epsilon {
+    @if ($heading-h5-transform != null) {
+        @include font(
+            $font: $heading-h5-font, 
+            $size: $heading-h5-size, 
+            $transform: $heading-h5-transform 
+        );
+    }
+    @else {
+        @include font(
+            $font: $heading-h5-font, 
+            $size: $heading-h5-size
+        );
+    }
+}
+
+h6, 
+.zeta {
+    @if ($heading-h6-transform != null) {
+        @include font(
+            $font: $heading-h6-font, 
+            $size: $heading-h6-size, 
+            $transform: $heading-h6-transform 
+        );
+    }
+    @else {
+        @include font(
+            $font: $heading-h6-font, 
+            $size: $heading-h6-size
+        );
+    }
+}

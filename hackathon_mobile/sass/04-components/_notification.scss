@@ -1,0 +1,45 @@
+.notification {
+
+    &__avatar {
+        float: left;
+        margin: 12px 0 0 12px;
+    }
+
+    .avatar {
+        box-shadow: 0 0 0; 
+    }
+
+    &__title {
+        @include ellipsis();
+        @include font(
+            $size: 26,
+            $color: 'black'
+        );
+        display: block;
+        padding: 18px 0 6px 8px;
+        width: 50%;
+        float: left;
+       
+    }
+
+    &__details {
+        @include ellipsis();
+        @include font(
+            $size: 12,
+            $color: 'black',
+            $transform: uppercase
+        );
+        display: block;
+        padding: 0 0 0 8px;
+        width: 50%;
+        float: left;
+        
+
+    }
+
+    &__reply {
+        right: 0;
+        margin: 12px 12px 0 0;
+    }
+
+}

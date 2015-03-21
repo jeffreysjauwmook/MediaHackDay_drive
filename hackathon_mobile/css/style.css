@@ -1,0 +1,771 @@
+/*------------------------------------*\
+    #VARIABLES-SF
+\*------------------------------------*/
+/**
+* System paths for various folders
+* Note: Should point to the css directory in config.rb
+*/
+/**
+*  Boolean choice operators
+*/
+/**
+* Global typography 
+* TBD
+*/
+/* Font declaration */
+/* Global typography variables */
+/* Heading fonts */
+/* Heading sizes */
+/* heading alignment */
+/* Heading stylings */
+/**
+* Colors
+* TBD
+*/
+/* Default color scheme and concept colors */
+/* Storefronts color(s) */
+/**
+* Use map_merge to merge the concept colors into the default color scheme
+* Map-2 overwrites Map-1 so any color mapped in the concept will
+* overwrite the 'core' color without problems
+*/
+/* Important color $vars */
+/**
+* Margin(s) fixed / static 
+* TBD
+*/
+/* Gutter sizes */
+/**
+* Grid / layout container settings
+* TBD
+*/
+/**
+* Height / width sitewide 
+* TBD
+*/
+/* Fixed width(s) */
+/* Fixed height(s) */
+/**
+* Header / Footer variables
+* TBD
+*/
+/**
+* Forms
+* TBD
+*/
+/**
+* Shop more
+* TBD
+*/
+/**
+* Redaction
+* TBD
+*/
+/**
+* Navigation
+* TBD
+*/
+/* Navigation */
+/* Paging */
+/**
+* Block
+* TBD
+*/
+/**
+* Brands list
+* TBD
+*/
+/**
+* BRAND BAR
+* TBD
+*/
+/**
+* QUICKVIEW
+* TBD
+*/
+/**
+* Popup
+* TBD
+*/
+/**
+* Character-filter (a.k.a. alphabet-bar)
+* TBD
+*/
+/**
+* Quick sort
+* TBD
+*/
+/**
+* Social bar
+* TBD
+*/
+/**
+* Search field(s)
+* TBD
+*/
+/**
+* Breadcrumbs
+* TBD
+*/
+/* Dropdowns */
+/**
+* Buttons
+* TBD
+*/
+/* Button colors */
+/* Button sizes */
+/* Like button */
+/* Follow button */
+/**
+* Ticker variables
+* TBD
+*/
+/**
+* Text variables
+* TBD
+*/
+/**
+* Comment(s)
+* TBD
+*/
+/**
+* Slideshow
+* TBD
+*/
+/**
+* Pricing-block
+* TBD
+*/
+/**
+* Filter variables
+* TBD
+*/
+/* Global filter variables */
+/* Special filters */
+/* Facets */
+/**
+* Meta data
+* TBD
+*/
+/**
+* Z-indices
+* TBD
+*/
+/**
+* Breakpoints
+* TBD
+*/
+/**
+* Animation settings 
+* TBD
+*/
+/**
+* Spritesheets
+* TBD
+*/
+/* Include Compass spritesheet generation mixin  */
+/* Sprite spacing (whitespace around images) */
+/* Disable sprite dimensions  */
+/*
+
+$greyscale-chevron-wright-position: 95%;
+$greyscale-arrow-right-position: 100%;
+$greyscale-search-icon-position: 100%;
+*/
+/* Make spritesheets */
+/*
+@import 'greyscale/*.png';  // make an exclusive greyscale sheet with minimized color set
+@include all-greyscale-sprites;
+
+@import 'colored/*.png';  // make an exclusive colored sheet with 24 bit color set
+@include all-colored-sprites;
+*/
+/* Modal */
+/* Sidebar */
+/* Contests */
+/* Scroller */
+/*------------------------------------*\
+    #FUNCTIONS
+\*------------------------------------*/
+/**
+* getMap returns a value from selected key or prints @debug info 
+* Usage: Do not directly call this, use a @mixin instead
+*/
+/* reference function for color(s), has set Map */
+/**
+* Checks length of input 
+* Usage: called from mixin / function returns a INTEGER value
+*        where INT is the amount of input values 
+* Note:  Special cases NULL where auto or 0 is used
+*/
+/**
+* Calculate value in em for pixel
+*
+*/
+/* Strips any unit indicator from value */
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+/**
+* Truncate text on max-width of parent 
+* Usage: @include ellipsis();
+* Note: requires (max)width property to function
+*/
+/**
+* Makes overflow on Y axis scrolling
+* Usage:  
+*/
+/**
+* animation settings for CSS3 animations
+* retrieves values from _variables-abstract.scss
+* Usage: Call this mixin once to set global values
+*        after that add your CSS3 transform of choice
+*/
+/**
+* Adds Boxshadow, in rgba() or HEX
+* Usage: Call shadow() and add either X / Y / blur / color
+*        Without parameters defaults to 0, 2px, 2px, $black
+*/
+/**
+* Set all font properties at once (or just one, your choice)
+*/
+/* Sets background-color property */
+/**
+* Sets border on element
+* Usage: @include setBorder(width, color, style);
+*        Checks amount of width inputs to downsize CSS 
+*/
+/**
+* @media mixins, inspired by Rafal Bromirski on Github
+* 
+*/
+/* 
+    $values == top, bottom, range*
+    $device == mobile, tablet-long, tablet-wide, desktop
+
+*/
+/**
+* Adds border-radius to an element
+* defaults to 50% per corner
+*/
+/**
+* Adds clearfix behavior to selector
+* Prevents use of @extend for clearfixing content
+*/
+/* Creates global layout parameters for layout-containers */
+/* Sets shadow() */
+/* _base */
+/*------------------------------------*\
+    #RESET
+\*------------------------------------*/
+/* Box-size all content */
+/* line 6, ../sass/02-base/_reset.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/* line 21, ../sass/02-base/_reset.scss */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 29, ../sass/02-base/_reset.scss */
+body {
+  margin: 0;
+}
+
+/* line 40, ../sass/02-base/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 60, ../sass/02-base/_reset.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 73, ../sass/02-base/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 83, ../sass/02-base/_reset.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* line 95, ../sass/02-base/_reset.scss */
+a {
+  background: transparent;
+}
+
+/* line 103, ../sass/02-base/_reset.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* line 115, ../sass/02-base/_reset.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 123, ../sass/02-base/_reset.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 132, ../sass/02-base/_reset.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 141, ../sass/02-base/_reset.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 150, ../sass/02-base/_reset.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 159, ../sass/02-base/_reset.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 167, ../sass/02-base/_reset.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 175, ../sass/02-base/_reset.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 179, ../sass/02-base/_reset.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 190, ../sass/02-base/_reset.scss */
+img {
+  border: 0;
+}
+
+/* line 198, ../sass/02-base/_reset.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 209, ../sass/02-base/_reset.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/* line 217, ../sass/02-base/_reset.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 227, ../sass/02-base/_reset.scss */
+pre {
+  overflow: auto;
+}
+
+/* line 235, ../sass/02-base/_reset.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* line 258, ../sass/02-base/_reset.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* line 272, ../sass/02-base/_reset.scss */
+button {
+  overflow: visible;
+}
+
+/* line 283, ../sass/02-base/_reset.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 296, ../sass/02-base/_reset.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 308, ../sass/02-base/_reset.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 317, ../sass/02-base/_reset.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 328, ../sass/02-base/_reset.scss */
+input {
+  line-height: normal;
+}
+
+/* line 340, ../sass/02-base/_reset.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 352, ../sass/02-base/_reset.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* line 363, ../sass/02-base/_reset.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 376, ../sass/02-base/_reset.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 385, ../sass/02-base/_reset.scss */
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 402, ../sass/02-base/_reset.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 411, ../sass/02-base/_reset.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* line 422, ../sass/02-base/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 427, ../sass/02-base/_reset.scss */
+td,
+th {
+  padding: 0;
+}
+
+/* line 1, ../sass/02-base/_main.scss */
+body {
+  background: red;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 18, ../sass/02-base/_main.scss */
+.content {
+  overflow: hidden;
+}
+
+/* line 23, ../sass/02-base/_main.scss */
+.footer {
+  background: blue;
+}
+
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+/* Default list behavior  */
+/* line 6, ../sass/02-base/_lists.scss */
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Display list items inline */
+/* line 15, ../sass/02-base/_lists.scss */
+.inline-list li {
+  display: inline-block;
+}
+/* line 19, ../sass/02-base/_lists.scss */
+.inline-list--centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+/** 
+* double heading declaration : 
+* http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+*/
+/* Always add global align to headings */
+/* line 12, ../sass/02-base/_headings.scss */
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+  text-align: center;
+  margin: 0;
+  font-weight: 100;
+}
+
+/* line 21, ../sass/02-base/_headings.scss */
+h1,
+.alpha {
+  font-size: 1.125rem;
+  font-family: Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+/* line 38, ../sass/02-base/_headings.scss */
+h2,
+.beta {
+  font-size: 1.25rem;
+  font-family: Georgia, serif;
+}
+
+/* line 55, ../sass/02-base/_headings.scss */
+h3,
+.gamma {
+  font-size: 1.25rem;
+  font-family: Georgia, serif;
+}
+
+/* line 72, ../sass/02-base/_headings.scss */
+h4,
+.delta {
+  font-size: 1.25rem;
+  font-family: "Courier New", monospaced;
+}
+
+/* line 89, ../sass/02-base/_headings.scss */
+h5,
+.epsilon {
+  font-size: 1.25rem;
+  font-family: "Courier New", monospaced;
+}
+
+/* line 106, ../sass/02-base/_headings.scss */
+h6,
+.zeta {
+  font-size: 1.25rem;
+  font-family: "Courier New", monospaced;
+}
+
+/* line 3, ../sass/02-base/_buttons.scss */
+.button {
+  position: absolute;
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #999;
+  margin: 16px;
+}
+/* line 13, ../sass/02-base/_buttons.scss */
+.button.notification {
+  bottom: 12px;
+  right: 12px;
+}
+/* line 18, ../sass/02-base/_buttons.scss */
+.button.alert {
+  right: 0;
+}
+
+/* _componets */
+/* line 7, ../sass/03-layout/_layout.scss */
+.menu__top,
+.menu__bottom {
+  height: 100px;
+  background: white;
+  display: block;
+  width: 100%;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  position: fixed;
+  z-index: 9999;
+  box-shadow: 0 5px 2px #999;
+}
+/* line 18, ../sass/03-layout/_layout.scss */
+.menu__top.open,
+.menu__bottom.open {
+  transform: translateY(0);
+}
+
+/* line 23, ../sass/03-layout/_layout.scss */
+.menu__top {
+  top: 0;
+  transform: translateY(-100px);
+}
+
+/* line 28, ../sass/03-layout/_layout.scss */
+.menu__bottom {
+  bottom: 0;
+  height: 250px;
+  transform: translateY(250px);
+}
+
+/* line 34, ../sass/03-layout/_layout.scss */
+.main-content {
+  position: fixed;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 400;
+  background-image: url("/mediahackday//img/map.png");
+}
+
+/* _componets */
+/* line 3, ../sass/04-components/_notification.scss */
+.notification__avatar {
+  float: left;
+  margin: 12px 0 0 12px;
+}
+/* line 8, ../sass/04-components/_notification.scss */
+.notification .avatar {
+  box-shadow: 0 0 0;
+}
+/* line 12, ../sass/04-components/_notification.scss */
+.notification__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.625rem;
+  color: #000;
+  display: block;
+  padding: 18px 0 6px 8px;
+  width: 50%;
+  float: left;
+}
+/* line 25, ../sass/04-components/_notification.scss */
+.notification__details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: #000;
+  text-transform: uppercase;
+  display: block;
+  padding: 0 0 0 8px;
+  width: 50%;
+  float: left;
+}
+/* line 40, ../sass/04-components/_notification.scss */
+.notification__reply {
+  right: 0;
+  margin: 12px 12px 0 0;
+}
+
+/* line 2, ../sass/04-components/_avatars.scss */
+.avatar {
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 3px 1px #999;
+  background-image: url("/mediahackday//img/bender-small.jpg");
+}
+/* line 11, ../sass/04-components/_avatars.scss */
+.avatar.road-owner {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+/* line 1, ../sass/04-components/_reply.scss */
+.reply-menu {
+  border-width: 1px 0 0;
+  border-color: #999;
+  border-style: solid;
+  list-style: inside none;
+}
+/* line 6, ../sass/04-components/_reply.scss */
+.reply-menu__option {
+  font-size: 1.125rem;
+  color: #999;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 12px;
+  border-width: 0 0 1px;
+  border-color: #999;
+  border-style: solid;
+}

@@ -1,0 +1,20 @@
+.reply-menu {
+    @include border(1px 0 0, $color: 'gray-light');
+    list-style: inside none;
+
+    
+    &__option {
+        @include font(
+            $color: 'gray-light',
+            $size: 18,
+            $align: center,
+            $transform: uppercase,
+            $deco: none
+        );
+        display: block;
+        padding: 12px;
+        @include border(0 0 1px, $color: 'gray-light');    
+    }
+
+
+}

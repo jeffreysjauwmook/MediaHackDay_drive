@@ -1,0 +1,85 @@
+/*------------------------------------*\
+    #FUNCTIONS
+\*------------------------------------*/
+
+/**
+* getMap returns a value from selected key or prints @debug info 
+* Usage: Do not directly call this, use a @mixin instead
+*/
+@function getMap($map, $c) {
+    // makes check skippable
+    @if ( $c != null ) {
+        @if ( map_has_key($map, $c) ) {
+            @return map-get($map, $c);
+        }
+        @else {
+            @debug "function getMap() could not find the key"  $c;
+            @return false;
+        }
+    }
+    @else {
+        // will not render
+        @return null;
+    }
+}
+
+/* reference function for color(s), has set Map */
+@function color( $c ) {
+    @return getMap($colorList, $c);
+}
+
+
+/**
+* Checks length of input 
+* Usage: called from mixin / function returns a INTEGER value
+*        where INT is the amount of input values 
+* Note:  Special cases NULL where auto or 0 is used
+*/
+@function checkLength( $var ) {
+    // exclude 0 value
+    @if ( $var == 0 or $var == auto) {
+        @return NULL;
+    }
+    @else if ( length($var) >= 1 ) {
+        @return length($var);
+    }
+}
+
+
+/**
+* Calculate value in em for pixel
+*
+*/
+@function convertPx( $value ) {
+    // makes check skippable
+    @if ( $value != null ) {
+
+        @if ( unitless($value) ) {
+            $remSize: ( $value / $text-size-root )+rem;
+            @return $remSize;       
+        }
+        @else if( unit($value) == "px" ) {
+            $remSize: ( stripUnit($value) / $text-size-root )+rem;
+            @return $remSize;
+        }
+        @else {
+            @debug "Incorrect value" $value "for font-size()";
+            @return false;
+        }
+
+    }
+    @else {
+        // will not render
+        @return null;
+    }
+}
+
+
+/* Strips any unit indicator from value */
+@function stripUnit($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function unit($value, $unit: px) {
+    @return $value+$unit;
+}

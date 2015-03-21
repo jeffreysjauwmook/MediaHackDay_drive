@@ -1,0 +1,252 @@
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+
+/**
+* Truncate text on max-width of parent 
+* Usage: @include ellipsis();
+* Note: requires (max)width property to function
+*/
+
+// #REWORK ALL THIS CRAPPY SHIT
+@mixin truncate($type: 'ellipsis') {
+    @if ($type == 'ellipsis') {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }@else if ($type == 'noclip') {
+        overflow: visible; // might not be needed
+        word-wrap: break-word;
+        text-overflow: clip;
+        white-space: normal;
+    }@else {
+        word-wrap: break-word;
+        overflow: hidden;
+    }    
+}
+
+@mixin ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/**
+* Makes overflow on Y axis scrolling
+* Usage:  
+*/
+@mixin overflowScroll( $height: 13em ) {
+    overflow-y: auto; // no scroll (fix for older browsers)
+    max-height: $height;
+}
+
+
+/**
+* animation settings for CSS3 animations
+* retrieves values from _variables-abstract.scss
+* Usage: Call this mixin once to set global values
+*        after that add your CSS3 transform of choice
+*/
+@mixin transition($time: $transitionTime, $easing: $transitionEasing) {
+    // neccesary animation settings
+    -webkit-transition:  $time $easing; 
+    -moz-transition:     $time $easing;
+    -o-transition:       $time $easing;
+}
+
+
+/**
+* Adds Boxshadow, in rgba() or HEX
+* Usage: Call shadow() and add either X / Y / blur / color
+*        Without parameters defaults to 0, 2px, 2px, $black
+*/
+@mixin shadow($x: 0, $y: 2px, $blur: 2px, $color: 'black') {
+    box-shadow: $x $y $blur color($color);
+}
+
+
+/**
+* Set all font properties at once (or just one, your choice)
+*/
+@mixin font( $size: null, $color: null, $align: null, $font: null, $transform: null, $deco: null, $style: null) {
+    font-size: convertPx( $size );
+    color: color($color); // run through getColor 
+    font-family: $font;
+    font-style: $style;
+    text-align: $align;
+    text-decoration: $deco;
+    text-transform: $transform;
+}
+
+
+/* Sets background-color property */
+@mixin bg( $color, $img : null ) {
+    @if ( $img ) {
+
+    }
+    @else {
+       background-color: getMap( $colorList, $color); 
+    }  
+}
+
+
+/**
+* Sets border on element
+* Usage: @include setBorder(width, color, style);
+*        Checks amount of width inputs to downsize CSS 
+*/
+@mixin border($width: 0, $color: $color-border, $style: solid) {
+    $int: checkLength( $width ); // returns INT
+    @if ( $int == NULL or $width == 0 ) {
+        border: $width;
+    }
+    @else if ( $int == 1) {
+        border: $width $style color($color);
+    }
+    @else if ( $int > 1  ) {
+        border-width: $width;
+        border-color: color($color);
+        border-style: $style;
+    }
+}
+
+
+/**
+* @media mixins, inspired by Rafal Bromirski on Github
+* 
+*/
+/* 
+    $values == top, bottom, range*
+    $device == mobile, tablet-long, tablet-wide, desktop
+
+*/
+
+// ~ISH prevents using "only and device-width value", 
+// Add in production!
+@mixin screen($device, $values: 'range') {
+    // first part of @media (is always identical for now)
+    $media: "screen and";
+
+    // collect minimal value for device (mobile first)
+    $minWidth: map-get($breakpoints, "#{$device}-min")+px;
+    $maxWidth: map-get($breakpoints, "#{$device}-max")+px;
+
+    @if ( $values == 'range' ) {
+        $media: "#{$media} (min-width: #{$minWidth}) and (max-width: #{$maxWidth})"
+    }
+    @else if( $values == 'max' ) {
+        $media: "#{$media} (max-width: #{$maxWidth})";
+    }
+    @else if( $values == 'min') {
+        $media: "#{$media} (min-width: #{$minWidth})";
+    }
+
+    // Build actual @media
+    @media  #{$media} {
+        @content;
+    }
+}
+
+
+/**
+* Adds border-radius to an element
+* defaults to 50% per corner
+*/
+@mixin border-radius($unit: 50%, $full: true) {
+    @if ( $full != true ) {
+        @debug "there is no value yet";
+    }@else {
+        border-radius: $unit;
+    }
+}
+
+
+/**
+* Adds clearfix behavior to selector
+* Prevents use of @extend for clearfixing content
+*/
+@mixin clearfix() {
+
+    *zoom: 1;
+
+    &::before, 
+    &::after {
+       content: " "; 
+       display: table;
+    }
+    
+    &::after {
+        clear: both;
+    }
+
+}
+
+
+/* Creates global layout parameters for layout-containers */
+@mixin lc-child() {
+    float: left;   
+    @if ($lc-gutter-flexible != null) {
+        padding: 0 $gutter-flex;
+    } 
+    @else {
+        padding: 0 $gutter;
+    }
+   
+    height: auto;
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+    }
+    & > .grid {
+        clear: both;
+    }
+}
+
+
+/* Sets shadow() */
+@mixin shadow($left: 0, $top: 2px, $blur: 2px, $color: 'gray-dark' ) {
+    box-shadow: $left $top $blur color($color);
+}
+
+// #REWORK
+@mixin triangle($direction: up, $width: 100px, $height: 100px, $color: #FFF) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 100px 100px;
+    border-color: transparent transparent #007bff transparent;
+}
+
+@mixin make-arrow( $border: 1px, $position: 50%, $color-border: #DDD, $color: #FFF,$width: 20px, $border-width: 21px) {
+    position: relative; 
+    background: transparent; 
+    border: $border solid $color;
+
+    &:after,
+    &:before {
+        bottom: 100%; // VAR?
+        left: $position; 
+        background: transparent; 
+        border: solid transparent; 
+        content: " "; 
+        height: 0;
+        width: 0; 
+        position: absolute; 
+        pointer-events: none; 
+    } 
+
+    &:after { 
+        border-bottom-color: $color; 
+        border-width: $width; margin-left: (-$width); 
+    } 
+       
+    &:before { 
+        border-color: rgba(194, 225, 245, 0); 
+        border-bottom-color: $color-border; 
+        border-width: $border-width; 
+        margin-left: (-$border-width); 
+    } 
+}
