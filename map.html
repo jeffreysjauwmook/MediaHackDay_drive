@@ -21,11 +21,11 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlp-w7j66AjGYNgaqf-BQpYhh1V4IvITo">
     </script>
     <script type="text/javascript">
-        function initialize(lati, long) {
-            if (lati == undefined) {
-                lati = -34.397;
-                long = 150.644;
-            }
+        function initialize() {
+
+            lati = -34.397;
+            long = 150.644;
+
             var mapOptions = {
                 center: {lat: lati, lng: long},
                 zoom: 18,
