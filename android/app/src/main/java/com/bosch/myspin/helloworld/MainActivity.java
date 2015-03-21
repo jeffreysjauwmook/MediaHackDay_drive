@@ -29,8 +29,9 @@ import com.thalmic.myo.scanner.ScanActivity;
 public class MainActivity extends ActionBarActivity {
     private final static String TAG = MainActivity.class.getCanonicalName();
 
-    private final String EMULATOR_URL = "http://10.0.2.2/~p.hooijenga/mediahackday";
+    private final String EMULATOR_URL = "http://10.0.2.2/~p.hooijenga/mediahackday/login.html";
     private final String URL = "http://mediahackday.gehekt.nl/";
+    private final String API_URL = "http://backend.mediahackday.gehekt.nl/";
 
     private Handler handler;
     private WebView webView;
@@ -38,6 +39,8 @@ public class MainActivity extends ActionBarActivity {
     private boolean usingMyo;
     private boolean usingMySpin;
     private LocationManager locationManager;
+    private ApiClient apiClient;
+    private boolean loggedIn;
 
     private AbstractDeviceListener myoDeviceListener = new AbstractDeviceListener() {
         @Override
@@ -62,6 +65,10 @@ public class MainActivity extends ActionBarActivity {
         public void onLocationChanged(Location location) {
             Log.i(TAG, String.format("LocationListener.onLocationChanged location=%s", location.toString()));
             jsInterface.setLocation(location);
+
+            if (loggedIn) {
+                apiClient.updateLocation(location);
+            }
         }
 
         public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -107,6 +114,28 @@ public class MainActivity extends ActionBarActivity {
 
         webView.loadUrl(isEmulator() ? EMULATOR_URL : URL);
 
+        loggedIn = false;
+        apiClient = new ApiClient(API_URL);
+        apiClient.login("car", "berlin2015", new ApiResponseCallback() {
+            @Override
+            public void onError(int responseCode, String response) {
+                if (responseCode == 404) {
+                    loggedIn = true;
+                }
+            }
+
+            @Override
+            public void onSuccess() {
+                loggedIn = true;
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MainActivity.this, "You are now logged in.", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
+
         initMyo();
         initMySpin();
         initLocation();
@@ -138,8 +167,18 @@ public class MainActivity extends ActionBarActivity {
 
     private void initLocation() {
         locationManager = (LocationManager)this.getSystemService(LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 500, 0, locationListener);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, locationListener);
+
+        try {
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 500, 0, locationListener);
+        } catch (IllegalArgumentException e) {
+            Log.e(TAG, "requestLocationUpdates NETWORK_PROVIDER", e);
+        }
+
+        try {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, locationListener);
+        } catch (IllegalArgumentException e) {
+            Log.e(TAG, "requestLocationUpdates GPS_PROVIDER", e);
+        }
 
         Location l = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (l == null) {
