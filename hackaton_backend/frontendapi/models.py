@@ -10,7 +10,7 @@ class User(AbstractUser):
     current_behaviour = models.CharField(max_length=255, default='none')
     engine_status = models.CharField(max_length=255)
     vim = models.CharField(max_length=255)
-    speed = models.CharField(max_length=255)
+    speed = models.CharField(max_length=255, default=0)
 
 
 class Message(models.Model):

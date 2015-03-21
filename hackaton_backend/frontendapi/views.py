@@ -35,10 +35,10 @@ class NearbyCarsList(generics.ListAPIView):
 class MyBehaviour(views.APIView):
 
     def get(self, request):
-    	user = User.objects.get(vim=123)
-    	te = trip_entry.objects.filter(vim=123, checked=False).order_by("id").reverse()[:5]
+    	user = User.objects.get(pk = request.user.id)
+    	te = trip_entry.objects.filter(vim=user.vim, checked=False).order_by("id").reverse()[:5]
     	my_behaviour = int(user.current_behaviour)
-    	print "current: " + str(my_behaviour)
+    	#print "current: " + str(my_behaviour)
         for t in te:
         	print t.id
         	print t.heavy
@@ -48,7 +48,7 @@ class MyBehaviour(views.APIView):
         		my_behaviour += 1
         	t.checked = True
         	t.save()
-        print "New: " + str(my_behaviour)		
+        #print "New: " + str(my_behaviour)		
         if my_behaviour < 0:
         	my_behaviour = 0
         if my_behaviour > 10:
@@ -62,7 +62,7 @@ class MyBehaviour(views.APIView):
 class MyLocation(views.APIView):
 
     def get(self, request):
-        my_location = self.request.user.last_known_position
+        my_location = request.user.last_known_position
         return response.Response(my_location.as_dict())
 
     def post(self, request):
