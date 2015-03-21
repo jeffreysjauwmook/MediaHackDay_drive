@@ -5,19 +5,21 @@ $footer-height: 200;
 
 .page {
     @include transition();
+    transform: translateY( unit(-$header-height) );
     // set default to 0 - $header-height
-    margin-top: unit(-$header-height);
+  //  margin-top: unit(-$header-height);
     //    margin-top: percentage(1/4);
      &.slide-top {
          // margin-top: (-percentage(1/4));
-        margin-top: unit(-$footer-height) + unit(-$header-height); 
+        transform: translateY( unit(-$header-height) );
+//        margin-top: unit(-$footer-height) + unit(-$header-height); 
          .main-content {
             height: 50%;
         }
     }
 
     &.slide-bottom {
-        margin-top: 0; 
+        transform: translateY( 0 );
         .main-content {
             height: 50%;
         }

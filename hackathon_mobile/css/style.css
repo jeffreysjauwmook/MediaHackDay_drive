@@ -544,185 +544,6 @@ body {
   background: blue;
 }
 
-/* line 6, ../sass/02-base/_layout.scss */
-.page {
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  margin-top: -150px;
-}
-/* line 11, ../sass/02-base/_layout.scss */
-.page.slide-top {
-  margin-top: -200px-150px;
-}
-/* line 14, ../sass/02-base/_layout.scss */
-.page.slide-top .main-content {
-  height: 50%;
-}
-/* line 19, ../sass/02-base/_layout.scss */
-.page.slide-bottom {
-  margin-top: 0;
-}
-/* line 21, ../sass/02-base/_layout.scss */
-.page.slide-bottom .main-content {
-  height: 50%;
-}
-
-/* line 28, ../sass/02-base/_layout.scss */
-.layer-first,
-.layer-second,
-.layer-third {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* line 38, ../sass/02-base/_layout.scss */
-.main-content {
-  position: relative;
-  display: block;
-  height: 100%;
-  width: 100%;
-  z-index: 400;
-  background-image: url("/mediahackday//img/map.png");
-}
-/* line 46, ../sass/02-base/_layout.scss */
-.main-content ul {
-  margin: 0;
-}
-
-/* line 53, ../sass/02-base/_layout.scss */
-.responses {
-  overflow-y: scroll;
-  height: 150px;
-  background: white;
-}
-
-/* line 59, ../sass/02-base/_layout.scss */
-.actions {
-  height: 200px;
-  background: white;
-}
-
-/* line 68, ../sass/02-base/_layout.scss */
-.conversation ul {
-  padding: 0;
-  margin: 0;
-}
-/* line 73, ../sass/02-base/_layout.scss */
-.conversation .reply,
-.conversation .awnser {
-  *zoom: 1;
-  border-width: 0 0 1px;
-  border-color: #999;
-  border-style: solid;
-  display: block;
-  list-style: inside none;
-  width: 100%;
-}
-/* line 173, ../sass/01-utils/_mixins.scss */
-.conversation .reply::before, .conversation .reply::after,
-.conversation .awnser::before,
-.conversation .awnser::after {
-  content: " ";
-  display: table;
-}
-/* line 179, ../sass/01-utils/_mixins.scss */
-.conversation .reply::after,
-.conversation .awnser::after {
-  clear: both;
-}
-/* line 84, ../sass/02-base/_layout.scss */
-.conversation .reply .conversation__text {
-  float: right;
-}
-/* line 88, ../sass/02-base/_layout.scss */
-.conversation .reply .avatar {
-  float: left;
-}
-/* line 94, ../sass/02-base/_layout.scss */
-.conversation .awnser .conversation__text {
-  float: left;
-}
-/* line 98, ../sass/02-base/_layout.scss */
-.conversation .awnser .avatar {
-  float: right;
-}
-/* line 105, ../sass/02-base/_layout.scss */
-.conversation .avatar {
-  display: block;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 16px;
-}
-/* line 116, ../sass/02-base/_layout.scss */
-.conversation__text {
-  width: calc(100% - 64px);
-  display: block;
-  padding: 0 32px;
-  margin: 20px 0 0;
-}
-
-/* line 130, ../sass/02-base/_layout.scss */
-.button {
-  position: absolute;
-  display: block;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid #000;
-  margin: 16px;
-}
-
-/* line 141, ../sass/02-base/_layout.scss */
-.road-warrior {
-  top: 0;
-  left: 0;
-  background: url("/mediahackday//img/bender-small.jpg");
-}
-
-/* line 147, ../sass/02-base/_layout.scss */
-.your-profile {
-  left: 0;
-  bottom: 0;
-  background: url("/mediahackday//img/zoidberg.png");
-}
-
-/* line 153, ../sass/02-base/_layout.scss */
-.switch-screen {
-  right: 0;
-  bottom: 0;
-}
-
-/* line 158, ../sass/02-base/_layout.scss */
-.chat-to {
-  right: 64px;
-  bottom: 0;
-}
-
-/* line 163, ../sass/02-base/_layout.scss */
-.options-menu {
-  display: block;
-  margin: 0;
-  padding: 0;
-  height: 25%;
-}
-
-/* line 171, ../sass/02-base/_layout.scss */
-.option-button {
-  border: 1px solid #999;
-  color: #000;
-  text-align: center;
-  display: block;
-  width: 90%;
-  margin: 8px 5%;
-  padding: 8px;
-}
-
 /*------------------------------------*\
     #HEADINGS
 \*------------------------------------*/
@@ -783,3 +604,181 @@ h6,
 }
 
 /* _componets */
+/* line 6, ../sass/03-layout/_layout.scss */
+.page {
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transform: translateY(-150px);
+}
+/* line 12, ../sass/03-layout/_layout.scss */
+.page.slide-top {
+  transform: translateY(-150px);
+}
+/* line 16, ../sass/03-layout/_layout.scss */
+.page.slide-top .main-content {
+  height: 50%;
+}
+/* line 21, ../sass/03-layout/_layout.scss */
+.page.slide-bottom {
+  transform: translateY(0);
+}
+/* line 23, ../sass/03-layout/_layout.scss */
+.page.slide-bottom .main-content {
+  height: 50%;
+}
+
+/* line 30, ../sass/03-layout/_layout.scss */
+.layer-first,
+.layer-second,
+.layer-third {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 40, ../sass/03-layout/_layout.scss */
+.main-content {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 400;
+  background-image: url("/mediahackday//img/map.png");
+}
+/* line 48, ../sass/03-layout/_layout.scss */
+.main-content ul {
+  margin: 0;
+}
+
+/* line 55, ../sass/03-layout/_layout.scss */
+.responses {
+  overflow-y: scroll;
+  height: 150px;
+  background: white;
+}
+
+/* line 61, ../sass/03-layout/_layout.scss */
+.actions {
+  height: 200px;
+  background: white;
+}
+
+/* line 70, ../sass/03-layout/_layout.scss */
+.conversation ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 75, ../sass/03-layout/_layout.scss */
+.conversation .reply,
+.conversation .awnser {
+  *zoom: 1;
+  border-width: 0 0 1px;
+  border-color: #999;
+  border-style: solid;
+  display: block;
+  list-style: inside none;
+  width: 100%;
+}
+/* line 173, ../sass/01-utils/_mixins.scss */
+.conversation .reply::before, .conversation .reply::after,
+.conversation .awnser::before,
+.conversation .awnser::after {
+  content: " ";
+  display: table;
+}
+/* line 179, ../sass/01-utils/_mixins.scss */
+.conversation .reply::after,
+.conversation .awnser::after {
+  clear: both;
+}
+/* line 86, ../sass/03-layout/_layout.scss */
+.conversation .reply .conversation__text {
+  float: right;
+}
+/* line 90, ../sass/03-layout/_layout.scss */
+.conversation .reply .avatar {
+  float: left;
+}
+/* line 96, ../sass/03-layout/_layout.scss */
+.conversation .awnser .conversation__text {
+  float: left;
+}
+/* line 100, ../sass/03-layout/_layout.scss */
+.conversation .awnser .avatar {
+  float: right;
+}
+/* line 107, ../sass/03-layout/_layout.scss */
+.conversation .avatar {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 16px;
+}
+/* line 118, ../sass/03-layout/_layout.scss */
+.conversation__text {
+  width: calc(100% - 64px);
+  display: block;
+  padding: 0 32px;
+  margin: 20px 0 0;
+}
+
+/* line 132, ../sass/03-layout/_layout.scss */
+.button {
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #000;
+  margin: 16px;
+}
+
+/* line 143, ../sass/03-layout/_layout.scss */
+.road-warrior {
+  top: 0;
+  left: 0;
+  background: url("/mediahackday//img/bender-small.jpg");
+}
+
+/* line 149, ../sass/03-layout/_layout.scss */
+.your-profile {
+  left: 0;
+  bottom: 0;
+  background: url("/mediahackday//img/zoidberg.png");
+}
+
+/* line 155, ../sass/03-layout/_layout.scss */
+.switch-screen {
+  right: 0;
+  bottom: 0;
+}
+
+/* line 160, ../sass/03-layout/_layout.scss */
+.chat-to {
+  right: 64px;
+  bottom: 0;
+}
+
+/* line 165, ../sass/03-layout/_layout.scss */
+.options-menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 25%;
+}
+
+/* line 173, ../sass/03-layout/_layout.scss */
+.option-button {
+  border: 1px solid #999;
+  color: #000;
+  text-align: center;
+  display: block;
+  width: 90%;
+  margin: 8px 5%;
+  padding: 8px;
+}
