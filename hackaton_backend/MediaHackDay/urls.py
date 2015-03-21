@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 from django.contrib import admin
 
 urlpatterns = patterns('',
@@ -12,4 +13,5 @@ urlpatterns = patterns('',
     url(r'^api/v1.0/', include('frontendapi.urls')),
     url(r'^login/?$', 'django.contrib.auth.views.login'),
     url(r'^logout/?$', 'django.contrib.auth.views.logout'),
+    url(r'^hello/?$', TemplateView.as_view(template_name="hello.html")),
 )
