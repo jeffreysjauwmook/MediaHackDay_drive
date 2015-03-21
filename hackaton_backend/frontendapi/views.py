@@ -81,6 +81,8 @@ class MyLocation(views.APIView):
         u.speed = speed
         u.last_known_position = (float(a), float(b))
         u.save()
+        return response.Response("Ok")
+
 
 class CarStatus(views.APIView):
 
