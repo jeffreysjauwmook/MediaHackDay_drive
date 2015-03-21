@@ -2,7 +2,7 @@
 
 $menu-height: 160;
 $menu-height-small: 100;
-$menu-height-large: 250;
+$menu-height-large: 216;
 
 .menu__top,
 .menu__bottom {
@@ -12,7 +12,7 @@ $menu-height-large: 250;
     width: 100%;
     @include transition();
     position: fixed;
-    z-index: $z-index-6;
+    z-index: $z-index-3;
     box-shadow: 0 5px 2px color('gray-light');
 
     &.open {
@@ -25,10 +25,23 @@ $menu-height-large: 250;
     transform: translateY( unit(-$menu-height-small) );
 }
 
-.menu__bottom {   
+.menu__bottom.reply {   
     bottom: 0;
     height: unit($menu-height-large);
     transform: translateY( unit($menu-height-large) );
+
+    &.open {
+        transform: translateY(0);
+    }
+}
+.menu__bottom.alerts {   
+    bottom: 0;
+    height: 100%;
+
+    transform: translateY( 100% );
+    &.open {
+        transform: translateY( 0 );
+    }
 }
 
 .main-content {

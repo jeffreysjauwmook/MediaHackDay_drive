@@ -635,13 +635,15 @@ h6,
   background: white;
   border: 1px solid #999;
   margin: 16px;
+  box-shadow: 0 5px 1px #999;
+  z-index: 9999;
 }
-/* line 13, ../sass/02-base/_buttons.scss */
+/* line 15, ../sass/02-base/_buttons.scss */
 .button.notification {
   bottom: 12px;
   right: 12px;
 }
-/* line 18, ../sass/02-base/_buttons.scss */
+/* line 20, ../sass/02-base/_buttons.scss */
 .button.alert {
   right: 0;
 }
@@ -658,7 +660,7 @@ h6,
   -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   position: fixed;
-  z-index: 9999;
+  z-index: 600;
   box-shadow: 0 5px 2px #999;
 }
 /* line 18, ../sass/03-layout/_layout.scss */
@@ -674,13 +676,28 @@ h6,
 }
 
 /* line 28, ../sass/03-layout/_layout.scss */
-.menu__bottom {
+.menu__bottom.reply {
   bottom: 0;
-  height: 250px;
-  transform: translateY(250px);
+  height: 216px;
+  transform: translateY(216px);
+}
+/* line 33, ../sass/03-layout/_layout.scss */
+.menu__bottom.reply.open {
+  transform: translateY(0);
 }
 
-/* line 34, ../sass/03-layout/_layout.scss */
+/* line 37, ../sass/03-layout/_layout.scss */
+.menu__bottom.alerts {
+  bottom: 0;
+  height: 100%;
+  transform: translateY(100%);
+}
+/* line 42, ../sass/03-layout/_layout.scss */
+.menu__bottom.alerts.open {
+  transform: translateY(0);
+}
+
+/* line 47, ../sass/03-layout/_layout.scss */
 .main-content {
   position: fixed;
   position: relative;
@@ -734,6 +751,7 @@ h6,
 
 /* line 2, ../sass/04-components/_avatars.scss */
 .avatar {
+  position: relative;
   display: block;
   width: 76px;
   height: 76px;
@@ -742,11 +760,26 @@ h6,
   box-shadow: 0 3px 1px #999;
   background-image: url("/mediahackday//img/bender-small.jpg");
 }
-/* line 11, ../sass/04-components/_avatars.scss */
+/* line 12, ../sass/04-components/_avatars.scss */
 .avatar.road-owner {
   position: absolute;
   left: 12px;
   top: 12px;
+}
+/* line 17, ../sass/04-components/_avatars.scss */
+.avatar .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 25, ../sass/04-components/_avatars.scss */
+.icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: red;
+  z-index: 9999;
 }
 
 /* line 1, ../sass/04-components/_reply.scss */
@@ -762,9 +795,8 @@ h6,
   color: #999;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   display: block;
-  padding: 12px;
+  padding: 16px;
   border-width: 0 0 1px;
   border-color: #999;
   border-style: solid;

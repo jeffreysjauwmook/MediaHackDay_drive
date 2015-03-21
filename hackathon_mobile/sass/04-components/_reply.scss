@@ -8,11 +8,10 @@
             $color: 'gray-light',
             $size: 18,
             $align: center,
-            $transform: uppercase,
             $deco: none
         );
         display: block;
-        padding: 12px;
+        padding: 16px;
         @include border(0 0 1px, $color: 'gray-light');    
     }
 

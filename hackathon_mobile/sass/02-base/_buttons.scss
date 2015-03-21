@@ -9,6 +9,8 @@
     background: white;
     @include border(1px, $color: 'gray-light');
     margin: 16px;
+    box-shadow: 0 5px 1px color("gray-light");
+    z-index: $z-index-6;
 
     &.notification {
         bottom: 12px;
