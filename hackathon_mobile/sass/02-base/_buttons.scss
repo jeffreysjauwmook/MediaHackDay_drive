@@ -1,0 +1,21 @@
+// BUttons
+
+.button {
+    position: absolute;
+    display: block;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: white;
+    @include border(1px, $color: 'gray-light');
+    margin: 16px;
+
+    &.notification {
+        bottom: 12px;
+        right: 12px;
+    }
+
+    &.alert {
+        right: 0;
+    }
+}

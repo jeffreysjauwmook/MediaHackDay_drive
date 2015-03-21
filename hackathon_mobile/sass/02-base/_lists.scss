@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+
+/* Default list behavior  */
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Display list items inline */
+.inline-list {
+   
+    li {
+        display: inline-block;
+    }
+
+    &--centered {
+        @include font($align: center);
+        margin: 0 auto;
+    }
+}

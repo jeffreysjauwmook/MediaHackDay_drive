@@ -1,9 +1,18 @@
 // User avatar
 .avatar {
-    @include border(1px);
     display: block;
-    width: 48px;
-    height: 48px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0 3px 1px color('gray-light');
+    background-image: url('#{$imagePath}/bender-small.jpg');
+
+    &.road-owner {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+    }
+
 }
+

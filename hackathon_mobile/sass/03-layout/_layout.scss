@@ -1,16 +1,19 @@
 // layout stuffs
 
 $menu-height: 160;
+$menu-height-small: 100;
+$menu-height-large: 250;
 
 .menu__top,
 .menu__bottom {
-    height: unit($menu-height);
+    height: unit($menu-height-small);
     background: white;
     display: block;
     width: 100%;
     @include transition();
     position: fixed;
-    @include border(0 0 1px);
+    z-index: $z-index-6;
+    box-shadow: 0 5px 2px color('gray-light');
 
     &.open {
         transform: translateY( 0 );
@@ -19,12 +22,13 @@ $menu-height: 160;
 
 .menu__top {
     top: 0;
-    transform: translateY( unit(-$menu-height) );
+    transform: translateY( unit(-$menu-height-small) );
 }
 
-.menu__bottom {
+.menu__bottom {   
     bottom: 0;
-    transform: translateY( unit($menu-height) );
+    height: unit($menu-height-large);
+    transform: translateY( unit($menu-height-large) );
 }
 
 .main-content {

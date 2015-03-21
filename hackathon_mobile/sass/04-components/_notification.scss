@@ -1,53 +1,45 @@
 .notification {
-    @include font(
-        $align: center,
-        $color: 'black'
-    );
-    padding: 5%;
 
-
-    &__header {
-        position: relative;
-        height: 60px;
+    &__avatar {
+        float: left;
+        margin: 12px 0 0 12px;
     }
 
     .avatar {
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-    .button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin: 0;
+        box-shadow: 0 0 0; 
     }
 
-
-    &__sender {
+    &__title {
+        @include ellipsis();
         @include font(
+            $size: 26,
+            $color: 'black'
+        );
+        display: block;
+        padding: 18px 0 6px 8px;
+        width: 50%;
+        float: left;
+       
+    }
+
+    &__details {
+        @include ellipsis();
+        @include font(
+            $size: 12,
             $color: 'black',
-            $deco: none
+            $transform: uppercase
         );
         display: block;
-        font-weight: 900;
-        padding-top: 8px;
-    }
-
-    &__vehicle {
-        display: block;
+        padding: 0 0 0 8px;
+        width: 50%;
+        float: left;
+        
 
     }
 
-    &__message {
-        display: block;
-        clear: both;
-        padding: 16px 0;
-        margin: 0;
-        @include font(
-            $size: 24,
-            $align: left
-
-        );
+    &__reply {
+        right: 0;
+        margin: 12px 12px 0 0;
     }
+
 }

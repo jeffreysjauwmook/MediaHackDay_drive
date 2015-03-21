@@ -545,6 +545,28 @@ body {
 }
 
 /*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+/* Default list behavior  */
+/* line 6, ../sass/02-base/_lists.scss */
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Display list items inline */
+/* line 15, ../sass/02-base/_lists.scss */
+.inline-list li {
+  display: inline-block;
+}
+/* line 19, ../sass/02-base/_lists.scss */
+.inline-list--centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*------------------------------------*\
     #HEADINGS
 \*------------------------------------*/
 /** 
@@ -603,11 +625,32 @@ h6,
   font-family: "Courier New", monospaced;
 }
 
+/* line 3, ../sass/02-base/_buttons.scss */
+.button {
+  position: absolute;
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #999;
+  margin: 16px;
+}
+/* line 13, ../sass/02-base/_buttons.scss */
+.button.notification {
+  bottom: 12px;
+  right: 12px;
+}
+/* line 18, ../sass/02-base/_buttons.scss */
+.button.alert {
+  right: 0;
+}
+
 /* _componets */
-/* line 5, ../sass/03-layout/_layout.scss */
+/* line 7, ../sass/03-layout/_layout.scss */
 .menu__top,
 .menu__bottom {
-  height: 160px;
+  height: 100px;
   background: white;
   display: block;
   width: 100%;
@@ -615,29 +658,29 @@ h6,
   -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   position: fixed;
-  border-width: 0 0 1px;
-  border-color: #999;
-  border-style: solid;
+  z-index: 9999;
+  box-shadow: 0 5px 2px #999;
 }
-/* line 15, ../sass/03-layout/_layout.scss */
+/* line 18, ../sass/03-layout/_layout.scss */
 .menu__top.open,
 .menu__bottom.open {
   transform: translateY(0);
 }
 
-/* line 20, ../sass/03-layout/_layout.scss */
+/* line 23, ../sass/03-layout/_layout.scss */
 .menu__top {
   top: 0;
-  transform: translateY(-160px);
+  transform: translateY(-100px);
 }
 
-/* line 25, ../sass/03-layout/_layout.scss */
+/* line 28, ../sass/03-layout/_layout.scss */
 .menu__bottom {
   bottom: 0;
-  transform: translateY(160px);
+  height: 250px;
+  transform: translateY(250px);
 }
 
-/* line 30, ../sass/03-layout/_layout.scss */
+/* line 34, ../sass/03-layout/_layout.scss */
 .main-content {
   position: fixed;
   position: relative;
@@ -649,58 +692,80 @@ h6,
 }
 
 /* _componets */
-/* line 1, ../sass/04-components/_notification.scss */
-.notification {
-  color: #000;
-  text-align: center;
-  padding: 5%;
+/* line 3, ../sass/04-components/_notification.scss */
+.notification__avatar {
+  float: left;
+  margin: 12px 0 0 12px;
 }
-/* line 9, ../sass/04-components/_notification.scss */
-.notification__header {
-  position: relative;
-  height: 60px;
-}
-/* line 14, ../sass/04-components/_notification.scss */
+/* line 8, ../sass/04-components/_notification.scss */
 .notification .avatar {
-  position: absolute;
-  left: 0;
-  top: 0;
+  box-shadow: 0 0 0;
 }
-/* line 19, ../sass/04-components/_notification.scss */
-.notification .button {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 0;
-}
-/* line 27, ../sass/04-components/_notification.scss */
-.notification__sender {
+/* line 12, ../sass/04-components/_notification.scss */
+.notification__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.625rem;
   color: #000;
-  text-decoration: none;
   display: block;
-  font-weight: 900;
-  padding-top: 8px;
+  padding: 18px 0 6px 8px;
+  width: 50%;
+  float: left;
 }
-/* line 37, ../sass/04-components/_notification.scss */
-.notification__vehicle {
+/* line 25, ../sass/04-components/_notification.scss */
+.notification__details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: #000;
+  text-transform: uppercase;
   display: block;
+  padding: 0 0 0 8px;
+  width: 50%;
+  float: left;
 }
-/* line 42, ../sass/04-components/_notification.scss */
-.notification__message {
-  display: block;
-  clear: both;
-  padding: 16px 0;
-  margin: 0;
-  font-size: 1.5rem;
-  text-align: left;
+/* line 40, ../sass/04-components/_notification.scss */
+.notification__reply {
+  right: 0;
+  margin: 12px 12px 0 0;
 }
 
 /* line 2, ../sass/04-components/_avatars.scss */
 .avatar {
-  border: 1px solid #999;
   display: block;
-  width: 48px;
-  height: 48px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   overflow: hidden;
+  box-shadow: 0 3px 1px #999;
+  background-image: url("/mediahackday//img/bender-small.jpg");
+}
+/* line 11, ../sass/04-components/_avatars.scss */
+.avatar.road-owner {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+/* line 1, ../sass/04-components/_reply.scss */
+.reply-menu {
+  border-width: 1px 0 0;
+  border-color: #999;
+  border-style: solid;
+  list-style: inside none;
+}
+/* line 6, ../sass/04-components/_reply.scss */
+.reply-menu__option {
+  font-size: 1.125rem;
+  color: #999;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 12px;
+  border-width: 0 0 1px;
+  border-color: #999;
+  border-style: solid;
 }
