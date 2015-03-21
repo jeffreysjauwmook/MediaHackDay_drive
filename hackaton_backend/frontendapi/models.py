@@ -8,7 +8,7 @@ class User(AbstractUser):
     last_known_position = geosimple.GeohashField(blank=True, null=True)
     previous_known_position = geosimple.GeohashField(blank=True, null=True)
     social_score = models.IntegerField(blank=True, null=True)
-    current_behaviour = models.CharField(max_length=255, default='none')
+    current_behaviour = models.CharField(max_length=255, default='0')
     engine_status = models.CharField(max_length=255)
     vim = models.CharField(max_length=255)
     speed = models.CharField(max_length=255, default=0)
