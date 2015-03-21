@@ -7,7 +7,8 @@ import geosimple
 class User(AbstractUser):
     last_known_position = geosimple.GeohashField(blank=True, null=True)
     social_score = models.IntegerField(blank=True, null=True)
-    current_behaviour = models.CharField(max_length=255)
+    current_behaviour = models.CharField(max_length=255, default='none')
+    engine_status = models.CharField(max_length=255)
 
 
 class Message(models.Model):
@@ -24,7 +25,3 @@ class Message(models.Model):
         'Message', blank=True, null=True, related_name='follow_up_message'
     )
 
-
-class Car(models.Model):
-    owner = models.ForeignKey(User)
-    engine_status = models.CharField(max_length=255)
