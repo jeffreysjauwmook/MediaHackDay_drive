@@ -18,7 +18,7 @@ class User(AbstractUser):
         blank=True,
     )
 
-    objects = geosimple.GeoManager()
+    geo_objects = geosimple.GeoManager()
 
 
 class Message(models.Model):
