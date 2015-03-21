@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('frontendapi', '0002_user_previous_known_position'),
+        ('frontendapi', '0003_auto_20150321_2304'),
     ]
 
     operations = [
