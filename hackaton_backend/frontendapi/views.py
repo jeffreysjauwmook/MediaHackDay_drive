@@ -30,8 +30,11 @@ class NearbyCarsList(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        #FIXME filter nearby cars
-        return User.objects.all()
+        distance = 0.100  # kilometers
+        return User.objects.filter(
+            previous_known_position__approx_distance_lt=(user.previous_known_position, distance)
+        ).exclude(user)
+
 
 class MyBehaviour(views.APIView):
 
@@ -49,13 +52,13 @@ class MyBehaviour(views.APIView):
         		my_behaviour += 1
         	t.checked = True
         	t.save()
-        #print "New: " + str(my_behaviour)		
+        #print "New: " + str(my_behaviour)
         if my_behaviour < 0:
         	my_behaviour = 0
         if my_behaviour > 10:
         	my_behaviour = 10
 
-        user.current_behaviour = str(my_behaviour)	
+        user.current_behaviour = str(my_behaviour)
         user.save()
         return response.Response(str(my_behaviour))
 
@@ -72,7 +75,7 @@ class MyLocation(views.APIView):
 
     def post(self, request):
         a = request.POST.get('lat')
-        b = request.POST.get('lng')	
+        b = request.POST.get('lng')
         speed = request.POST.get('speed')
         if not speed or not a or not b:
             return response.Response("404")
