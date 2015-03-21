@@ -12,7 +12,6 @@ class UserMixin(object):
     serializer_class = UserSerializer
 
 class MessageMixin(object):
-
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
 
@@ -21,6 +20,9 @@ class UserList(UserMixin, generics.ListCreateAPIView):
     pass
 
 class MessageList(MessageMixin, generics.ListCreateAPIView):
+    pass
+
+class MessageUpdate(MessageMixin, generics.RetrieveUpdateAPIView):
     pass
 
 

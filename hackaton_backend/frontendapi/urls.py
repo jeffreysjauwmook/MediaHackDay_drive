@@ -4,6 +4,8 @@ from . import views
 urlpatterns = patterns('',
     url(r'^user/?$', views.UserList.as_view()),
     url(r'^message/?$', views.MessageList.as_view()),
+    url(r'^message-update/(?P<pk>\d+)/$', views.MessageUpdate.as_view()),
+
     url(r'^nearby-cars/?$', views.NearbyCarsList.as_view()),
     url(r'^my-behaviour/?$', views.MyBehaviour.as_view()),
     url(r'^my-location/?$', views.MyLocation.as_view()),

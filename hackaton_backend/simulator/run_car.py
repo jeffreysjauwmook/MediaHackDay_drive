@@ -22,6 +22,6 @@ for i in range(0,distance):
     #{"timestamp":["This field is required."],"fuel_diff":["This field is required."],"fuel_total":["This field is required."]}
     payload = {'vim': '123', 'km_total': km_total, 'heavy': heavy, 'fuel_diff': 0, 'fuel_total': 0, 'timestamp' : d}
 
-#    r = requests.post("http://backend.mediahackday.gehekt.nl/as-api/v1.0/entry", data=payload)
-    r = requests.post("http://localhost:8000/as-api/v1.0/entry", data=payload)
+    r = requests.post("http://backend.mediahackday.gehekt.nl/as-api/v1.0/entry", data=payload)
+#    r = requests.post("http://localhost:8000/as-api/v1.0/entry", data=payload)
     print r.text
