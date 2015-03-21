@@ -12,6 +12,11 @@ class User(AbstractUser):
     engine_status = models.CharField(max_length=255)
     vim = models.CharField(max_length=255)
     speed = models.CharField(max_length=255, default=0)
+    avatar = models.ImageField(
+        'Profilephoto',
+        upload_to='user_avatars/',
+        blank=True,
+    )
 
     objects = geosimple.GeoManager()
 

@@ -12,3 +12,4 @@
 db.sqlite3
 hackaton_backend/MediaHackDay/local_settings.py
 .sass-cache/
+media/
