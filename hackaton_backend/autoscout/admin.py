@@ -1,3 +1,4 @@
 from django.contrib import admin
+from autoscout.models import trip_entry
 
-# Register your models here.
+admin.site.register(trip_entry)
