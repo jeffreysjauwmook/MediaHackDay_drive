@@ -2,7 +2,7 @@
 
 $menu-height: 160;
 $menu-height-small: 100;
-$menu-height-large: 216;
+$menu-height-large: 225;
 
 .menu__top,
 .menu__bottom {
@@ -13,7 +13,7 @@ $menu-height-large: 216;
     @include transition();
     position: fixed;
     z-index: $z-index-3;
-    box-shadow: 0 5px 2px color('gray-light');
+    box-shadow: 0 5px 2px color('gray-light-2');
 
     &.open {
         transform: translateY( 0 );

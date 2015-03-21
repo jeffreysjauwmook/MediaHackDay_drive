@@ -6,40 +6,44 @@
     }
 
     .avatar {
-        box-shadow: 0 0 0; 
+        box-shadow: none; 
     }
 
     &__title {
         @include ellipsis();
         @include font(
-            $size: 26,
-            $color: 'black'
+            $size: 32,
+            $color: 'mh-gray-text'
         );
         display: block;
-        padding: 18px 0 6px 8px;
+        padding: 20px 0 0 8px;
         width: 50%;
         float: left;
-       
+       font-weight: 400;
     }
 
     &__details {
         @include ellipsis();
         @include font(
-            $size: 12,
-            $color: 'black',
+            $size: 16,
+            $color: 'mh-gray-text',
             $transform: uppercase
         );
         display: block;
         padding: 0 0 0 8px;
         width: 50%;
         float: left;
+
         
 
     }
 
     &__reply {
+        @include bg('mh-gray-button');
+        border: 0;
         right: 0;
         margin: 12px 12px 0 0;
+        box-shadow: none;
     }
 
 }

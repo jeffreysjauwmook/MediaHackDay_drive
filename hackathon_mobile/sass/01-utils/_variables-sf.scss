@@ -29,9 +29,8 @@ $block-has-quickview: true;
 * Global typography 
 * TBD
 */
-
 /* Font declaration */
-$font-default:   Verdana,       sans-serif     !default;  
+$font-default:   'Source Sans Pro', Verdana,       sans-serif     !default;  
 $font-alt:       Georgia,       serif          !default; 
 $font-alt-2:     'Courier New', monospaced     !default;
 // Seperate bold state for @fontface typekits
@@ -95,9 +94,14 @@ $colorList: (
 
     'gray-dark':  #666,
     'gray-dark-2': #333,
+    'gray-medium': #777,
     'gray-light': #999,
     'gray-light-2': #EEE,
     'green': #66AE5E,
+
+    'mh-gray-text': #5c5c5c,
+    'mh-gray-button': #f2f2f2,
+    'mh-gray-stuff': #5c5c5c,
 
     // reworked new color
     'Desert-storm': #F4F4F2,
@@ -126,7 +130,7 @@ $color-modal:      $color-bg      !default;
 $color-link:       'green'        !default;
 $color-footer:     'black'        !default;
 $color-redaction:  'gray-light-2' !default;
-$color-border:     'gray-light'   !default;
+$color-border:     'gray-light-2'   !default;
 
 
 
