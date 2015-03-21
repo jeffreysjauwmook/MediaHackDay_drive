@@ -7,7 +7,6 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class UserMixin(object):
-
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -20,7 +19,11 @@ class UserList(UserMixin, generics.ListCreateAPIView):
     pass
 
 class MessageList(MessageMixin, generics.ListCreateAPIView):
-    pass
+    """
+    List of messages for current user
+    """    
+    def get_queryset(self):
+    	return Message.objects.filter(receiver = self.request.user)
 
 class MessageUpdate(MessageMixin, generics.RetrieveUpdateAPIView):
     pass
