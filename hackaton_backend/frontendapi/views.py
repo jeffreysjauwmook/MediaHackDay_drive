@@ -2,6 +2,7 @@ from models import User, Message
 from serializers import UserSerializer,MessageSerializer
 from rest_framework import generics, views, response
 from autoscout.models import trip_entry
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here.
@@ -70,10 +71,13 @@ class MyLocation(views.APIView):
         	return response.Response("404")
 
     def post(self, request):
-        a = request.POST['lat']
-        b = request.POST['lng']	
-        speed = request.POST['speed']
-        u = User.objects.get(pk=request.user.pk)
+        a = request.POST.get('lat')
+        b = request.POST.get('lng')	
+        speed = request.POST.get('speed')
+        if not speed or a or b:
+            return response.Response("404")
+
+        u = get_object_or_404(User, pk=request.user.id)
         u.speed = speed
         u.last_known_position = (float(a), float(b))
         u.save()
