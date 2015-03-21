@@ -62,8 +62,12 @@ class MyBehaviour(views.APIView):
 class MyLocation(views.APIView):
 
     def get(self, request):
-        my_location = request.user.last_known_position
-        return response.Response(my_location.as_dict())
+    	try:
+    	    u = User.objects.get(pk=request.user.id)
+            my_location = u.last_known_position
+            return response.Response(my_location.as_dict())
+        except:
+        	return response.Response("404")
 
     def post(self, request):
         a = request.POST['lat']
