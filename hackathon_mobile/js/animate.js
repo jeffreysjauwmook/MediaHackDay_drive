@@ -1,6 +1,6 @@
-$( ".switch-screen" ).click(function() {
-    $('.page').toggleClass("slide-top");
+$( ".js-toggle__top" ).click(function() {
+    $('.menu__top').toggleClass("open");
 });
-$( ".chat-to" ).click(function() {
-    $('.page').toggleClass("slide-bottom");
+$( "js-toggle__bottom" ).click(function() {
+    $('.menu__bottom').toggleClass("open");
 });
