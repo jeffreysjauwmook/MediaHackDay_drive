@@ -9,6 +9,7 @@ class User(AbstractUser):
     social_score = models.IntegerField(blank=True, null=True)
     current_behaviour = models.CharField(max_length=255, default='none')
     engine_status = models.CharField(max_length=255)
+    vim = models.CharField(max_length=255)
 
 
 class Message(models.Model):

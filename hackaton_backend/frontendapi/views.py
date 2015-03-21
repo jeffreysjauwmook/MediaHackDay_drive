@@ -1,6 +1,7 @@
 from models import User, Message
 from serializers import UserSerializer,MessageSerializer
 from rest_framework import generics, views, response
+from autoscout.models import trip_entry
 
 
 # Create your views here.
@@ -34,8 +35,26 @@ class NearbyCarsList(generics.ListAPIView):
 class MyBehaviour(views.APIView):
 
     def get(self, request):
-        my_behaviour = self.request.user.current_behaviour
-        return response.Response(my_behaviour)
+    	user = User.objects.get(vim=123)
+    	te = trip_entry.objects.filter(vim=123).order_by("id").reverse()[:5]
+    	my_behaviour = int(user.current_behaviour)
+    	print "current: " + str(my_behaviour)
+        for t in te:
+        	print t.id
+        	print t.heavy
+        	if t.heavy:
+        		my_behaviour -= 1
+        	else:
+        		my_behaviour += 1
+        print "New: " + str(my_behaviour)		
+        if my_behaviour < 0:
+        	my_behaviour = 0
+        if my_behaviour > 10:
+        	my_behaviour = 10
+
+        user.current_behaviour = str(my_behaviour)	
+        user.save()
+        return response.Response(str(my_behaviour))
 
 
 class MyLocation(views.APIView):
