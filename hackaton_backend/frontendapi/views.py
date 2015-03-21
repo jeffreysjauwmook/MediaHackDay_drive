@@ -36,7 +36,7 @@ class MyBehaviour(views.APIView):
 
     def get(self, request):
     	user = User.objects.get(vim=123)
-    	te = trip_entry.objects.filter(vim=123).order_by("id").reverse()[:5]
+    	te = trip_entry.objects.filter(vim=123, checked=False).order_by("id").reverse()[:5]
     	my_behaviour = int(user.current_behaviour)
     	print "current: " + str(my_behaviour)
         for t in te:
@@ -46,6 +46,8 @@ class MyBehaviour(views.APIView):
         		my_behaviour -= 1
         	else:
         		my_behaviour += 1
+        	t.checked = True
+        	t.save()
         print "New: " + str(my_behaviour)		
         if my_behaviour < 0:
         	my_behaviour = 0

@@ -8,6 +8,7 @@ class trip_entry(models.Model):
     fuel_total = models.DecimalField(decimal_places=2, max_digits=99999)
     fuel_diff = models.DecimalField(decimal_places=2, max_digits=99999)
     heavy = models.BooleanField(default=False)
+    checked = models.BooleanField(default=False)
 
 
 
