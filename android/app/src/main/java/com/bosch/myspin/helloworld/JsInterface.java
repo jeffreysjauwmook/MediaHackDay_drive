@@ -8,14 +8,14 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 public class JsInterface {
-    private Context context;
+    private MainActivity context;
     private Handler handler;
     private WebView webView;
     private Location location;
     private String locationCallback;
     private String gestureCallback;
 
-    public JsInterface(Context context, Handler handler, WebView webView) {
+    public JsInterface(MainActivity context, Handler handler, WebView webView) {
         this.context = context;
         this.handler = handler;
         this.webView = webView;
@@ -42,6 +42,11 @@ public class JsInterface {
         if (location != null) {
             sendLocation();
         }
+    }
+
+    @JavascriptInterface
+    public void login(String username, String password) {
+        context.login(username, password);
     }
 
     private void loadUrl(final String url) {

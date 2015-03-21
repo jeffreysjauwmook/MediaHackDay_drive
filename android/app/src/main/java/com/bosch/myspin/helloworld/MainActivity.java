@@ -29,7 +29,7 @@ import com.thalmic.myo.scanner.ScanActivity;
 public class MainActivity extends ActionBarActivity {
     private final static String TAG = MainActivity.class.getCanonicalName();
 
-    private final String EMULATOR_URL = "http://10.0.2.2/~p.hooijenga/mediahackday/login.html";
+    private final String EMULATOR_URL = "http://10.0.2.2/~p.hooijenga/mediahackday/";
     private final String URL = "http://mediahackday.gehekt.nl/";
     private final String API_URL = "http://backend.mediahackday.gehekt.nl/";
 
@@ -112,16 +112,20 @@ public class MainActivity extends ActionBarActivity {
         jsInterface = new JsInterface(this, handler, webView);
         webView.addJavascriptInterface(jsInterface, "app");
 
-        webView.loadUrl(isEmulator() ? EMULATOR_URL : URL);
+        webView.loadUrl((isEmulator() ? EMULATOR_URL : URL) + "login.html");
 
         loggedIn = false;
         apiClient = new ApiClient(API_URL);
-        apiClient.login("car", "berlin2015", new ApiResponseCallback() {
+
+        initMyo();
+        initMySpin();
+        initLocation();
+    }
+
+    public void login(String username, String password) {
+        apiClient.login(username, password, new ApiResponseCallback() {
             @Override
             public void onError(int responseCode, String response) {
-                if (responseCode == 404) {
-                    loggedIn = true;
-                }
             }
 
             @Override
@@ -130,15 +134,11 @@ public class MainActivity extends ActionBarActivity {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(MainActivity.this, "You are now logged in.", Toast.LENGTH_LONG).show();
+                        webView.loadUrl(isEmulator() ? EMULATOR_URL : URL);
                     }
                 });
             }
         });
-
-        initMyo();
-        initMySpin();
-        initLocation();
     }
 
     private void initMySpin() {
