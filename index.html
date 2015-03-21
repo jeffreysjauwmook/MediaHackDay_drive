@@ -27,16 +27,30 @@
         var myOptions;
         var userMarker
         var markers = [];
+        var colors = ['red', 'blue', 'green', 'red'];
+        var markerColors = {
+            red: null,
+            blue: null,
+            green: null,
+            black: null
+        };
         function drawMap(latlng) {
             myOptions = {
-                zoom: 23,
+                zoom: 20, //23
                 center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                zIndex: 1
+                zIndex: 1,
+                scrollwheel: false,
+                navigationControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                draggable: false,
+                streetViewControl: false,
+                zoomControl: false
             };
 
             map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-            console.log(map);
+
             // Add an overlay to the map of current lat/lng
             userMarker = new google.maps.Marker({
                 position: latlng,
@@ -52,32 +66,40 @@
         function createMarkers(nearByUsers) {
 
             for (var i = 0; i < nearByUsers.length; i++) {
+
                 var user = nearByUsers[i];
                 var userId = user.id;
-                var userLocation = new google.maps.LatLng(user.lat, user.long);
-                var username = user.name;
+                var position = user.previous_known_position;
+                var userLocation = new google.maps.LatLng(position.latitude, position.longitude);
+                var username = user.username;
+                var image = 'img/bender-small.jpg';
                 if (markers[userId] == undefined) {
                     markers[userId] = new google.maps.Marker({
                         map: map,
                         position: userLocation,
-                        title: username
+                        title: username,
+                        icon: image,
+                        user: user
+                    });
+                    google.maps.event.addListener(markers[userId], 'click', function () {
+                        userMenu(markers[userId].user);
                     });
                 }
 
             }
         }
         function getNearbyUsers(lat, long) {
-            console.log(lat)
+
             $.ajax({
-                url: "http://backend.mediahackday.gehekt.nl",
-                method: "POST",
-                data: {latitude: lat, longitude: long},
+                url: "http://backend.mediahackday.gehekt.nl/api/v1.0/user?format=json",
+                method: "GET",
+                data: {},
                 cache: false,
                 dataType: 'json'
             }).done(function (info) {
 
                 createMarkers(info);
-                console.log(markers);
+
             });
 
 
@@ -85,6 +107,48 @@
         function isLoggedIn() {
 
         }
+        function userMenu(user) {
+            console.log(user);
+            $('.menu__bottom').addClass('open');
+            $('.reply-menu').attr('data-id', user.id);
+
+
+        }
+        function sendMessage(user, msg) {
+            $.ajax({
+                url: "test.json",
+                method: "POST",
+                data: {user: user, msg: msg},
+                cache: false,
+                dataType: 'json'
+            }).done(function () {
+                alert('message send');
+
+            });
+        }
+        function checkForNotifications() {
+            $.ajax({
+                url: "test.json",
+                method: "POST",
+                data: {user: user},
+                cache: false,
+                dataType: 'json'
+            }).done(function () {
+                getLastNotifications();
+            });
+        }
+        function getLastNotifications() {
+            $.ajax({
+                url: "test.json",
+                method: "POST",
+                data: {user: user},
+                cache: false,
+                dataType: 'json'
+            }).done(function () {
+                getLastMessage();
+            });
+        }
+
 
         $(document).on("pageinit", "#map-page", function () {
 
@@ -116,7 +180,7 @@
 
                 if (navigator.geolocation) {
                     function success(pos) {
-                        console.log(pos)
+
                         // Location found, show map with these coordinates
                         appSetLocation(pos.coords.latitude, pos.coords.longitude);
                         getNearbyUsers(pos.coords.latitude, pos.coords.longitude);
@@ -134,9 +198,29 @@
                     });
                 }
 
-            })
-        });
+            });
+            $('.reply-menu__option').click(function () {
+                var recipient = $(this).parent().attr('data-id');
+                var msg = $(this).attr('data-msg');
 
+                console.log(recipient, msg);
+                $('.menu__bottom').removeClass('open');
+            });
+            setInterval(function () {
+                getNearbyUsers('asdad', 'asdasd')
+            }, 3000);
+
+        });
+        if (window.app) {
+            /* Note: Callback functions need to be global. */
+            app.setGestureCallback("onGesture");
+            app.setLocationCallback("onLocation");
+
+            var b = document.getElementById("b");
+            b.onclick = function () {
+                app.showMessage("You clicked the button.");
+            };
+        }
 
     </script>
 </head>
@@ -169,10 +253,10 @@
 </main>
 <footer class="menu__bottom">
     <ul class="reply-menu">
-        <li class="reply-menu__option">option</li>
-        <li class="reply-menu__option">option</li>
-        <li class="reply-menu__option">option</li>
-        <li class="reply-menu__option">option</li>
+        <li class="reply-menu__option" data-msg="1">Thanks</li>
+        <li class="reply-menu__option" data-msg="2">No Problem</li>
+        <li class="reply-menu__option" data-msg="3">Sorry!</li>
+        <li class="reply-menu__option" data-msg="4">WTF!</li>
     </ul>
 </footer>
 

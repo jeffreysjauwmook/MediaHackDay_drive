@@ -37,7 +37,7 @@ class NearbyCarsList(generics.ListAPIView):
         user = self.request.user
         distance = 0.100  # kilometers
         try:
-            return User.objects.filter(
+            return User.geo_objects.filter(
                 previous_known_position__approx_distance_lt=(user.previous_known_position, distance)
             ).exclude(user)
         except:
