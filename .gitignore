@@ -10,3 +10,4 @@
 .idea/dictionaries/J_Sjauw_mook.xml
 *.pyc
 db.sqlite3
+.sass-cache

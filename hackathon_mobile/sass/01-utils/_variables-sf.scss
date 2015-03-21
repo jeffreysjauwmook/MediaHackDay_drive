@@ -1,0 +1,859 @@
+/*------------------------------------*\
+    #VARIABLES-SF
+\*------------------------------------*/
+
+
+/**
+* System paths for various folders
+* Note: Should point to the css directory in config.rb
+*/
+
+$themePath: '/mediahackday/' !default;
+$fontPath:  $themePath + '/fonts'           !default; 
+$imagePath: $themePath + '/img'          !default;
+$vendorPath: $themePath + '/vendor'         !default; 
+
+
+/**
+*  Boolean choice operators
+*/ 
+
+$block-has-heading: true;
+$block-has-button: true;
+$block-has-annotation: true;
+$block-has-sizes: true;
+$block-has-quickview: true;
+
+
+/**
+* Global typography 
+* TBD
+*/
+
+/* Font declaration */
+$font-default:   Verdana,       sans-serif     !default;  
+$font-alt:       Georgia,       serif          !default; 
+$font-alt-2:     'Courier New', monospaced     !default;
+// Seperate bold state for @fontface typekits
+$font-default-bold:    null  !default;
+$font-alt-bold:        null  !default;
+$font-alt-2-bold:      null  !default;
+// Seperate italic state for @fontface typekits
+$font-default-italic:  null  !default;
+$font-alt-italic:      null  !default;
+$font-alt-2-italic:    null  !default;
+
+
+/* Global typography variables */
+$text-size-root:     16  !default;
+$text-size-default:  14  !default;
+
+/* Heading fonts */
+$heading-h1-font:  $font-default !default;
+$heading-h2-font:  $font-alt     !default;
+$heading-h3-font:  $font-alt     !default;
+$heading-h4-font:  $font-alt-2   !default;
+$heading-h5-font:  $font-alt-2   !default;
+$heading-h6-font:  $font-alt-2   !default;
+
+/* Heading sizes */
+$heading-h1-size: 18 !default;
+$heading-h2-size: 20 !default;
+$heading-h3-size: 20 !default;
+$heading-h4-size: 20 !default;
+$heading-h5-size: 20 !default;
+$heading-h6-size: 20 !default;
+
+/* heading alignment */
+$heading-aligment: center  !default;
+
+/* Heading stylings */
+$heading-h1-transform: uppercase !default;
+$heading-h2-transform: null      !default;
+$heading-h3-transform: null      !default;
+$heading-h4-transform: null      !default;
+$heading-h5-transform: null      !default;
+$heading-h6-transform: null      !default;
+
+
+
+
+
+/**
+* Colors
+* TBD
+*/
+
+
+/* Default color scheme and concept colors */
+$addedColors: () !default; // remains empty
+
+/* Storefronts color(s) */
+$colorList: (
+    'black': #000,
+    'white': #FFF,
+
+    'gray-dark':  #666,
+    'gray-dark-2': #333,
+    'gray-light': #999,
+    'gray-light-2': #EEE,
+    'green': #66AE5E,
+
+    // reworked new color
+    'Desert-storm': #F4F4F2,
+    'Alto':         #DDDDDD,
+    'Dusty Gray':   #999999,
+    'Dove Gray':    #666666,
+
+
+    'red': #C00
+) !default;
+
+/**
+* Use map_merge to merge the concept colors into the default color scheme
+* Map-2 overwrites Map-1 so any color mapped in the concept will
+* overwrite the 'core' color without problems
+*/
+$colorList: map_merge( $colorList, $addedColors );
+
+
+
+/* Important color $vars */
+$color-bg:         'white'        !default;
+$color-bg-alt:     'gray-light'   !default;
+$color-sidebar:    $color-bg      !default;
+$color-modal:      $color-bg      !default;
+$color-link:       'green'        !default;
+$color-footer:     'black'        !default;
+$color-redaction:  'gray-light-2' !default;
+$color-border:     'gray-light'   !default;
+
+
+
+
+/**
+* Margin(s) fixed / static 
+* TBD
+*/
+
+/* Gutter sizes */
+$gutter-flex : 1%   !default; // fixed pixel value
+$gutter      : 1em  !default; // flexible pixel value
+
+// Gutter scaling
+$gutter-half:         $gutter / 2 !global;
+$gutter-third:        $gutter / 3 !global;
+$gutter-quarter:      $gutter / 4 !global;
+$gutter-double:       $gutter * 2 !global;
+$gutter-triple:       $gutter * 3 !global;
+
+// Gutter-flex scaling
+$gutter-flex-half:    $gutter-flex / 2 !global;
+$gutter-flex-third:   $gutter-flex / 3 !global;
+$gutter-flex-quarter: $gutter-flex / 4 !global;
+$gutter-flex-double:  $gutter-flex * 2 !global;
+$gutter-flex-triple:  $gutter-flex * 3 !global;
+
+/**
+* Grid / layout container settings
+* TBD
+*/
+
+$grid-gutter-flexible: true !default;
+$lc-gutter-flexible:   true !default;
+
+
+
+/**
+* Height / width sitewide 
+* TBD
+*/
+
+/* Fixed width(s) */
+$width-site:         1130 !default;
+$width-outfit-app:   732  !default;
+$width-large-image:  930  !default;
+
+/* Fixed height(s) */
+$height-header-row:  53   !default;
+$height-header-alt:  106  !default;
+$height-content:     768  !default;
+$height-slideshow:   500  !default;
+$height-offset:      159  !default;
+
+
+
+
+
+/**
+* Header / Footer variables
+* TBD
+*/
+
+$header-first-bg: 'black'                  !default;
+$header-second-bg: 'gray-light'            !default;
+$header-third-bg: 'white'                  !default;
+
+$header-btn-hover: 'gray-light'            !default;
+
+$mobile-menu-bg: 'black'                   !default;
+$mobile-menu-position: left                !default;
+$mobile-menu-icon: menu-icon               !default;
+$mobile-menu-icon-size: $height-header-row !default;
+
+$mobile-branding-offset: 0.8em             !default;
+$mobile-branding-width: 13em               !default;
+
+$footer-text-size: 12                      !default;
+$footer-link-color: 'gray-light'           !default;
+$footer-link-hover: 'white'                !default;
+
+
+
+
+
+/**
+* Forms
+* TBD
+*/
+
+$form-label-width: 10em        !default;
+$form-field-width: 30em        !default;
+$form-center-width: 40em       !default;
+$form-field-file-width: 24.5em !default;
+
+$form-label-text-size: 12      !default;
+$form-field-text-size: 14      !default;
+
+$form-text-color: 'gray-dark'  !default;
+
+$login-form-bg: 'gray-dark'    !default;
+$login-form-width:  285 !default;
+$login-form-height:  250 !default;
+
+$login-form-text-size: 12;
+$login-form-text-color: 'white';
+
+$login-form-field-color: 'white';
+$login-form-field-text-color: 'gray-light';
+
+
+
+
+
+/**
+* Shop more
+* TBD
+*/
+
+$shop-more-text-size: 14             !default;
+$shop-more-text-color: 'black'       !default;
+$shop-more-text-hover: 'gray-dark'   !default;
+$shop-more-text-transform: uppercase !default;
+
+
+
+
+
+/**
+* Redaction
+* TBD
+*/
+
+$redaction-block-height: 250         !default;
+
+
+
+
+
+
+/**
+* Navigation
+* TBD
+*/
+
+/* Navigation */
+$nav-link-size: 14                            !default;
+
+$nav-link-color: 'black'                      !default;
+$nav-link-hover: 'gray-light'                 !default;
+$nav-link-active: $nav-link-hover             !default;
+
+$nav-header-offset: 0.8em                     !default;
+$nav-header-2-offset: 0.75em                  !default;
+
+$nav-mobile-header: 'gray-dark'               !default;
+$nav-mobile-header-text: 'white'              !default;
+$nav-mobile-header-icon: 'chevron-wleft'      !default;
+$nav-mobile-header-icon-alt: 'chevron-wright' !default;
+
+$nav-mobile-size: 12 !default;
+$nav-mobile-item-transform: uppercase         !default;
+$nav-mobile-subitem-color: 'gray-light'       !default;
+
+$nav-mobile-sub-item-text: 'gray-dark';
+
+
+
+/* Paging */
+$paging-text-size: 14                !default;
+$paging-mobile-text-size: 12         !default;
+
+$paging-text-color: 'black'          !default;
+$paging-bg-color: 'white'            !default;
+$paging-bg-color-hover: 'gray-light' !default;
+
+$paging-bg-color-active: 'black'     !default;
+$paging-text-color-active: 'white'   !default;
+
+$paging-bg-color-disabled: 'white'   !default;
+$paging-next-icon: 'chevron-right'   !default;
+$paging-prev-icon: 'chevron-left'    !default;
+
+
+
+
+
+/**
+* Block
+* TBD
+*/
+
+$block-text-padding: 0 !default;
+
+$block-bg-color: 'white'              !default;
+$block-text-color: 'black'            !default;
+$block-annotation-color: 'gray-light' !default;
+$block-long-title-height: 50          !default;
+$block-annotation-size: 12            !default;
+$block-link-size: 24                  !default; // #REWORK
+
+
+
+
+/**
+* Brands list
+* TBD
+*/
+
+$brand-list-indicator-size: 42       !default;
+$brand-list-text-size: 14            !default;
+$brand-list-color: 'black'           !default;
+$brand-list-color-hover: 'gray-dark' !default;
+$brand-list-border: 'gray-light'     !default;
+
+
+
+
+
+/**
+* BRAND BAR
+* TBD
+*/
+
+$brand-bar-height: 300 !default;
+$brand-bar-text-size: 12 !default;
+$brand-bar-text-color: 'gray-light' !default;
+
+
+
+
+
+
+/**
+* QUICKVIEW
+* TBD
+*/
+
+$quickview-width:  75 !default;
+$quickview-height: 20 !default;
+$quickview-img: 'quickview.png' !default;
+
+
+
+
+
+/**
+* Popup
+* TBD
+*/
+
+$popup-color: 'white'   !default;
+$popup-bg: 'white'      !default;
+$popup-text-size: 12    !default;
+$popup-border-radius: 0 !default;
+
+
+
+
+
+/**
+* Character-filter (a.k.a. alphabet-bar)
+* TBD
+*/
+
+$filter-char-text-size: 10              !default;
+$filter-char-text-color: 'gray-light'   !default;
+$filter-char-text-hover: 'white'        !default;
+$filter-char-bg-color: 'white'          !default;
+$filter-char-bg-hover: 'gray-dark'      !default;
+$filter-char-btn-size: 2.3em            !default;
+$filter-char-btn-size-large: 3.6em      !default;
+$filter-char-bg: 'gray-light'           !default;
+$filter-char-rounded: 50%               !default;
+$filter-char-offset: 4                  !default;
+$filter-large-char-offset: 10           !default;
+$filter-char-max-height: 19em           !default;
+
+
+
+
+
+/**
+* Quick sort
+* TBD
+*/
+
+$quick-sort-text-size: 14            !default;
+$quick-sort-text-hover: 'gray-dark'  !default;
+$quick-sort-icon: single-check       !default;
+$quick-sort-text-active: 'black'     !default;
+$quick-sort-bg-mobile: 'white'       !default;
+
+
+
+
+
+
+/**
+* Social bar
+* TBD
+*/
+
+$social-reply-min-width: 6em !default;
+$social-reply-max-width: 24em !default;
+$social-reply-height: 2em !default;
+
+$social-reply-bg: 'gray-light' !default; // DEMO
+
+
+
+
+
+/**
+* Search field(s)
+* TBD
+*/
+
+$search-submit-icon: search-icon !default;
+$search-submit-size: 32          !default;
+$search-text-size:   14          !default;
+$search-text-color: 'gray-light' !default;
+$search-bg:         'white'      !default;
+$search-mobile-bg:  'gray-light' !default;
+
+
+
+
+
+/**
+* Breadcrumbs
+* TBD
+*/
+
+$crumb-size: 12 !default;
+$crumb-color: 'gray-light' !default;
+$crumb-active: 'black' !default;
+$crumb-seperator: "\2022" !default; // bullet
+$crumb-back-btn-offset: 0 !default;
+
+/* Dropdowns */
+$dropdown-bg: 'white';
+$dropdown-item-hover: 'gray-light';
+$dropdown-text-color: 'gray-dark';
+$dropdown-toggle-text: 12;
+$dropdown-icon-default: 'chevron-black-wup';
+$dropdown-icon-opened: 'chevron-black-wdown';
+$dropdown-border-radius: 5px;
+
+
+
+
+
+/**
+* Buttons
+* TBD
+*/
+
+$btn-icon: chevron-wright !default;
+$btn-icon-offset: 13 !default;
+$btn-height: 35 !default;
+$btn-offset-y: 0.8em !default ;
+
+$btn-text-size:       12  !default;
+$btn-text-size-large: 14  !default;
+
+/* Button colors */
+$btn-text-color: 'white'          !default;
+$btn-text-transform: null         !default;
+
+$btn-color:          'black'      !default;
+$btn-hover:          'gray-dark'  !default;
+
+$btn-alt-color:      'gray-dark'  !default;
+$btn-alt-hover:      'gray-light' !default;
+
+$btn-alt2-color:     'red'        !default;
+$btn-alt2-hover:     'green'      !default;
+
+$btn-disabled-color: 'gray-dark'  !default;
+
+/* Button sizes */
+$btn-min-width: 8em  !default;
+$btn-max-width: 100% !default;
+
+$btn-size-small:  12em !default;
+$btn-size-medium: 16em !default;
+$btn-size-large:  24em !default;
+
+
+/* Like button */
+$btn-like-icon-size:   24    !default;
+$btn-like-text-size:   12    !default;
+$btn-like-text-offset: 0.4em !default;
+$btn-like-height: 35         !default; 
+
+$btn-like-amount-position: left  !default;
+$btn-like-text-position:   right !default;
+
+$btn-like-text-color: 'gray-dark' !default;
+
+$btn-like-icon:               heart-nolove     !default; 
+$btn-like-icon-active:        heart-love       !default;
+$btn-like-icon-hover:         heart-hover      !default;
+$btn-like-icon-active-hover:  heart-remove     !default;
+
+$btn-toggle-filters-color: 'white'  !default;
+$btn-toggle-filters-bg: 'black'     !default;
+
+
+/* Follow button */
+$follow-text-size: 14       !default;
+$follow-text-color: 'black' !default;
+$follow-max-width: 15em     !default;
+$follow-icon: single-check  !default;
+
+
+
+
+
+/**
+* Ticker variables
+* TBD
+*/
+
+$ticker-timestamp-size:      12        !default;
+$ticker-timestamp-transform: uppercase !default;
+$ticker-timestamp-color: 'gray-light'  !default;
+$ticker-text-size: 12                  !default;
+$ticker-btn-bg: 'gray-light'           !default;
+
+
+
+
+/**
+* Text variables
+* TBD
+*/
+
+$text-blockquote-color: 'gray-light'    !default;
+$text-mark-color: 'gray-light'          !default;
+
+
+
+
+
+/**
+* Comment(s)
+* TBD
+*/
+
+$comment-text-size: 14            !default;
+$comment-avatar-size: 6em         !default;
+$comment-text-color: 'gray-dark'  !default;
+
+
+
+
+
+
+/**
+* Slideshow
+* TBD
+*/
+
+$slides-width: $width-site         !default;
+$slides-height: 500                !default;
+$slides-bullet-size: 24            !default;
+$slides-bullet-color: 'gray-light' !default;
+$slides-bullet-active: 'black'     !default;
+ 
+$slides-navigator-size: 32         !default;
+$slides-navigator-bg: 'white'      !default;
+
+$slides-scroller-next-icon: 'chevron-wright' !default;
+$slides-scroller-prev-icon: 'chevron-wleft'  !default;
+
+
+
+
+
+/**
+* Pricing-block
+* TBD
+*/
+
+$pricing-text-size:       14           !default;
+$pricing-text-size-large: 24           !default;
+$pricing-discount-align:  3            !default;
+$pricing-sale-color:   'red'           !default;
+$pricing-sale-color-large: 'gray-dark' !default;
+
+
+
+
+
+/**
+* Filter variables
+* TBD
+*/
+
+// #REWORK
+
+/* Global filter variables */
+$filter-max-width: 20em       !default;
+
+$filter-text-size:  14    !default;
+$filter-title-size: 14    !default;
+$filter-amount-size: 12   !default;
+
+$filter-text-color: 'gray-light'        !default;
+$filter-text-hover: 'gray-dark'         !default;
+$filter-text-active: $filter-text-hover !default;
+$filter-amount-color: 'gray-light' !default;
+
+$filter-sale-color: 'gray-dark'         !default;
+$filter-new-color:  'green'             !default;
+$filter-anchor-color: 'black'           !default;
+
+$filter-text-transform: uppercase       !default;
+
+/* Special filters */
+$filter-circle-size:  32    !default;
+$filter-circle-border: 2    !default;
+$filter-circle-border-color: 'gray-light' !default;
+$filter-circle-border-hover: 'gray-dark'  !default;
+
+$fitler-block-text-size: $filter-text-size !default;
+$filter-block-text-color:  'black'         !default;
+$filter-block-text-hover:  'gray-light'    !default;
+$filter-block-text-active: $filter-block-text-hover   !default;
+$filter-block-bg: 'gray-light' !default;
+$filter-block-bg-hover: 'black' !default;
+
+/* Facets */
+$filter-facet-text-size: 12 !default;
+$filter-facet-text-color: 'gray-light'    !default;
+$filter-facet-text-hover: 'gray-dark'     !default;
+$filter-facet-padding: 2px 4px            !default;
+
+$filter-facet-close-icon: '\274c'         !default;
+
+$filter-facet-remove-text-size: 14 !default;
+$filter-facet-remove-text-color: 'gray-dark' !default;
+$filter-facet-remove-text-hover: 'black'     !default;
+
+$filter-color: #000;
+
+$filter-block-text-color: 'black'            !default;
+$filter-block-text-color-active: 'gray-dark' !default;
+
+
+$filter-cat-text-size: 14    !default;
+$filter-cat-icon: bullet     !default;
+$filter-cat-text-hover: 'gray-dark' !default;
+$filter-cat-sale-color: 'red' !default;
+$filter-cat-new-color: 'green' !default;
+
+$filter-sub-cat-text-size: 14px !default;
+$filter-sub-cat-text-hover: 'gray-dark' !default;
+$filter-sub-cat-icon: single-check !default;
+
+
+$filter-checkbox: checkbox-checked !default;
+
+
+
+$filter-text-size: 12 !default;
+$filter-text-color: 'gray-light' !default;
+$filter-text-title-size: 14 !default;
+$filter-text-title-color: 'black' !default;
+
+
+
+
+
+/**
+* Meta data
+* TBD
+*/
+
+$meta-text-size: 12 !default;
+
+$meta-text-color: 'gray-light'       !default;
+$meta-text-color-hover: 'gray-dark'  !default;
+$meta-text-transform: uppercase      !default;
+
+
+
+
+/**
+* Z-indices
+* TBD
+*/
+
+$z-index-0: 0    !default;
+$z-index-1: 200  !default;
+$z-index-2: 400  !default;
+$z-index-3: 600  !default;
+$z-index-4: 800  !default;
+$z-index-5: 1000 !default;
+$z-index-6: 9999 !default;
+
+// maybe restructure into 7 layers?
+$z-index-top:      9999 !default;
+$z-index-highest:  1000 !default;
+$z-index-high:      800 !default;
+$z-index-medium:    600 !default;
+$z-index-low:       400 !default;
+$z-index-lowest:    200 !default;
+$z-index-root:        0 !default;
+
+
+
+
+
+/**
+* Breakpoints
+* TBD
+*/
+
+$breakpoints: (
+    'mobile-min': 240,
+    'mobile-max': 600,
+    
+    'tablet-min': 601,
+    'tablet-max': 1024,
+ 
+    'tablet-vert-min': 601, 
+    'tablet-vert-max': 768, 
+        
+    'tablet-hor-min': 769,
+    'tablet-hor-max': 1024,
+
+
+    'desktop-min': 1025,
+    'desktop-max': stripUnit( $text-size-root )
+) !default;
+
+
+
+
+
+/**
+* Animation settings 
+* TBD
+*/
+
+$transitionTime:     0.25s       !default;
+$transitionEasing:   ease-in-out !default;
+
+
+
+
+
+/**
+* Spritesheets
+* TBD
+*/
+
+/* Include Compass spritesheet generation mixin  */
+@import 'compass/utilities/sprites';
+
+/* Sprite spacing (whitespace around images) */
+$greyscale-spacing: 16px !default;
+$colored-spacing:   16px !default;
+
+/* Disable sprite dimensions  */
+$greyscale-sprite-dimensions: false !default; // write with icon width / height
+$colored-sprite-dimensions:   false !default;  // write with icon width / height
+
+$greyscale-chevron-wright-position: 97%;
+$greyscale-chevron-black-wup-position: 100%;
+$greyscale-chevron-black-wdown-position: 100%;
+$greyscale-arrow-right-position: 100%;
+$greyscale-search-icon-position: 99%;
+
+/*
+
+$greyscale-chevron-wright-position: 95%;
+$greyscale-arrow-right-position: 100%;
+$greyscale-search-icon-position: 100%;
+*/
+
+/* Make spritesheets */
+/*
+@import 'greyscale/*.png';  // make an exclusive greyscale sheet with minimized color set
+@include all-greyscale-sprites;
+
+@import 'colored/*.png';  // make an exclusive colored sheet with 24 bit color set
+@include all-colored-sprites;
+*/
+/* Modal */ 
+$modal-overlay-color: rgba(0,0,0,0.5) !default;
+$modal-color: #FFF !default;
+$modal-max-width: 970 !default;
+
+$modal-close-bg: 'black' !default;
+$modal-close-bg-hover: 'gray-light' !default;
+$modal-close-text: 'white' !default;
+$modal-close-text-size: 24 !default;
+$modal-close-size: 60 !default;
+$modal-content-offset: 75 !default;
+
+
+/* Sidebar */
+$sidebar-mobile-width: 50% !default;
+$sidebar-mobile-position: (-$sidebar-mobile-width) - 2 !default;
+
+
+/* Contests */
+$contest-icon-color: 'gray-dark' !default;
+$contest-icon-text-color: 'white' !default;
+$contest-icon-width: 6em !default;
+$contest-icon-border-radius: 50%  !default;
+$contest-offset-x: 2.3em !default; 
+$contest-offset-y: 0.5em !default;
+
+
+/* Scroller */
+$scroller-text-color: 'gray-light' !default;
+$scroller-text-size: 12 !default;
+$scroller-text-hover: 'black' !default;
+
+$scroller-next-icon: arrow-right !default; 
+$scroller-prev-icon: arrow-left !default;
+
+
+$mobile-dropdown-bg: 'gray-light' !default;
+$mobile-dropdown-text: 'black'    !default;

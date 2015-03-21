@@ -1,0 +1,25 @@
+body {
+    background: red;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+// Fixed page <header>
+.header {
+
+}
+
+
+// content in <main>
+.content {
+    overflow: hidden; // Prevent showing hidden menus
+}
+
+// <footer>
+.footer {
+    background: blue;
+}
