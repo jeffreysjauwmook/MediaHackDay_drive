@@ -1,4 +1,3 @@
 Django
 git+ssh://git@github.com/dabapps/django-geosimple.git
-
-
+djangorestframework

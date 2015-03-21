@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'autoscout',
     'frontendapi',
+    'rest_framework',
+
 )
 
 MIDDLEWARE_CLASSES = (
