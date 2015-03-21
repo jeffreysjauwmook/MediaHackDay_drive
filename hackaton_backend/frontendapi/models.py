@@ -13,6 +13,8 @@ class User(AbstractUser):
     vim = models.CharField(max_length=255)
     speed = models.CharField(max_length=255, default=0)
 
+    objects = geosimple.GeoManager()
+
 
 class Message(models.Model):
     sender = models.ForeignKey(User, related_name='sender')
