@@ -1,0 +1,35 @@
+<h1>Hello World</h1>
+
+<button id="b" type="button">Button</button>
+<pre id="d"></pre>
+
+<script>
+    var d = document.getElementById("d");
+
+    function debug(string) {
+        var i;
+
+        for (i = 0; i < arguments.length; i += 1) {
+            d.innerHTML += arguments[i] + "\n";
+        }
+    }
+
+    function onGesture(gesture) {
+        debug("Gesture: " + gesture);
+    }
+
+    function onLocation(lat, lng) {
+        debug("Location: " + lat + ", " + lng);
+    }
+
+    if (window.app) {
+        /* Note: Callback functions need to be global. */
+        app.setGestureCallback("onGesture");
+        app.setLocationCallback("onLocation");
+
+        var b = document.getElementById("b");
+        b.onclick = function () {
+            app.showMessage("You clicked the button.");
+        };
+    }
+</script>
