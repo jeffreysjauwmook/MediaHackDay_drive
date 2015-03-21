@@ -65,6 +65,14 @@ class MyLocation(views.APIView):
         my_location = self.request.user.last_known_position
         return response.Response(my_location.as_dict())
 
+    def post(self, request):
+        a = request.POST['lat']
+        b = request.POST['lng']	
+        speed = request.POST['speed']
+        u = User.objects.get(pk=request.user.pk)
+        u.speed = speed
+        u.last_known_position = (float(a), float(b))
+        u.save()
 
 class CarStatus(views.APIView):
 
