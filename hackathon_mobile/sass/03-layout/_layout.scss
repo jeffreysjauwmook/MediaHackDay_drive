@@ -56,9 +56,9 @@ $menu-height-large: 225;
 
 #map-page {
     height: calc(100% - 75px);
-    min-height: 595px !important;
+    min-height: 100% !important;
     overflow: hidden;
 }
 #map-canvas {
-    height: 100% !important;
+    height: 595px !important;
 }

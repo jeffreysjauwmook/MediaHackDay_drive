@@ -8,11 +8,10 @@
     border-radius: 50%;
     @include bg('mh-gray-button');
     margin: 16px;
-    box-shadow: 0 5px 1px  rgba(0, 0, 0, 0.15);
     z-index: $z-index-6;
 
     &.notification {
-        bottom: 0;
+        bottom: 95px;
         right: 0;
     }
 
@@ -38,15 +37,16 @@
 .button.notification {
     background: none;
     box-shadow: none;
+    margin-right: 12px;
 
     .icon-leaf{
         display: block;
         margin-top: 8px;
+
         @include font(
             $size: 60,
             $align: center,
             $color: 'mh-green'
         );
-        text-shadow: 0 2px 2px color('mh-green');
     }
 }
