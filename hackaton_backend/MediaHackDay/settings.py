@@ -89,11 +89,6 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'frontendapi.User'
 
-try:
-    from local_settings import *
-except ImportError:
-    pass
-
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -104,3 +99,14 @@ BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media', '')
 FRONT_ROOT = os.path.join(BASE_DIR + '/../', 'hackathon_mobile', '')
 MEDIA_URL = '/media/'
+
+# CORS middleware configuration
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_URLS_REGEX = r'^/(api|as-api)/'
+
+
+# Note: Keep this import below all other settings.
+try:
+    from local_settings import *
+except ImportError:
+    pass
