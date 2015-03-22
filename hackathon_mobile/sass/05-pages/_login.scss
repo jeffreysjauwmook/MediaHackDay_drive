@@ -1,13 +1,6 @@
 body.login {
-     background: #a9cfc3; /* Old browsers */
-    background: -moz-linear-gradient(left,  #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a9cfc3), color-stop(20%,#a9cfc3), color-stop(20%,#ebe1ca), color-stop(40%,#ebe1ca), color-stop(40%,#ff8359), color-stop(60%,#ff8359), color-stop(60%,#ed4242), color-stop(80%,#ed4242), color-stop(80%,#65566b), color-stop(100%,#65566b)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* IE10+ */
-    background: linear-gradient(to right,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9cfc3', endColorstr='#65566b',GradientType=1 ); /* IE6-9 */
-    
+    @include bg-gradient();
+
     main {
         &:focus{
             oultine: none;
@@ -40,8 +33,8 @@ body.login {
 
     .password {
         border-radius: 0 0 12px 12px;
-        border-width: 0 1px 1px  1px; 
-        border-style: solid; 
+        border-width: 0 1px 1px  1px;
+        border-style: solid;
         border-color: rgba(0,0,0,0.15);
         &:focus {
             outline: none;
@@ -50,7 +43,7 @@ body.login {
     .submit {
         position: absolute;
         right: -28px;
-        top: 32px;
+        top: 22px;
         width: 64px;
         height: 64px;
         border: 0;

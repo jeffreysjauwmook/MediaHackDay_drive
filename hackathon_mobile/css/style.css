@@ -207,13 +207,13 @@ $greyscale-search-icon-position: 100%;
     #MIXINS
 \*------------------------------------*/
 /**
-* Truncate text on max-width of parent 
+* Truncate text on max-width of parent
 * Usage: @include ellipsis();
 * Note: requires (max)width property to function
 */
 /**
 * Makes overflow on Y axis scrolling
-* Usage:  
+* Usage:
 */
 /**
 * animation settings for CSS3 animations
@@ -233,13 +233,13 @@ $greyscale-search-icon-position: 100%;
 /**
 * Sets border on element
 * Usage: @include setBorder(width, color, style);
-*        Checks amount of width inputs to downsize CSS 
+*        Checks amount of width inputs to downsize CSS
 */
 /**
 * @media mixins, inspired by Rafal Bromirski on Github
-* 
+*
 */
-/* 
+/*
     $values == top, bottom, range*
     $device == mobile, tablet-long, tablet-wide, desktop
 
@@ -859,6 +859,15 @@ h6,
 }
 
 /* line 46, ../sass/02-base/_icons.scss */
+.icon-stats {
+  font-size: 2.1875rem;
+  color: #5c5c5c;
+  text-align: center;
+  margin: 20px 0 0 6px;
+  display: block;
+}
+
+/* line 55, ../sass/02-base/_icons.scss */
 .icon-close {
   font-size: 1.5625rem;
   color: #5c5c5c;
@@ -1215,51 +1224,51 @@ body.login {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9cfc3', endColorstr='#65566b',GradientType=1 );
   /* IE6-9 */
 }
-/* line 12, ../sass/05-pages/_login.scss */
+/* line 5, ../sass/05-pages/_login.scss */
 body.login main:focus {
   oultine: none;
 }
-/* line 17, ../sass/05-pages/_login.scss */
+/* line 10, ../sass/05-pages/_login.scss */
 body.login form {
   position: relative;
   width: 80%;
   margin: 0 10%;
 }
-/* line 21, ../sass/05-pages/_login.scss */
+/* line 14, ../sass/05-pages/_login.scss */
 body.login form:focus {
   outline: none;
 }
-/* line 25, ../sass/05-pages/_login.scss */
+/* line 18, ../sass/05-pages/_login.scss */
 body.login form input {
   width: 100%;
   padding: 12px 16px;
   font-size: 24px;
 }
-/* line 33, ../sass/05-pages/_login.scss */
+/* line 26, ../sass/05-pages/_login.scss */
 body.login .email {
   border-radius: 12px 12px 0 0;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
-/* line 36, ../sass/05-pages/_login.scss */
+/* line 29, ../sass/05-pages/_login.scss */
 body.login .email:focus {
   outline: none;
 }
-/* line 41, ../sass/05-pages/_login.scss */
+/* line 34, ../sass/05-pages/_login.scss */
 body.login .password {
   border-radius: 0 0 12px 12px;
   border-width: 0 1px 1px  1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.15);
 }
-/* line 46, ../sass/05-pages/_login.scss */
+/* line 39, ../sass/05-pages/_login.scss */
 body.login .password:focus {
   outline: none;
 }
-/* line 50, ../sass/05-pages/_login.scss */
+/* line 43, ../sass/05-pages/_login.scss */
 body.login .submit {
   position: absolute;
   right: -28px;
-  top: 32px;
+  top: 22px;
   width: 64px;
   height: 64px;
   border: 0;
@@ -1267,7 +1276,7 @@ body.login .submit {
   background-color: #45d16a;
   box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
 }
-/* line 63, ../sass/05-pages/_login.scss */
+/* line 56, ../sass/05-pages/_login.scss */
 body.login .icon--large {
   display: block;
   margin: 20% auto 10%;
@@ -1276,13 +1285,13 @@ body.login .icon--large {
   color: #45d16a;
   text-align: center;
 }
-/* line 73, ../sass/05-pages/_login.scss */
+/* line 66, ../sass/05-pages/_login.scss */
 body.login .icon-leaf {
   font-size: 210px;
   line-height: 1;
   text-shadow: 0 12px 1px rgba(0, 0, 0, 0.15);
 }
-/* line 79, ../sass/05-pages/_login.scss */
+/* line 72, ../sass/05-pages/_login.scss */
 body.login .new-account {
   position: absolute;
   display: block;
@@ -1295,4 +1304,109 @@ body.login .new-account {
   text-decoration: none;
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+@keyframes scroll-in {
+  0% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* line 10, ../sass/05-pages/_home.scss */
+body.home {
+  background: #a9cfc3;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a9cfc3), color-stop(20%, #a9cfc3), color-stop(20%, #ebe1ca), color-stop(40%, #ebe1ca), color-stop(40%, #ff8359), color-stop(60%, #ff8359), color-stop(60%, #ed4242), color-stop(80%, #ed4242), color-stop(80%, #65566b), color-stop(100%, #65566b));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9cfc3', endColorstr='#65566b',GradientType=1 );
+  /* IE6-9 */
+}
+/* line 13, ../sass/05-pages/_home.scss */
+body.home.open__profile .user-info {
+  transform: translateY(0);
+}
+/* line 17, ../sass/05-pages/_home.scss */
+body.home .user-info {
+  text-align: center;
+  background-color: white;
+  overflow: hidden;
+  padding-bottom: 15px;
+  transform: translateY(-500px);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+/* line 25, ../sass/05-pages/_home.scss */
+body.home .user-info .avatar {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  margin: 25px auto;
+}
+/* line 31, ../sass/05-pages/_home.scss */
+body.home .user-info .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/* line 37, ../sass/05-pages/_home.scss */
+body.home .user-info .avatar .icon-leaf {
+  position: absolute;
+  font-size: 4em;
+  bottom: -30px;
+  right: 30px;
+  color: #45d16a;
+}
+/* line 48, ../sass/05-pages/_home.scss */
+body.home .user-info h1, body.home .user-info h2 {
+  color: #5c5c5c;
+}
+/* line 54, ../sass/05-pages/_home.scss */
+body.home .user-info h1 {
+  font-size: 36px;
+}
+/* line 56, ../sass/05-pages/_home.scss */
+body.home .user-info p {
+  font-size: 20px;
+  margin: 8px;
+}
+/* line 60, ../sass/05-pages/_home.scss */
+body.home .btn-inbox, body.home .btn-stats {
+  position: absolute;
+  bottom: 0;
+  margin: 0 -38px 0 0;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transform: translateY(200px);
+}
+/* line 68, ../sass/05-pages/_home.scss */
+body.home .btn-inbox {
+  right: 30%;
+  bottom: 57px;
+}
+/* line 72, ../sass/05-pages/_home.scss */
+body.show__btn_2 .btn-inbox {
+  transform: translateY(0px);
+}
+/* line 76, ../sass/05-pages/_home.scss */
+body.home .btn-stats {
+  right: 50%;
+  bottom: 94px;
+}
+/* line 80, ../sass/05-pages/_home.scss */
+body.show__btn_1 .btn-stats {
+  transform: translateY(0px);
 }

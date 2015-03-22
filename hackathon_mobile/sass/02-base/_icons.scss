@@ -14,7 +14,7 @@
         $color: 'mh-gray-text',
         $align: center
     );
-    margin-top: 18px; 
+    margin-top: 18px;
 }
 
 .icon {
@@ -35,6 +35,15 @@
     }
 }
 .icon-inbox {
+    @include font(
+        $size: 35,
+        $color: 'mh-gray-text',
+        $align: center
+    );
+    margin: 20px 0 0 6px;
+    display: block;
+}
+.icon-stats {
     @include font(
         $size: 35,
         $color: 'mh-gray-text',

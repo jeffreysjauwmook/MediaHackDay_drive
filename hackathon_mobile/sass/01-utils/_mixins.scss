@@ -4,7 +4,7 @@
 
 
 /**
-* Truncate text on max-width of parent 
+* Truncate text on max-width of parent
 * Usage: @include ellipsis();
 * Note: requires (max)width property to function
 */
@@ -23,7 +23,7 @@
     }@else {
         word-wrap: break-word;
         overflow: hidden;
-    }    
+    }
 }
 
 @mixin ellipsis() {
@@ -34,7 +34,7 @@
 
 /**
 * Makes overflow on Y axis scrolling
-* Usage:  
+* Usage:
 */
 @mixin overflowScroll( $height: 13em ) {
     overflow-y: auto; // no scroll (fix for older browsers)
@@ -50,7 +50,7 @@
 */
 @mixin transition($time: $transitionTime, $easing: $transitionEasing) {
     // neccesary animation settings
-    -webkit-transition:  $time $easing; 
+    -webkit-transition:  $time $easing;
     -moz-transition:     $time $easing;
     -o-transition:       $time $easing;
 }
@@ -71,7 +71,7 @@
 */
 @mixin font( $size: null, $color: null, $align: null, $font: null, $transform: null, $deco: null, $style: null) {
     font-size: convertPx( $size );
-    color: color($color); // run through getColor 
+    color: color($color); // run through getColor
     font-family: $font;
     font-style: $style;
     text-align: $align;
@@ -86,15 +86,15 @@
 
     }
     @else {
-       background-color: getMap( $colorList, $color); 
-    }  
+       background-color: getMap( $colorList, $color);
+    }
 }
 
 
 /**
 * Sets border on element
 * Usage: @include setBorder(width, color, style);
-*        Checks amount of width inputs to downsize CSS 
+*        Checks amount of width inputs to downsize CSS
 */
 @mixin border($width: 0, $color: $color-border, $style: solid) {
     $int: checkLength( $width ); // returns INT
@@ -114,15 +114,15 @@
 
 /**
 * @media mixins, inspired by Rafal Bromirski on Github
-* 
+*
 */
-/* 
+/*
     $values == top, bottom, range*
     $device == mobile, tablet-long, tablet-wide, desktop
 
 */
 
-// ~ISH prevents using "only and device-width value", 
+// ~ISH prevents using "only and device-width value",
 // Add in production!
 @mixin screen($device, $values: 'range') {
     // first part of @media (is always identical for now)
@@ -170,12 +170,12 @@
 
     *zoom: 1;
 
-    &::before, 
+    &::before,
     &::after {
-       content: " "; 
+       content: " ";
        display: table;
     }
-    
+
     &::after {
         clear: both;
     }
@@ -185,14 +185,14 @@
 
 /* Creates global layout parameters for layout-containers */
 @mixin lc-child() {
-    float: left;   
+    float: left;
     @if ($lc-gutter-flexible != null) {
         padding: 0 $gutter-flex;
-    } 
+    }
     @else {
         padding: 0 $gutter;
     }
-   
+
     height: auto;
     &:first-child {
         padding-left: 0;
@@ -221,32 +221,43 @@
 }
 
 @mixin make-arrow( $border: 1px, $position: 50%, $color-border: #DDD, $color: #FFF,$width: 20px, $border-width: 21px) {
-    position: relative; 
-    background: transparent; 
+    position: relative;
+    background: transparent;
     border: $border solid $color;
 
     &:after,
     &:before {
         bottom: 100%; // VAR?
-        left: $position; 
-        background: transparent; 
-        border: solid transparent; 
-        content: " "; 
+        left: $position;
+        background: transparent;
+        border: solid transparent;
+        content: " ";
         height: 0;
-        width: 0; 
-        position: absolute; 
-        pointer-events: none; 
-    } 
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
 
-    &:after { 
-        border-bottom-color: $color; 
-        border-width: $width; margin-left: (-$width); 
-    } 
-       
-    &:before { 
-        border-color: rgba(194, 225, 245, 0); 
-        border-bottom-color: $color-border; 
-        border-width: $border-width; 
-        margin-left: (-$border-width); 
-    } 
+    &:after {
+        border-bottom-color: $color;
+        border-width: $width; margin-left: (-$width);
+    }
+
+    &:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-bottom-color: $color-border;
+        border-width: $border-width;
+        margin-left: (-$border-width);
+    }
+}
+
+@mixin bg-gradient (){
+    background: #a9cfc3; /* Old browsers */
+    background: -moz-linear-gradient(left,  #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a9cfc3), color-stop(20%,#a9cfc3), color-stop(20%,#ebe1ca), color-stop(40%,#ebe1ca), color-stop(40%,#ff8359), color-stop(60%,#ff8359), color-stop(60%,#ed4242), color-stop(80%,#ed4242), color-stop(80%,#65566b), color-stop(100%,#65566b)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* IE10+ */
+    background: linear-gradient(to right,  #a9cfc3 0%,#a9cfc3 20%,#ebe1ca 20%,#ebe1ca 40%,#ff8359 40%,#ff8359 60%,#ed4242 60%,#ed4242 80%,#65566b 80%,#65566b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9cfc3', endColorstr='#65566b',GradientType=1 ); /* IE6-9 */
 }
