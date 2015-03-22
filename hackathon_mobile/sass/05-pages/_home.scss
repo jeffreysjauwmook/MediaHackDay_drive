@@ -63,6 +63,7 @@ body.home {
         margin:0 -38px 0 0;
         @include transition(.5s);
         transform: translateY(200px);
+        background-color:#fff;
     }
 
     .btn-inbox{

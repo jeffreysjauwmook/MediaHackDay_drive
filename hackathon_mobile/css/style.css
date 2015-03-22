@@ -865,10 +865,10 @@ h6,
 
 /* line 46, ../sass/02-base/_icons.scss */
 .icon-stats {
-  font-size: 2.1875rem;
+  font-size: 2.25rem;
   color: #5c5c5c;
   text-align: center;
-  margin: 20px 0 0 6px;
+  margin: 20px 0 0 1px;
   display: block;
 }
 
@@ -1516,22 +1516,23 @@ body.home .btn-inbox, body.home .btn-stats {
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transform: translateY(200px);
+  background-color: #fff;
 }
-/* line 68, ../sass/05-pages/_home.scss */
+/* line 69, ../sass/05-pages/_home.scss */
 body.home .btn-inbox {
   right: 30%;
   bottom: 57px;
 }
-/* line 72, ../sass/05-pages/_home.scss */
+/* line 73, ../sass/05-pages/_home.scss */
 body.show__btn_2 .btn-inbox {
   transform: translateY(0px);
 }
-/* line 76, ../sass/05-pages/_home.scss */
+/* line 77, ../sass/05-pages/_home.scss */
 body.home .btn-stats {
   right: 50%;
   bottom: 94px;
 }
-/* line 80, ../sass/05-pages/_home.scss */
+/* line 81, ../sass/05-pages/_home.scss */
 body.show__btn_1 .btn-stats {
   transform: translateY(0px);
 }
