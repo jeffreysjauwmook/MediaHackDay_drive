@@ -1,5 +1,5 @@
-from models import User, Message
-from serializers import UserSerializer,MessageSerializer
+from models import User, Message, Trip
+from serializers import UserSerializer,MessageSerializer, TripSerializer
 from rest_framework import generics, views, response, mixins, viewsets
 from autoscout.models import trip_entry
 from django.shortcuts import get_object_or_404
@@ -98,3 +98,11 @@ class CarStatus(views.APIView):
 
     def get(self, request):
         return response.Response(request.user.engine_status)
+
+
+class TripHistory(generics.ListAPIView):
+
+    serializer_class = TripSerializer
+
+    def get_queryset(self):
+        return Trip.objects.filter(user__id=self.request.user.id).order_by('started_at')
