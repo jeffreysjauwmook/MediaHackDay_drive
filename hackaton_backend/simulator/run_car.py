@@ -28,6 +28,10 @@ while True:
         counter = 0
         heavy = rnd
     print heavy
+    if heavy:
+        heavy = 'true'
+    else:
+        heavy = 'false'
     ts =time.time()
     d = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%dT%H:%M:%S')
     payload = {'vim': '123', 'km_total': km_total, 'heavy': heavy, 'fuel_diff': 0, 'fuel_total': 0, 'timestamp' : d}

@@ -29,7 +29,7 @@ class EntryList(generics.ListCreateAPIView):
             if heavy:
                 user.eco_score = 'bad'
             else:
-                user.eco_score = 'medium'
+                user.eco_score = 'neutral'
         elif score == 'bad':
             if not heavy:
                 user.eco_score = 'medium'
