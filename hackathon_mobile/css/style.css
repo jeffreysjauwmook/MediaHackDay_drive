@@ -1303,7 +1303,7 @@ h6,
 /* line 81, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title time, .stats .alerts__item .alerts__title p, .stats .alerts__item .alerts__title i {
   display: block;
-  color: false;
+  color: #5c5c5c;
   margin: 0;
 }
 /* line 89, ../sass/04-components/_stats.scss */
@@ -1529,4 +1529,9 @@ body.home .btn-stats {
 /* line 80, ../sass/05-pages/_home.scss */
 body.show__btn_1 .btn-stats {
   transform: translateY(0px);
+}
+
+/* line 1, ../sass/05-pages/_inbox.scss */
+.home.inbox {
+  z-index: 10000;
 }

@@ -45,7 +45,9 @@ $( ".home .btn-stats" ).click(function() {
 $( ".home .btn-inbox" ).click(function() {
     $('.menu__bottom.inbox').toggleClass("open");
 });
-
+$( ".home .js-toggle__bottom" ).click(function() {
+    $('.menu__bottom.alerts').removeClass("open");
+});
 
 $( ".network" ).click(function() {
     $('.menu__bottom.reply').toggleClass("open");
