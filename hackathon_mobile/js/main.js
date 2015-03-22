@@ -551,13 +551,18 @@ $(document).ready(function () {
     }, 500);
 
 });
+
+function onLocation(lat, lng) {
+    if (map === undefined) {
+        drawMap(new google.maps.LatLng(lat, lng));
+    }
+
+    appSetLocation(lat, lng);
+    getNearbyUsers(lat, lng);
+}
+
 if (window.app) {
     /* Note: Callback functions need to be global. */
-    app.setGestureCallback("onGesture");
+    // app.setGestureCallback("onGesture");
     app.setLocationCallback("onLocation");
-
-    var b = document.getElementById("b");
-    b.onclick = function () {
-        app.showMessage("You clicked the button.");
-    };
 }
