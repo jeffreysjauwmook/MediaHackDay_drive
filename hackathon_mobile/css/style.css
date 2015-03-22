@@ -9,7 +9,7 @@
 *  Boolean choice operators
 */
 /**
-* Global typography 
+* Global typography
 * TBD
 */
 /* Font declaration */
@@ -31,7 +31,7 @@
 */
 /* Important color $vars */
 /**
-* Margin(s) fixed / static 
+* Margin(s) fixed / static
 * TBD
 */
 /* Gutter sizes */
@@ -40,7 +40,7 @@
 * TBD
 */
 /**
-* Height / width sitewide 
+* Height / width sitewide
 * TBD
 */
 /* Fixed width(s) */
@@ -156,7 +156,7 @@
 * TBD
 */
 /**
-* Animation settings 
+* Animation settings
 * TBD
 */
 /**
@@ -971,40 +971,54 @@ h6,
 
 /* line 3, ../sass/04-components/_network.scss */
 .network {
+  width: 100%;
+  height: 200px;
+  float: left;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
   display: block;
   height: 75px;
 }
-/* line 7, ../sass/04-components/_network.scss */
+/* line 14, ../sass/04-components/_network.scss */
 .network__user {
-  display: block;
-  float: left;
-  width: 20%;
   height: 100%;
+  width: 20%;
   border-top: 2px solid rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  *dsplay: inline;
+  /* For IE7*/
+  *zoom: 1;
+  /* For IE7*/
+  white-space: normal;
 }
-/* line 13, ../sass/04-components/_network.scss */
-.network__user.orange {
-  background-color: #ff8359;
+/* line 23, ../sass/04-components/_network.scss */
+.network__user.color-1 {
+  background-color: #abd1c6;
 }
-/* line 16, ../sass/04-components/_network.scss */
-.network__user.teal {
-  background-color: #a9cfc3;
+/* line 26, ../sass/04-components/_network.scss */
+.network__user.color-2 {
+  background-color: #ede3cb;
 }
-/* line 19, ../sass/04-components/_network.scss */
-.network__user.yellow {
-  background-color: #ebe1ca;
+/* line 29, ../sass/04-components/_network.scss */
+.network__user.color-3 {
+  background-color: #ff8157;
 }
-/* line 22, ../sass/04-components/_network.scss */
-.network__user.red {
-  background-color: #ed4242;
+/* line 32, ../sass/04-components/_network.scss */
+.network__user.color-4 {
+  background-color: #ee4242;
 }
-/* line 25, ../sass/04-components/_network.scss */
-.network__user.purple {
-  background-color: #65566b;
+/* line 35, ../sass/04-components/_network.scss */
+.network__user.color-5 {
+  background-color: #66566c;
 }
-/* line 28, ../sass/04-components/_network.scss */
-.network__user.green {
-  background-color: #45d16a;
+/* line 38, ../sass/04-components/_network.scss */
+.network__user.color-6 {
+  background-color: #42ee8d;
+}
+/* line 41, ../sass/04-components/_network.scss */
+.network__user.color-7 {
+  background-color: #57d4ff;
 }
 
 /* line 1, ../sass/05-pages/_login.scss */

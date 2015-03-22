@@ -9,14 +9,14 @@
 */
 
 $themePath: '/mediahackday/' !default;
-$fontPath:  $themePath + '/fonts'           !default; 
+$fontPath:  $themePath + '/fonts'           !default;
 $imagePath: $themePath + '/img'          !default;
-$vendorPath: $themePath + '/vendor'         !default; 
+$vendorPath: $themePath + '/vendor'         !default;
 
 
 /**
 *  Boolean choice operators
-*/ 
+*/
 
 $block-has-heading: true;
 $block-has-button: true;
@@ -26,12 +26,12 @@ $block-has-quickview: true;
 
 
 /**
-* Global typography 
+* Global typography
 * TBD
 */
 /* Font declaration */
-$font-default:   'Source Sans Pro', Verdana,       sans-serif     !default;  
-$font-alt:       Georgia,       serif          !default; 
+$font-default:   'Source Sans Pro', Verdana,       sans-serif     !default;
+$font-alt:       Georgia,       serif          !default;
 $font-alt-2:     'Courier New', monospaced     !default;
 // Seperate bold state for @fontface typekits
 $font-default-bold:    null  !default;
@@ -110,6 +110,14 @@ $colorList: (
     'mh-purple': #65566b,
     'mh-green': #45d16a,
 
+    'mh-color-1': #abd1c6,
+    'mh-color-2': #ede3cb,
+    'mh-color-3': #ff8157,
+    'mh-color-4': #ee4242,
+    'mh-color-5': #66566c,
+    'mh-color-6': #42ee8d,
+    'mh-color-7': #57d4ff,
+
     // reworked new color
     'Desert-storm': #F4F4F2,
     'Alto':         #DDDDDD,
@@ -143,7 +151,7 @@ $color-border:     'gray-light-2'   !default;
 
 
 /**
-* Margin(s) fixed / static 
+* Margin(s) fixed / static
 * TBD
 */
 
@@ -176,7 +184,7 @@ $lc-gutter-flexible:   true !default;
 
 
 /**
-* Height / width sitewide 
+* Height / width sitewide
 * TBD
 */
 
@@ -532,14 +540,14 @@ $btn-size-large:  24em !default;
 $btn-like-icon-size:   24    !default;
 $btn-like-text-size:   12    !default;
 $btn-like-text-offset: 0.4em !default;
-$btn-like-height: 35         !default; 
+$btn-like-height: 35         !default;
 
 $btn-like-amount-position: left  !default;
 $btn-like-text-position:   right !default;
 
 $btn-like-text-color: 'gray-dark' !default;
 
-$btn-like-icon:               heart-nolove     !default; 
+$btn-like-icon:               heart-nolove     !default;
 $btn-like-icon-active:        heart-love       !default;
 $btn-like-icon-hover:         heart-hover      !default;
 $btn-like-icon-active-hover:  heart-remove     !default;
@@ -608,7 +616,7 @@ $slides-height: 500                !default;
 $slides-bullet-size: 24            !default;
 $slides-bullet-color: 'gray-light' !default;
 $slides-bullet-active: 'black'     !default;
- 
+
 $slides-navigator-size: 32         !default;
 $slides-navigator-bg: 'white'      !default;
 
@@ -762,13 +770,13 @@ $z-index-root:        0 !default;
 $breakpoints: (
     'mobile-min': 240,
     'mobile-max': 600,
-    
+
     'tablet-min': 601,
     'tablet-max': 1024,
- 
-    'tablet-vert-min': 601, 
-    'tablet-vert-max': 768, 
-        
+
+    'tablet-vert-min': 601,
+    'tablet-vert-max': 768,
+
     'tablet-hor-min': 769,
     'tablet-hor-max': 1024,
 
@@ -782,7 +790,7 @@ $breakpoints: (
 
 
 /**
-* Animation settings 
+* Animation settings
 * TBD
 */
 
@@ -830,7 +838,7 @@ $greyscale-search-icon-position: 100%;
 @import 'colored/*.png';  // make an exclusive colored sheet with 24 bit color set
 @include all-colored-sprites;
 */
-/* Modal */ 
+/* Modal */
 $modal-overlay-color: rgba(0,0,0,0.5) !default;
 $modal-color: #FFF !default;
 $modal-max-width: 970 !default;
@@ -853,7 +861,7 @@ $contest-icon-color: 'gray-dark' !default;
 $contest-icon-text-color: 'white' !default;
 $contest-icon-width: 6em !default;
 $contest-icon-border-radius: 50%  !default;
-$contest-offset-x: 2.3em !default; 
+$contest-offset-x: 2.3em !default;
 $contest-offset-y: 0.5em !default;
 
 
@@ -862,7 +870,7 @@ $scroller-text-color: 'gray-light' !default;
 $scroller-text-size: 12 !default;
 $scroller-text-hover: 'black' !default;
 
-$scroller-next-icon: arrow-right !default; 
+$scroller-next-icon: arrow-right !default;
 $scroller-prev-icon: arrow-left !default;
 
 

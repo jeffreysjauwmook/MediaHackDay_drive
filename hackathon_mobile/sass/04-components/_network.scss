@@ -1,32 +1,45 @@
 // netwrok
 
 .network {
+    width:100%;
+    height:200px;
+    float:left;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    white-space:nowrap;
+
     display: block;
     height: 75px;
 
     &__user {
-        display: block;
-        float: left;
-        width: 20%;
         height: 100%;
+        width: 20%;
         border-top: 2px solid rgba(0,0,0,0.15);
-        &.orange {
-            @include bg('mh-orange');
+        display:inline-block;
+        *dsplay:inline;/* For IE7*/
+        *zoom:1;/* For IE7*/
+        white-space:normal;
+
+        &.color-1 {
+            @include bg('mh-color-1');
         }
-        &.teal {
-            @include bg('mh-teal');
+        &.color-2 {
+            @include bg('mh-color-2');
         }
-        &.yellow {
-            @include bg('mh-yellow');
+        &.color-3 {
+            @include bg('mh-color-3');
         }
-        &.red {
-            @include bg('mh-red');
+        &.color-4 {
+            @include bg('mh-color-4');
         }
-        &.purple {
-            @include bg('mh-purple');
+        &.color-5 {
+            @include bg('mh-color-5');
         }
-        &.green {
-            @include bg('mh-green');
+        &.color-6 {
+            @include bg('mh-color-6');
+        }
+        &.color-7 {
+            @include bg('mh-color-7');
         }
     }
 
