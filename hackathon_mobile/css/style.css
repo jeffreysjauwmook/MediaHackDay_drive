@@ -767,7 +767,12 @@ h6,
   font-family: "Courier New", monospaced;
 }
 
-/* line 3, ../sass/02-base/_buttons.scss */
+/* line 4, ../sass/02-base/_buttons.scss */
+button:focus {
+  outline: none;
+}
+
+/* line 9, ../sass/02-base/_buttons.scss */
 .button {
   position: absolute;
   display: block;
@@ -778,21 +783,21 @@ h6,
   margin: 16px;
   z-index: 9999;
 }
-/* line 13, ../sass/02-base/_buttons.scss */
+/* line 19, ../sass/02-base/_buttons.scss */
 .button.notification {
   bottom: 0;
   right: 0;
 }
-/* line 18, ../sass/02-base/_buttons.scss */
+/* line 24, ../sass/02-base/_buttons.scss */
 .button.alert {
   right: 0;
 }
 
-/* line 24, ../sass/02-base/_buttons.scss */
+/* line 30, ../sass/02-base/_buttons.scss */
 .button.alert {
   background-color: #FFF;
 }
-/* line 27, ../sass/02-base/_buttons.scss */
+/* line 33, ../sass/02-base/_buttons.scss */
 .button.alert .icon-inbox {
   font-size: 2.1875rem;
   color: #5c5c5c;
@@ -801,13 +806,13 @@ h6,
   display: block;
 }
 
-/* line 37, ../sass/02-base/_buttons.scss */
+/* line 43, ../sass/02-base/_buttons.scss */
 .button.notification {
   background: none;
   box-shadow: none;
   margin-right: 12px;
 }
-/* line 42, ../sass/02-base/_buttons.scss */
+/* line 48, ../sass/02-base/_buttons.scss */
 .button.notification .icon-leaf {
   display: block;
   margin-top: 8px;
@@ -926,25 +931,26 @@ h6,
   bottom: 0;
   height: 225px;
   transform: translateY(225px);
+  z-index: 99999;
 }
-/* line 33, ../sass/03-layout/_layout.scss */
+/* line 34, ../sass/03-layout/_layout.scss */
 .menu__bottom.reply.open {
   transform: translateY(0);
 }
 
-/* line 37, ../sass/03-layout/_layout.scss */
+/* line 38, ../sass/03-layout/_layout.scss */
 .menu__bottom.alerts {
   bottom: 0;
   height: 100%;
   overflow: auto;
   transform: translateY(100%);
 }
-/* line 43, ../sass/03-layout/_layout.scss */
+/* line 44, ../sass/03-layout/_layout.scss */
 .menu__bottom.alerts.open {
   transform: translateY(0);
 }
 
-/* line 48, ../sass/03-layout/_layout.scss */
+/* line 49, ../sass/03-layout/_layout.scss */
 .main-content {
   position: fixed;
   position: relative;
@@ -955,14 +961,14 @@ h6,
   background-image: url("/mediahackday//img/map.png");
 }
 
-/* line 58, ../sass/03-layout/_layout.scss */
+/* line 59, ../sass/03-layout/_layout.scss */
 #map-page {
   height: calc(100% - 75px);
   min-height: 100% !important;
   overflow: hidden;
 }
 
-/* line 63, ../sass/03-layout/_layout.scss */
+/* line 64, ../sass/03-layout/_layout.scss */
 #map-canvas {
   height: 595px !important;
 }
@@ -1074,8 +1080,9 @@ h6,
   border-color: #EEE;
   border-style: solid;
   list-style: inside none;
+  z-index: 1000;
 }
-/* line 6, ../sass/04-components/_reply.scss */
+/* line 7, ../sass/04-components/_reply.scss */
 .reply-menu__option {
   font-size: 1.125rem;
   color: #5c5c5c;
@@ -1119,14 +1126,15 @@ h6,
   border-bottom: 1px solid #5c5c5c;
 }
 /* line 28, ../sass/04-components/_alerts.scss */
+.alerts__header h1,
 .alerts__header h2 {
-  padding: 30px 0;
-  font-size: 2rem;
+  padding: 32px 0;
+  font-size: 1.75rem;
   color: #5c5c5c;
   font-family: "Source Sans Pro", Verdana, sans-serif;
   text-transform: uppercase;
 }
-/* line 38, ../sass/04-components/_alerts.scss */
+/* line 39, ../sass/04-components/_alerts.scss */
 .alerts__header .button {
   position: absolute;
   top: 0;
@@ -1134,7 +1142,7 @@ h6,
   box-shadow: none;
   margin: 10px 0 0 6px;
 }
-/* line 45, ../sass/04-components/_alerts.scss */
+/* line 46, ../sass/04-components/_alerts.scss */
 .alerts__header .button.js-toggle__bottom {
   position: absolute;
   top: 0;
@@ -1143,7 +1151,7 @@ h6,
   box-shadow: none;
   margin: 12px 6px 0 0;
 }
-/* line 55, ../sass/04-components/_alerts.scss */
+/* line 56, ../sass/04-components/_alerts.scss */
 .alerts__title {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1154,13 +1162,13 @@ h6,
   padding: 0;
   margin-top: 18px;
 }
-/* line 67, ../sass/04-components/_alerts.scss */
+/* line 68, ../sass/04-components/_alerts.scss */
 .alerts__holder {
   display: block;
   width: 50%;
   float: left;
 }
-/* line 73, ../sass/04-components/_alerts.scss */
+/* line 74, ../sass/04-components/_alerts.scss */
 .alerts__details {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1171,12 +1179,12 @@ h6,
   display: block;
   padding: 0;
 }
-/* line 85, ../sass/04-components/_alerts.scss */
+/* line 86, ../sass/04-components/_alerts.scss */
 .alerts .avatar {
   float: left;
   margin: 6px 0 0 2px;
 }
-/* line 90, ../sass/04-components/_alerts.scss */
+/* line 91, ../sass/04-components/_alerts.scss */
 .alerts.stats {
   z-index: 10000;
 }
