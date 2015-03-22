@@ -402,6 +402,7 @@ function createMarkers(nearByUsers) {
             markers[userId].setPosition(userLocation);
 
         }
+        console.log(markers[userId]);
         var color = i + 1;
         $('.network').append('<span class="network__user color-' + color + '" data-userId="' + userId + '"></span>');
 
