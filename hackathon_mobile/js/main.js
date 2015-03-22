@@ -337,6 +337,7 @@ function drawMap(latlng) {
 function appSetLocation(lat, long) {
     var location = new google.maps.LatLng(lat, long);
     userMarker.setPosition(location);
+    map.setCenter(location)
 
 }
 function getUserStats() {
