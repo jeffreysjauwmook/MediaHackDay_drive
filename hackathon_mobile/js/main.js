@@ -510,7 +510,7 @@ $(document).ready(function () {
         getNearbyUsers('asdad', 'asdasd');
 
 
-    }, 3000);
+    }, 500);
 
 });
 if (window.app) {
