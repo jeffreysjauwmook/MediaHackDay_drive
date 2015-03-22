@@ -248,53 +248,65 @@ var ecoStyles = {
         "stylers": [{"color": "#ffdfa6"}, {"weight": 0.4}]
     }, {"featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{"visibility": "off"}]}],
     medium: [{
+        "featureType": "landscape",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": 50.2}, {"lightness": -34.8}, {"gamma": 1}]
+    }, {
+        "featureType": "road.highway",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": -19.8}, {"lightness": -1.8}, {"gamma": 1}]
+    }, {
+        "featureType": "road.arterial",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": 72.4}, {"lightness": -32.6}, {"gamma": 1}]
+    }, {
+        "featureType": "road.local",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": 74.4}, {"lightness": -18}, {"gamma": 1}]
+    }, {
         "featureType": "water",
+        "stylers": [{"hue": "#00FFA6"}, {"saturation": -63.2}, {"lightness": 38}, {"gamma": 1}]
+    }, {
+        "featureType": "poi",
+        "stylers": [{"hue": "#FFC300"}, {"saturation": 54.2}, {"lightness": -14.4}, {"gamma": 1}]
+    }],
+    neutral: [{
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [{"hue": "#7fc8ed"}, {"saturation": 55}, {"lightness": -6}, {"visibility": "on"}]
+    }, {
+        "featureType": "water",
+        "elementType": "labels",
+        "stylers": [{"hue": "#7fc8ed"}, {"saturation": 55}, {"lightness": -6}, {"visibility": "off"}]
+    }, {
+        "featureType": "poi.park",
         "elementType": "geometry",
-        "stylers": [{"color": "#ffdfa6"}]
+        "stylers": [{"hue": "#83cead"}, {"saturation": 1}, {"lightness": -15}, {"visibility": "on"}]
     }, {
         "featureType": "landscape",
         "elementType": "geometry",
-        "stylers": [{"color": "#b52127"}]
+        "stylers": [{"hue": "#f3f4f4"}, {"saturation": -84}, {"lightness": 59}, {"visibility": "on"}]
     }, {
-        "featureType": "poi",
+        "featureType": "landscape",
+        "elementType": "labels",
+        "stylers": [{"hue": "#ffffff"}, {"saturation": -100}, {"lightness": 100}, {"visibility": "off"}]
+    }, {
+        "featureType": "road",
         "elementType": "geometry",
-        "stylers": [{"color": "#c5531b"}]
+        "stylers": [{"hue": "#ffffff"}, {"saturation": -100}, {"lightness": 100}, {"visibility": "on"}]
     }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#74001b"}, {"lightness": -10}]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{"color": "#da3c3c"}]
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [{"hue": "#bbbbbb"}, {"saturation": -100}, {"lightness": 26}, {"visibility": "on"}]
     }, {
         "featureType": "road.arterial",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#74001b"}]
-    }, {
-        "featureType": "road.arterial",
-        "elementType": "geometry.stroke",
-        "stylers": [{"color": "#da3c3c"}]
-    }, {
-        "featureType": "road.local",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#990c19"}]
-    }, {
-        "elementType": "labels.text.fill",
-        "stylers": [{"color": "#ffffff"}]
-    }, {
-        "elementType": "labels.text.stroke",
-        "stylers": [{"color": "#74001b"}, {"lightness": -8}]
-    }, {
-        "featureType": "transit",
         "elementType": "geometry",
-        "stylers": [{"color": "#6a0d10"}, {"visibility": "on"}]
+        "stylers": [{"hue": "#ffcc00"}, {"saturation": 100}, {"lightness": -35}, {"visibility": "simplified"}]
     }, {
-        "featureType": "administrative",
+        "featureType": "road.highway",
         "elementType": "geometry",
-        "stylers": [{"color": "#ffdfa6"}, {"weight": 0.4}]
-    }, {"featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{"visibility": "off"}]}],
-    neutral: []
+        "stylers": [{"hue": "#ffcc00"}, {"saturation": 100}, {"lightness": -22}, {"visibility": "on"}]
+    }, {
+        "featureType": "poi.school",
+        "elementType": "all",
+        "stylers": [{"hue": "#d7e4e4"}, {"saturation": -60}, {"lightness": 23}, {"visibility": "on"}]
+    }]
 };
 function drawMap(latlng) {
     myOptions = {
