@@ -48,8 +48,17 @@ $menu-height-large: 225;
     position: fixed;
     position: relative; // buttons stay in .main-content
     display: block;
-    height: 100%;
+    height: calc(100% - 75px);
     width: 100%;
     z-index: $z-index-2;
     background-image: url('#{$imagePath}/map.png');
+}
+
+#map-page {
+    height: calc(100% - 75px);
+    min-height: 495px !important;
+    overflow: hidden;
+}
+#map-canvas {
+    height: 100% !important;
 }

@@ -46,4 +46,14 @@
         box-shadow: none;
     }
 
+    .icon-reply {
+        display: block;
+        @include font(
+            $size: 40,
+            $color: 'mh-gray-text',
+            $align: center
+        );
+        margin-top: 18px; 
+    }
+
 }

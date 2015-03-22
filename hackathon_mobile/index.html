@@ -7,9 +7,10 @@
     <style>
         #map-page, #map-canvas {
             width: 100%;
-            height: 100%;
+            height: calc(100% - 75px);
             padding: 0;
             z-index: 200;
+            min-height: 400px;
         }
     </style>
     <title>Mediahackday</title>
@@ -33,7 +34,7 @@
                 zoom: 23,
                 center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                zIndex: 1
+                zIndex: 1,
             };
 
             map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
@@ -153,7 +154,9 @@
         <span class="notification__details">
             BMW Z4, red
         </span>
-    <span class="button notification__reply"></span>
+    <span class="button notification__reply">
+        <span class="icon-reply"></span>
+    </span>
 </header>
 <main class="main-content">
 
@@ -169,7 +172,13 @@
             <!-- map loads here... -->
         </div>
     </div>
-
+    <section class="network">
+        <span class="network__user red"></span>
+        <span class="network__user orange"></span>
+        <span class="network__user yellow"></span>
+        <span class="network__user purple"></span>
+        <span class="network__user green"></span>
+    </section>
 </main>
 <footer class="menu__bottom reply">
     <ul class="reply-menu">
