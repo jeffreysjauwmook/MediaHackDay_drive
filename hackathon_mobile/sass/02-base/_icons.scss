@@ -55,11 +55,17 @@
 .button .icon-leaf {
     @include font(
         $size: 35,
-        $color: 'mh-gray-text',
+        $color: 'mh-green',
         $align: center
     );
     margin: 22px 0 0;
     display: block;
+
+    &.red {
+        @include font(
+            $color: 'mh-red'
+        );
+    }
 }
 
 .icon-close {
