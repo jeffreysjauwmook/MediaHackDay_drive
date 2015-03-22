@@ -294,14 +294,14 @@ function appSetLocation(lat, long) {
 }
 function getUserStats() {
     $.ajax({
-        url: "test.json",
+        url: "http://backend.mediahackday.gehekt.nl/api/v1.0/user/1/?format=json",
         method: "GET",
         data: {},
         cache: false,
         dataType: 'json'
     }).done(function (user) {
-
-        userMarker.setPosition(user.previous_location);
+        console.log(user);
+        //userMarker.setPosition(user.previous_location);
 
     });
 
