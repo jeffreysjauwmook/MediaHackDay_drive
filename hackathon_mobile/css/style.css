@@ -860,7 +860,7 @@ button:focus {
 }
 
 /* line 37, ../sass/02-base/_icons.scss */
-.icon-inbox {
+.icon-inbox, .icon-messages {
   font-size: 2.1875rem;
   color: #5c5c5c;
   text-align: center;
@@ -923,7 +923,7 @@ button:focus {
 /* line 23, ../sass/03-layout/_layout.scss */
 .menu__top {
   top: 0;
-  transform: translateY(-100px);
+  transform: translateY(-110px);
 }
 
 /* line 28, ../sass/03-layout/_layout.scss */
@@ -1187,7 +1187,7 @@ button:focus {
 /* line 3, ../sass/04-components/_network.scss */
 .network {
   width: 100%;
-  height: 75px;
+  height: 76px;
   float: left;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -1532,7 +1532,12 @@ body.home .user-info p {
   font-size: 20px;
   margin: 8px;
 }
-/* line 60, ../sass/05-pages/_home.scss */
+/* line 58, ../sass/05-pages/_home.scss */
+body.home .user-info a {
+  text-decoration: none;
+  color: #57d4ff;
+}
+/* line 67, ../sass/05-pages/_home.scss */
 body.home .btn-inbox, body.home .btn-stats {
   position: absolute;
   bottom: 0;
@@ -1543,21 +1548,21 @@ body.home .btn-inbox, body.home .btn-stats {
   transform: translateY(200px);
   background-color: #fff;
 }
-/* line 69, ../sass/05-pages/_home.scss */
+/* line 76, ../sass/05-pages/_home.scss */
 body.home .btn-inbox {
   right: 30%;
   bottom: 57px;
 }
-/* line 73, ../sass/05-pages/_home.scss */
+/* line 80, ../sass/05-pages/_home.scss */
 body.show__btn_2 .btn-inbox {
   transform: translateY(0px);
 }
-/* line 77, ../sass/05-pages/_home.scss */
+/* line 84, ../sass/05-pages/_home.scss */
 body.home .btn-stats {
   right: 50%;
   bottom: 94px;
 }
-/* line 81, ../sass/05-pages/_home.scss */
+/* line 88, ../sass/05-pages/_home.scss */
 body.show__btn_1 .btn-stats {
   transform: translateY(0px);
 }

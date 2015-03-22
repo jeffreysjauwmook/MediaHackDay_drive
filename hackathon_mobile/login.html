@@ -25,5 +25,16 @@
 
 <script src="js/jquery.js"></script>
 <script src="js/animate.js"></script>
+<script>
+  $(function() {
+    $("form").on("submit", function (e) {
+      var username = $("input.email").val(),
+          password = $("input.password").val();
+
+      app.login(username, password);
+      e.preventDefault();
+    });
+  });
+</script>
 </body>
 </html>
