@@ -318,9 +318,10 @@ function drawMap(latlng) {
     };
 
     map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-
+    var image = 'img/pointer.png';
     // Add an overlay to the map of current lat/lng
     userMarker = new google.maps.Marker({
+        icon: image,
         position: latlng,
         map: map,
         title: "This is you!"
