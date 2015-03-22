@@ -358,7 +358,7 @@ function getUserStats() {
         userInfo = user;
         var position = user.previous_known_position;
         appSetLocation(position.latitude, position.longitude);
-        switchTheme(user.eco_score);
+        // switchTheme(user.eco_score);
 
 
     });
