@@ -402,18 +402,12 @@ function createMarkers(nearByUsers) {
             markers[userId].setPosition(userLocation);
 
         }
+        console.log(markers[userId]);
         var color = i + 1;
         $('.network').append('<span class="network__user color-' + color + '" data-userId="' + userId + '"></span>');
 
     }
-    $(newUsers).each(function () {
-        if (markers[newUser] != undefined) {
-            newUsers = jQuery.grep(newUsers, function (value) {
-                return value != newUser;
-            });
 
-        }
-    });
     $('.network__user').click(function () {
         console.log($(this))
     })
