@@ -5,7 +5,8 @@
 var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
 var map;
 var myOptions;
-var userMarker
+var userMarker;
+var userInfo;
 var markers = [];
 var colors = ['red', 'orange', 'green', 'yellow', 'purple'];
 var markerColors = {
@@ -346,8 +347,10 @@ function getUserStats() {
         cache: false,
         dataType: 'json'
     }).done(function (user) {
-        console.log(user);
-        //userMarker.setPosition(user.previous_location);
+        userInfo = user;
+        var position = user.previous_known_position;
+        appSetLocation(position.latitude, position.longitude);
+
 
     });
 
@@ -501,7 +504,8 @@ $(document).ready(function () {
         $('.menu__bottom').removeClass('open');
     });
     setInterval(function () {
-        switchTheme('good')
+        getUserStats();
+        switchTheme('good');
         getNearbyUsers('asdad', 'asdasd');
 
 
