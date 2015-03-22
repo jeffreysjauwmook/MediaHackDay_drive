@@ -339,7 +339,7 @@ function createMarkers(nearByUsers) {
 function getNearbyUsers(lat, long) {
 
     $.ajax({
-        url: "test.json",
+        url: "http://backend.mediahackday.gehekt.nl/api/v1.0/nearby-cars?format=json",
         method: "GET",
         data: {},
         cache: false,
