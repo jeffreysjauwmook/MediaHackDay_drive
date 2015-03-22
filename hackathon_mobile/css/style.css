@@ -561,6 +561,11 @@ th {
 }
 
 /* line 1, ../sass/02-base/_main.scss */
+html {
+  height: 100%;
+}
+
+/* line 5, ../sass/02-base/_main.scss */
 body {
   margin: 0;
   padding: 0;
@@ -571,12 +576,12 @@ body {
   font-weight: 100;
 }
 
-/* line 19, ../sass/02-base/_main.scss */
+/* line 23, ../sass/02-base/_main.scss */
 .content {
   overflow: hidden;
 }
 
-/* line 24, ../sass/02-base/_main.scss */
+/* line 28, ../sass/02-base/_main.scss */
 .footer {
   background: blue;
 }
