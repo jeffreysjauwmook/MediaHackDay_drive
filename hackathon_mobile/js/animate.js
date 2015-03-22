@@ -55,6 +55,12 @@ $( ".home .js-toggle__bottom" ).click(function() {
     $('.menu__bottom.alerts').removeClass("open");
 });
 
+//network (driving page)
 $( ".network" ).click(function() {
+    $('.menu__bottom.reply').toggleClass("open");
+});
+
+//notifcations (driving page)
+$( ".alert-reply" ).click(function() {
     $('.menu__bottom.reply').toggleClass("open");
 });

@@ -1093,6 +1093,11 @@ button:focus {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+/* line 19, ../sass/04-components/_reply.scss */
+.menu__bottom.reply {
+  z-index: 10000;
+}
+
 /* line 5, ../sass/04-components/_alerts.scss */
 .alerts ul {
   border-width: 0 0 1px;
