@@ -360,10 +360,14 @@ function getUserStats() {
         userInfo = user;
         var position = user.previous_known_position;
         appSetLocation(position.latitude, position.longitude);
+
         // switchTheme(user.eco_score);
 
 
     });
+
+}
+function setUserSpeed() {
 
 }
 
@@ -373,7 +377,7 @@ function switchTheme(rating) {
 }
 function createMarkers(nearByUsers) {
     var newUsers = [];
-    $('.network').clear();
+    $('.network').empty();
     for (var i = 0; i < nearByUsers.length; i++) {
         newUsers.push(user.id);
         var user = nearByUsers[i];
