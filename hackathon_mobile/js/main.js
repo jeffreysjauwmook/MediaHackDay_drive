@@ -380,13 +380,14 @@ function createMarkers(nearByUsers) {
                 icon: image,
                 user: user
             });
-            $('.network').append('<span class="network__user""></span>');
+            //$('.network').append('<span class="network__user""></span>');
 
         } else {
             markers[userId].setPosition(userLocation);
         }
 
     }
+    console.log(markers);
 }
 function getNearbyUsers(lat, long) {
 
