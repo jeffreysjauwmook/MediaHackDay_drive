@@ -1,22 +1,19 @@
 from models import User, Message
 from serializers import UserSerializer,MessageSerializer
-from rest_framework import generics, views, response
+from rest_framework import generics, views, response, mixins, viewsets
 from autoscout.models import trip_entry
 from django.shortcuts import get_object_or_404
 
-
-# Create your views here.
-class UserMixin(object):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
 class MessageMixin(object):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
 
 
-class UserList(UserMixin, generics.ListCreateAPIView):
-    pass
+class UserViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 
 class MessageList(MessageMixin, generics.ListCreateAPIView):
     """
