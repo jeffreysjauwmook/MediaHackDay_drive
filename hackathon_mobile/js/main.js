@@ -8,14 +8,7 @@ var myOptions;
 var userMarker;
 var userInfo;
 var markers = [];
-var colors = ['red', 'orange', 'green', 'yellow', 'purple'];
-var markerColors = {
-    red: null,
-    orange: null,
-    green: null,
-    yellow: null,
-    purple: null
-};
+
 
 var urls = {
     userStats: "http://backend.mediahackday.gehekt.nl/api/v1.0/user/1/?format=json",
@@ -255,58 +248,70 @@ var ecoStyles = {
         "stylers": [{"color": "#ffdfa6"}, {"weight": 0.4}]
     }, {"featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{"visibility": "off"}]}],
     medium: [{
+        "featureType": "landscape",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": 50.2}, {"lightness": -34.8}, {"gamma": 1}]
+    }, {
+        "featureType": "road.highway",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": -19.8}, {"lightness": -1.8}, {"gamma": 1}]
+    }, {
+        "featureType": "road.arterial",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": 72.4}, {"lightness": -32.6}, {"gamma": 1}]
+    }, {
+        "featureType": "road.local",
+        "stylers": [{"hue": "#FFAD00"}, {"saturation": 74.4}, {"lightness": -18}, {"gamma": 1}]
+    }, {
         "featureType": "water",
+        "stylers": [{"hue": "#00FFA6"}, {"saturation": -63.2}, {"lightness": 38}, {"gamma": 1}]
+    }, {
+        "featureType": "poi",
+        "stylers": [{"hue": "#FFC300"}, {"saturation": 54.2}, {"lightness": -14.4}, {"gamma": 1}]
+    }],
+    neutral: [{
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [{"hue": "#7fc8ed"}, {"saturation": 55}, {"lightness": -6}, {"visibility": "on"}]
+    }, {
+        "featureType": "water",
+        "elementType": "labels",
+        "stylers": [{"hue": "#7fc8ed"}, {"saturation": 55}, {"lightness": -6}, {"visibility": "off"}]
+    }, {
+        "featureType": "poi.park",
         "elementType": "geometry",
-        "stylers": [{"color": "#ffdfa6"}]
+        "stylers": [{"hue": "#83cead"}, {"saturation": 1}, {"lightness": -15}, {"visibility": "on"}]
     }, {
         "featureType": "landscape",
         "elementType": "geometry",
-        "stylers": [{"color": "#b52127"}]
+        "stylers": [{"hue": "#f3f4f4"}, {"saturation": -84}, {"lightness": 59}, {"visibility": "on"}]
     }, {
-        "featureType": "poi",
+        "featureType": "landscape",
+        "elementType": "labels",
+        "stylers": [{"hue": "#ffffff"}, {"saturation": -100}, {"lightness": 100}, {"visibility": "off"}]
+    }, {
+        "featureType": "road",
         "elementType": "geometry",
-        "stylers": [{"color": "#c5531b"}]
+        "stylers": [{"hue": "#ffffff"}, {"saturation": -100}, {"lightness": 100}, {"visibility": "on"}]
     }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#74001b"}, {"lightness": -10}]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{"color": "#da3c3c"}]
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [{"hue": "#bbbbbb"}, {"saturation": -100}, {"lightness": 26}, {"visibility": "on"}]
     }, {
         "featureType": "road.arterial",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#74001b"}]
-    }, {
-        "featureType": "road.arterial",
-        "elementType": "geometry.stroke",
-        "stylers": [{"color": "#da3c3c"}]
-    }, {
-        "featureType": "road.local",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#990c19"}]
-    }, {
-        "elementType": "labels.text.fill",
-        "stylers": [{"color": "#ffffff"}]
-    }, {
-        "elementType": "labels.text.stroke",
-        "stylers": [{"color": "#74001b"}, {"lightness": -8}]
-    }, {
-        "featureType": "transit",
         "elementType": "geometry",
-        "stylers": [{"color": "#6a0d10"}, {"visibility": "on"}]
+        "stylers": [{"hue": "#ffcc00"}, {"saturation": 100}, {"lightness": -35}, {"visibility": "simplified"}]
     }, {
-        "featureType": "administrative",
+        "featureType": "road.highway",
         "elementType": "geometry",
-        "stylers": [{"color": "#ffdfa6"}, {"weight": 0.4}]
-    }, {"featureType": "road.local", "elementType": "geometry.stroke", "stylers": [{"visibility": "off"}]}],
-    neutral: []
+        "stylers": [{"hue": "#ffcc00"}, {"saturation": 100}, {"lightness": -22}, {"visibility": "on"}]
+    }, {
+        "featureType": "poi.school",
+        "elementType": "all",
+        "stylers": [{"hue": "#d7e4e4"}, {"saturation": -60}, {"lightness": 23}, {"visibility": "on"}]
+    }]
 };
 function drawMap(latlng) {
     myOptions = {
         styles: ecoStyles.neutral,
-        zoom: 20, //23
+        zoom: 15, //23
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         zIndex: 1,
@@ -316,7 +321,6 @@ function drawMap(latlng) {
         scaleControl: false,
         draggable: false,
         streetViewControl: false,
-        zoomControl: false,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'good', google.maps.MapTypeId.ROADMAP,
                 'bad', google.maps.MapTypeId.ROADMAP, 'medium']
@@ -325,9 +329,10 @@ function drawMap(latlng) {
     };
 
     map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-
+    var image = 'img/pointer.png';
     // Add an overlay to the map of current lat/lng
     userMarker = new google.maps.Marker({
+        icon: image,
         position: latlng,
         map: map,
         title: "This is you!"
@@ -360,28 +365,37 @@ function getUserStats() {
         userInfo = user;
         var position = user.previous_known_position;
         appSetLocation(position.latitude, position.longitude);
-
-        // switchTheme(user.eco_score);
+        setUserSpeed(user);
+        switchTheme(user.eco_score);
 
 
     });
-
 }
-function setUserSpeed() {
-
+function setUserSpeed(user) {
+    if (user.speed > 0 && user.speed < 50) {
+        $('body').removeClass('km-50').removeClass('km-80').removeClass('km-120').addClass('km-30');
+    } else if (user.speed >= 50 && user.speed < 80) {
+        $('body').removeClass('km-30').removeClass('km-80').removeClass('km-120').addClass('km-50');
+    } else if (user.speed >= 80 && user.speed < 120) {
+        $('body').removeClass('km-30').removeClass('km-50').removeClass('km-120').addClass('km-80');
+    } else {
+        $('body').removeClass('km-30').removeClass('km-50').removeClass('km-80').addClass('km-120');
+    }
 }
 
 function switchTheme(rating) {
-    map.setMapTypeId(rating);
+    if (ecoStyles[rating] != undefined) {
+        map.setMapTypeId(rating);
+    }
 
 }
 function createMarkers(nearByUsers) {
     var newUsers = [];
     $('.network').empty();
     for (var i = 0; i < nearByUsers.length; i++) {
-        newUsers.push(user.id);
         var user = nearByUsers[i];
         var userId = user.id;
+        newUsers.push(user.id);
         var position = user.previous_known_position;
         var userLocation = new google.maps.LatLng(position.latitude, position.longitude);
         var username = user.username;
@@ -396,22 +410,16 @@ function createMarkers(nearByUsers) {
             });
 
 
-            $('.network').append('<span class="network__user" data-userId="' + userId + '"></span>')
-
-
         } else {
             markers[userId].setPosition(userLocation);
+
         }
+        console.log(markers[userId]);
+        var color = i + 1;
+        $('.network').append('<span class="network__user color-' + color + '" data-userId="' + userId + '"></span>');
 
     }
-    $(newUsers).each(function () {
-        if (markers[newUser] != undefined) {
-            newUsers = jQuery.grep(newUsers, function (value) {
-                return value != newUser;
-            });
 
-        }
-    });
     $('.network__user').click(function () {
         console.log($(this))
     })
@@ -540,16 +548,21 @@ $(document).ready(function () {
         getNearbyUsers();
 
 
-    }, 500);
+    }, 1000);
 
 });
+
+function onLocation(lat, lng) {
+    if (map === undefined) {
+        drawMap(new google.maps.LatLng(lat, lng));
+    }
+
+    appSetLocation(lat, lng);
+    getNearbyUsers(lat, lng);
+}
+
 if (window.app) {
     /* Note: Callback functions need to be global. */
-    app.setGestureCallback("onGesture");
+    // app.setGestureCallback("onGesture");
     app.setLocationCallback("onLocation");
-
-    var b = document.getElementById("b");
-    b.onclick = function () {
-        app.showMessage("You clicked the button.");
-    };
 }

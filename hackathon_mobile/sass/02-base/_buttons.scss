@@ -1,5 +1,11 @@
 // BUttons
 
+button {
+    &:focus{ 
+        outline: none
+    }
+}
+
 .button {
     position: absolute;
     display: block;

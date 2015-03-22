@@ -7,6 +7,12 @@ $( ".js-toggle__bottom" ).click(function() {
 $( ".notification__reply" ).click(function() {
     $('.menu__bottom.reply').toggleClass("open");
 });
+$( ".alert-reply" ).click(function() {
+    $('.menu__bottom.reply').toggleClass("open");
+});
+$( ".reply-menu__option" ).click(function() {
+    $('.menu__bottom').removeClass("open");
+});
 
 
 $(window).on("resize", function () {
@@ -49,6 +55,23 @@ $( ".home .js-toggle__bottom" ).click(function() {
     $('.menu__bottom.alerts').removeClass("open");
 });
 
+//network (driving page)
 $( ".network" ).click(function() {
     $('.menu__bottom.reply').toggleClass("open");
+});
+
+//notifcations (driving page)
+$( ".alert-reply" ).click(function() {
+    $('.menu__bottom.reply').toggleClass("open");
+    $(this).parent().siblings().hide();
+});
+
+
+// $(".reply.open .reply-menu__option").click(function() {
+//     $(".reply.open").removeClass("open");
+// });
+
+//hide notify when gave msg
+$(".menu__bottom.reply li").click(function() {
+    $(".notification").removeClass("open");
 });

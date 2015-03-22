@@ -1,8 +1,9 @@
 .reply-menu {
     @include border(1px 0 0, $color: 'gray-light-2');
     list-style: inside none;
+    z-index: $z-index-5;
 
-    
+
     &__option {
         @include font(
             $color: 'mh-gray-text',
@@ -14,4 +15,8 @@
         padding: 16px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     }
+}
+
+.menu__bottom.reply {
+    z-index:10000;
 }
