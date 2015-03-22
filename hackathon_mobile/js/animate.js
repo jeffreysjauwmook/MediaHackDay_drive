@@ -57,4 +57,15 @@ $( ".network" ).click(function() {
 //notifcations (driving page)
 $( ".alert-reply" ).click(function() {
     $('.menu__bottom.reply').toggleClass("open");
+    $(this).parent().siblings().hide();
+});
+
+
+// $(".reply.open .reply-menu__option").click(function() {
+//     $(".reply.open").removeClass("open");
+// });
+
+//hide notify when gave msg
+$(".menu__bottom.reply li").click(function() {
+    $(".notification").removeClass("open");
 });
