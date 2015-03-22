@@ -1,8 +1,15 @@
 // netwrok
 
 .network {
+    @include transition();
     display: block;
     height: 75px;
+    top:100%;
+
+
+    &.not-empty{
+        transform: translateY(-75px);
+    }
 
     &__user {
         display: block;
