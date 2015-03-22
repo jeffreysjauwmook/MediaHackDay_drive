@@ -868,6 +868,15 @@ h6,
 }
 
 /* line 55, ../sass/02-base/_icons.scss */
+.button .icon-leaf {
+  font-size: 2.1875rem;
+  color: #5c5c5c;
+  text-align: center;
+  margin: 22px 0 0;
+  display: block;
+}
+
+/* line 65, ../sass/02-base/_icons.scss */
 .icon-close {
   font-size: 1.5625rem;
   color: #5c5c5c;
@@ -1153,7 +1162,7 @@ h6,
   float: left;
   margin: 6px 0 0 2px;
 }
-/* line 93, ../sass/04-components/_alerts.scss */
+/* line 90, ../sass/04-components/_alerts.scss */
 .alerts.stats {
   z-index: 10000;
 }
@@ -1226,7 +1235,7 @@ h6,
   margin: 0 0 30px;
 }
 /* line 10, ../sass/04-components/_stats.scss */
-.stats .alerts__header:nth-child(2) {
+.stats .alerts__header {
   border-width: 1px 0 0;
   border-color: #f2f2f2;
   border-style: solid;
@@ -1263,27 +1272,52 @@ h6,
   text-transform: uppercase;
   margin: 5px 0 30px;
 }
-/* line 58, ../sass/04-components/_stats.scss */
+/* line 57, ../sass/04-components/_stats.scss */
+.stats > p.red {
+  color: #ed4242;
+}
+/* line 64, ../sass/04-components/_stats.scss */
 .stats .alerts__item {
   float: none;
 }
-/* line 61, ../sass/04-components/_stats.scss */
+/* line 67, ../sass/04-components/_stats.scss */
 .stats .alerts__item .button {
   right: auto;
   left: 6px;
 }
-/* line 66, ../sass/04-components/_stats.scss */
+/* line 72, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__holder {
   width: auto;
   float: none;
 }
-/* line 71, ../sass/04-components/_stats.scss */
+/* line 77, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title {
   margin-left: 90px;
+  margin-top: 10px;
 }
-/* line 82, ../sass/04-components/_stats.scss */
+/* line 81, ../sass/04-components/_stats.scss */
+.stats .alerts__item .alerts__title time, .stats .alerts__item .alerts__title p, .stats .alerts__item .alerts__title i {
+  display: block;
+  color: false;
+  margin: 0;
+}
+/* line 89, ../sass/04-components/_stats.scss */
+.stats .alerts__item .alerts__title time, .stats .alerts__item .alerts__title i {
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+/* line 96, ../sass/04-components/_stats.scss */
+.stats .alerts__item .alerts__title time {
+  text-transform: uppercase;
+}
+/* line 102, ../sass/04-components/_stats.scss */
+.stats .alerts__item .alerts__title p {
+  font-size: 1.625rem;
+  text-transform: uppercase;
+}
+/* line 109, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title i {
-  font-style: none;
+  text-transform: uppercase;
 }
 
 /* line 1, ../sass/05-pages/_login.scss */

@@ -7,7 +7,7 @@
         margin:0 0 30px;
     }
 
-    .alerts__header:nth-child(2){
+    .alerts__header{
         border-width: 1px 0 0;
         border-color: #f2f2f2;
         border-style: solid;
@@ -53,6 +53,12 @@
             $transform: uppercase
         );
         margin:5px 0 30px;
+
+        &.red{
+            @include font(
+                $color: 'mh-red'
+            );
+        }
     }
 
     .alerts__item {
@@ -70,17 +76,40 @@
 
         .alerts__title {
             margin-left:90px;
+            margin-top:10px;
+
+            time, p, i {
+                display: block;
+                @include font(
+                    $color: 'mh-grey-txt'
+                );
+                margin:0;
+            }
+
+            time, i {
+                @include font(
+                    $size: 14
+                );
+                line-height: 20px;
+            }
 
             time {
-
+                @include font(
+                    $transform: uppercase
+                );
             }
 
             p {
-
+                @include font(
+                    $size: 26,
+                    $transform: uppercase
+                );
             }
 
             i {
-                font-style: none;
+                @include font(
+                    $transform: uppercase
+                );
             }
         }
     }

@@ -52,6 +52,16 @@
     margin: 20px 0 0 6px;
     display: block;
 }
+.button .icon-leaf {
+    @include font(
+        $size: 35,
+        $color: 'mh-gray-text',
+        $align: center
+    );
+    margin: 22px 0 0;
+    display: block;
+}
+
 .icon-close {
     @include font(
         $size: 25,
