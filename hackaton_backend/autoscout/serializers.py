@@ -6,3 +6,4 @@ from models import trip_entry
 class TripEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = trip_entry
+
