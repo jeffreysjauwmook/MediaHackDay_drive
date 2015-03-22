@@ -50,6 +50,14 @@ body.login {
         border-radius: 50%;
         @include bg('mh-green');
         box-shadow: 0 5px 1px rgba(0,0,0,0.15);
+        .icon-arrow-right {
+            @include font(
+                $size: 30,
+                $color: 'white'
+            );
+            display: block;
+            margin-top: 8px;
+        }
 
     }
 
@@ -85,4 +93,17 @@ body.login {
         border-top: 1px solid rgba(0,0,0,0.15);
     }
 
+}
+@include screen(tablet, min) {
+    body.login {
+        
+        form {
+            max-width: 600px;
+            margin: 100px auto;
+        }
+        
+        .icon--large {
+            margin: 100px auto;
+        }
+    }
 }

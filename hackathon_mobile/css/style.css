@@ -780,7 +780,7 @@ h6,
 }
 /* line 13, ../sass/02-base/_buttons.scss */
 .button.notification {
-  bottom: 95px;
+  bottom: 0;
   right: 0;
 }
 /* line 18, ../sass/02-base/_buttons.scss */
@@ -1189,7 +1189,6 @@ h6,
   -o-transition: 0.25s ease-in-out;
   display: block;
   top: 100%;
-  transform: translateY(75px);
 }
 /* line 17, ../sass/04-components/_network.scss */
 .network.not-empty {
@@ -1401,7 +1400,14 @@ body.login .submit {
   background-color: #45d16a;
   box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
 }
-/* line 56, ../sass/05-pages/_login.scss */
+/* line 53, ../sass/05-pages/_login.scss */
+body.login .submit .icon-arrow-right {
+  font-size: 1.875rem;
+  color: #FFF;
+  display: block;
+  margin-top: 8px;
+}
+/* line 64, ../sass/05-pages/_login.scss */
 body.login .icon--large {
   display: block;
   margin: 20% auto 10%;
@@ -1410,13 +1416,13 @@ body.login .icon--large {
   color: #45d16a;
   text-align: center;
 }
-/* line 66, ../sass/05-pages/_login.scss */
+/* line 74, ../sass/05-pages/_login.scss */
 body.login .icon-leaf {
   font-size: 210px;
   line-height: 1;
   text-shadow: 0 12px 1px rgba(0, 0, 0, 0.15);
 }
-/* line 72, ../sass/05-pages/_login.scss */
+/* line 80, ../sass/05-pages/_login.scss */
 body.login .new-account {
   position: absolute;
   display: block;
@@ -1431,6 +1437,17 @@ body.login .new-account {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+@media screen and (min-width: 601px) {
+  /* line 100, ../sass/05-pages/_login.scss */
+  body.login form {
+    max-width: 600px;
+    margin: 100px auto;
+  }
+  /* line 105, ../sass/05-pages/_login.scss */
+  body.login .icon--large {
+    margin: 100px auto;
+  }
+}
 @keyframes scroll-in {
   0% {
     transform: translateY(-40px);
