@@ -1,0 +1,54 @@
+// alerts
+
+.alerts {
+
+    &__item {
+        display: block;
+        height: 100px;
+        
+    }
+
+    &__header {
+        height: 100px;
+        clear: both;
+
+        .button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            box-shadow: 0 0 0;
+        }
+    }
+    
+    &__title {
+        @include ellipsis();
+        @include font(
+            $size: 26,
+            $color: 'black'
+        );
+        display: block;
+        padding: 0;
+        float: left;
+        width: 50%;
+       
+    }
+
+    &__details {
+        @include ellipsis();
+        @include font(
+            $size: 12,
+            $color: 'black',
+            $transform: uppercase
+        );
+        display: block;
+        padding: 0;
+        float: left;
+        width: 50%;
+        
+
+    }
+    .avatar {
+        float: left;
+    }
+
+}

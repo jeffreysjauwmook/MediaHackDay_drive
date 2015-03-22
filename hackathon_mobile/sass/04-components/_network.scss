@@ -1,0 +1,33 @@
+// netwrok
+
+.network {
+    display: block;
+    height: 75px;
+
+    &__user {
+        display: block;
+        float: left;
+        width: 20%;
+        height: 100%;
+        border-top: 2px solid rgba(0,0,0,0.15);
+        &.orange {
+            @include bg('mh-orange');
+        }
+        &.teal {
+            @include bg('mh-teal');
+        }
+        &.yellow {
+            @include bg('mh-yellow');
+        }
+        &.red {
+            @include bg('mh-red');
+        }
+        &.purple {
+            @include bg('mh-purple');
+        }
+        &.green {
+            @include bg('mh-green');
+        }
+    }
+
+}

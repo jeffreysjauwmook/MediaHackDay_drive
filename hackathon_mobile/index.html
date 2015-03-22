@@ -7,13 +7,15 @@
     <style>
         #map-page, #map-canvas {
             width: 100%;
-            height: 100%;
+            height: calc(100% - 75px);
             padding: 0;
             z-index: 200;
+            min-height: 400px;
         }
     </style>
     <title>Mediahackday</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -32,7 +34,7 @@
                 zoom: 23,
                 center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                zIndex: 1
+                zIndex: 1,
             };
 
             map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
@@ -142,14 +144,19 @@
 </head>
 <body class="no-drive speed-low">
 <header class="menu__top notification">
-    <span class="notification__avatar avatar"></span>
+    <span class="notification__avatar avatar">
+        <span class="icon"></span>
+        <img src="img/bender-small.jpg" alt="Bender">
+    </span>
         <span class="notification__title">
             Thanks!
         </span>
         <span class="notification__details">
             BMW Z4, red
         </span>
-    <span class="button notification__reply"></span>
+    <span class="button notification__reply">
+        <span class="icon-reply"></span>
+    </span>
 </header>
 <main class="main-content">
 
@@ -165,15 +172,53 @@
             <!-- map loads here... -->
         </div>
     </div>
-
+    <section class="network">
+        <span class="network__user red"></span>
+        <span class="network__user orange"></span>
+        <span class="network__user yellow"></span>
+        <span class="network__user purple"></span>
+        <span class="network__user green"></span>
+    </section>
 </main>
-<footer class="menu__bottom">
+<footer class="menu__bottom reply">
     <ul class="reply-menu">
-        <li class="reply-menu__option">option</li>
-        <li class="reply-menu__option">option</li>
-        <li class="reply-menu__option">option</li>
-        <li class="reply-menu__option">option</li>
+        <li class="reply-menu__option">Thanks!</li>
+        <li class="reply-menu__option">Sorry</li>
+        <li class="reply-menu__option">WTF!?</li>
+        <li class="reply-menu__option">No problem</li>
     </ul>
+</footer>
+<footer class="menu__bottom alerts">
+    <header class="alerts__header">
+        <span class="icon">X</span>
+       <span class="button js-toggle__bottom"></span>
+    </header>
+    <ul>
+        <li class="alerts__item">
+           <span class="avatar">
+               <span class="icon"></span>
+               <img src="img/bender-small.jpg" alt="Bender">
+           </span>
+           <span class="alerts__title">text in a list</span>
+           <span class="alerts__text">
+               Details here
+           </span>
+        </li>
+        <li class="alerts__item">
+           <span class="avatar"></span>
+           <span class="alerts__title">text in a list</span>
+           <span class="alerts__text">
+               Details here
+           </span>
+        </li>
+        <li class="alerts__item">
+           <span class="avatar"></span>
+           <span class="alerts__title">text in a list</span>
+           <span class="alerts__text">
+               Details here
+           </span>
+       </li>
+    </ul>  
 </footer>
 
 

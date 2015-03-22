@@ -6,9 +6,10 @@
     width: 76px;
     height: 76px;
     border-radius: 50%;
-    background: white;
-    @include border(1px, $color: 'gray-light');
+    @include bg('mh-gray-button');
     margin: 16px;
+    box-shadow: 0 5px 1px  rgba(0, 0, 0, 0.15);
+    z-index: $z-index-6;
 
     &.notification {
         bottom: 12px;

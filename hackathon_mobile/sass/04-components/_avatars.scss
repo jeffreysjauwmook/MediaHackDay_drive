@@ -1,18 +1,40 @@
 // User avatar
 .avatar {
+    position: relative;
     display: block;
-    width: 76px;
-    height: 76px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 3px 1px color('gray-light');
-    background-image: url('#{$imagePath}/bender-small.jpg');
+    width: 96px;
+    height: 96px;
+    z-index: $z-index-6;
+    
+ //   background-image: url('#{$imagePath}/bender-small.jpg');
 
     &.road-owner {
         position: absolute;
         left: 12px;
         top: 12px;
     }
+    & .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
 
+    }
+    img {
+        width: 76px;
+        height: 76px;
+        margin: 4px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 3px 1px color('gray-light-2');
+    }
 }
 
+.icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: red;
+    z-index: $z-index-6;
+}

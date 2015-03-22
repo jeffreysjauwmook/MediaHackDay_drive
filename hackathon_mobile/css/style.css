@@ -526,22 +526,113 @@ th {
 
 /* line 1, ../sass/02-base/_main.scss */
 body {
-  background: red;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
+  font-family: "Source Sans Pro", Verdana, sans-serif;
+  font-weight: 100;
 }
 
-/* line 18, ../sass/02-base/_main.scss */
+/* line 19, ../sass/02-base/_main.scss */
 .content {
   overflow: hidden;
 }
 
-/* line 23, ../sass/02-base/_main.scss */
+/* line 24, ../sass/02-base/_main.scss */
 .footer {
   background: blue;
+}
+
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.eot");
+  src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 15, ../sass/02-base/_fontface.scss */
+[data-icon]:before {
+  font-family: "icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 28, ../sass/02-base/_fontface.scss */
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 41, ../sass/02-base/_fontface.scss */
+.icon-close:before {
+  content: "x";
+}
+
+/* line 44, ../sass/02-base/_fontface.scss */
+.icon-config:before {
+  content: "c";
+}
+
+/* line 47, ../sass/02-base/_fontface.scss */
+.icon-inbox:before {
+  content: "d";
+}
+
+/* line 50, ../sass/02-base/_fontface.scss */
+.icon-leaf:before {
+  content: "e";
+}
+
+/* line 53, ../sass/02-base/_fontface.scss */
+.icon-message:before {
+  content: "f";
+}
+
+/* line 56, ../sass/02-base/_fontface.scss */
+.icon-messages:before {
+  content: "g";
+}
+
+/* line 59, ../sass/02-base/_fontface.scss */
+.icon-reply:before {
+  content: "h";
+}
+
+/* line 62, ../sass/02-base/_fontface.scss */
+.icon-star:before {
+  content: "i";
+}
+
+/* line 65, ../sass/02-base/_fontface.scss */
+.icon-star-o:before {
+  content: "j";
+}
+
+/* line 68, ../sass/02-base/_fontface.scss */
+.icon-stats:before {
+  content: "k";
+}
+
+/* line 71, ../sass/02-base/_fontface.scss */
+.icon-arrow-right:before {
+  content: "a";
 }
 
 /*------------------------------------*\
@@ -586,7 +677,7 @@ h1, h2, h3, h4, h5, h6,
 h1,
 .alpha {
   font-size: 1.125rem;
-  font-family: Verdana, sans-serif;
+  font-family: "Source Sans Pro", Verdana, sans-serif;
   text-transform: uppercase;
 }
 
@@ -632,16 +723,17 @@ h6,
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: white;
-  border: 1px solid #999;
+  background-color: #f2f2f2;
   margin: 16px;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
 }
-/* line 13, ../sass/02-base/_buttons.scss */
+/* line 14, ../sass/02-base/_buttons.scss */
 .button.notification {
   bottom: 12px;
   right: 12px;
 }
-/* line 18, ../sass/02-base/_buttons.scss */
+/* line 19, ../sass/02-base/_buttons.scss */
 .button.alert {
   right: 0;
 }
@@ -658,8 +750,8 @@ h6,
   -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   position: fixed;
-  z-index: 9999;
-  box-shadow: 0 5px 2px #999;
+  z-index: 600;
+  box-shadow: 0 5px 2px #EEE;
 }
 /* line 18, ../sass/03-layout/_layout.scss */
 .menu__top.open,
@@ -674,21 +766,48 @@ h6,
 }
 
 /* line 28, ../sass/03-layout/_layout.scss */
-.menu__bottom {
+.menu__bottom.reply {
   bottom: 0;
-  height: 250px;
-  transform: translateY(250px);
+  height: 225px;
+  transform: translateY(225px);
+}
+/* line 33, ../sass/03-layout/_layout.scss */
+.menu__bottom.reply.open {
+  transform: translateY(0);
 }
 
-/* line 34, ../sass/03-layout/_layout.scss */
+/* line 37, ../sass/03-layout/_layout.scss */
+.menu__bottom.alerts {
+  bottom: 0;
+  height: 100%;
+  transform: translateY(100%);
+}
+/* line 42, ../sass/03-layout/_layout.scss */
+.menu__bottom.alerts.open {
+  transform: translateY(0);
+}
+
+/* line 47, ../sass/03-layout/_layout.scss */
 .main-content {
   position: fixed;
   position: relative;
   display: block;
-  height: 100%;
+  height: calc(100% - 75px);
   width: 100%;
   z-index: 400;
   background-image: url("/mediahackday//img/map.png");
+}
+
+/* line 57, ../sass/03-layout/_layout.scss */
+#map-page {
+  height: calc(100% - 75px);
+  min-height: 495px !important;
+  overflow: hidden;
+}
+
+/* line 62, ../sass/03-layout/_layout.scss */
+#map-canvas {
+  height: 100% !important;
 }
 
 /* _componets */
@@ -699,48 +818,58 @@ h6,
 }
 /* line 8, ../sass/04-components/_notification.scss */
 .notification .avatar {
-  box-shadow: 0 0 0;
+  box-shadow: none;
 }
 /* line 12, ../sass/04-components/_notification.scss */
 .notification__title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1.625rem;
-  color: #000;
+  font-size: 2rem;
+  color: #5c5c5c;
   display: block;
-  padding: 18px 0 6px 8px;
+  padding: 20px 0 0 8px;
   width: 50%;
   float: left;
+  font-weight: 400;
 }
 /* line 25, ../sass/04-components/_notification.scss */
 .notification__details {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.75rem;
-  color: #000;
+  font-size: 1rem;
+  color: #5c5c5c;
   text-transform: uppercase;
   display: block;
   padding: 0 0 0 8px;
   width: 50%;
   float: left;
 }
-/* line 40, ../sass/04-components/_notification.scss */
+/* line 41, ../sass/04-components/_notification.scss */
 .notification__reply {
+  background-color: #f2f2f2;
+  border: 0;
   right: 0;
   margin: 12px 12px 0 0;
+  box-shadow: none;
+}
+/* line 49, ../sass/04-components/_notification.scss */
+.notification .icon-reply {
+  display: block;
+  font-size: 2.5rem;
+  color: #5c5c5c;
+  text-align: center;
+  margin-top: 18px;
 }
 
 /* line 2, ../sass/04-components/_avatars.scss */
 .avatar {
+  position: relative;
   display: block;
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 3px 1px #999;
-  background-image: url("/mediahackday//img/bender-small.jpg");
+  width: 96px;
+  height: 96px;
+  z-index: 9999;
 }
 /* line 11, ../sass/04-components/_avatars.scss */
 .avatar.road-owner {
@@ -748,24 +877,226 @@ h6,
   left: 12px;
   top: 12px;
 }
+/* line 16, ../sass/04-components/_avatars.scss */
+.avatar .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+}
+/* line 24, ../sass/04-components/_avatars.scss */
+.avatar img {
+  width: 76px;
+  height: 76px;
+  margin: 4px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 3px 1px #EEE;
+}
+
+/* line 34, ../sass/04-components/_avatars.scss */
+.icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: red;
+  z-index: 9999;
+}
 
 /* line 1, ../sass/04-components/_reply.scss */
 .reply-menu {
   border-width: 1px 0 0;
-  border-color: #999;
+  border-color: #EEE;
   border-style: solid;
   list-style: inside none;
 }
 /* line 6, ../sass/04-components/_reply.scss */
 .reply-menu__option {
   font-size: 1.125rem;
-  color: #999;
+  color: #5c5c5c;
   text-align: center;
   text-decoration: none;
+  display: block;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 5, ../sass/04-components/_alerts.scss */
+.alerts__item {
+  display: block;
+  height: 100px;
+}
+/* line 11, ../sass/04-components/_alerts.scss */
+.alerts__header {
+  height: 100px;
+  clear: both;
+}
+/* line 15, ../sass/04-components/_alerts.scss */
+.alerts__header .button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 0 0;
+}
+/* line 23, ../sass/04-components/_alerts.scss */
+.alerts__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.625rem;
+  color: #000;
+  display: block;
+  padding: 0;
+  float: left;
+  width: 50%;
+}
+/* line 36, ../sass/04-components/_alerts.scss */
+.alerts__details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: #000;
   text-transform: uppercase;
   display: block;
-  padding: 12px;
-  border-width: 0 0 1px;
-  border-color: #999;
+  padding: 0;
+  float: left;
+  width: 50%;
+}
+/* line 50, ../sass/04-components/_alerts.scss */
+.alerts .avatar {
+  float: left;
+}
+
+/* line 3, ../sass/04-components/_network.scss */
+.network {
+  display: block;
+  height: 75px;
+}
+/* line 7, ../sass/04-components/_network.scss */
+.network__user {
+  display: block;
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-top: 2px solid rgba(0, 0, 0, 0.15);
+}
+/* line 13, ../sass/04-components/_network.scss */
+.network__user.orange {
+  background-color: #ff8359;
+}
+/* line 16, ../sass/04-components/_network.scss */
+.network__user.teal {
+  background-color: #a9cfc3;
+}
+/* line 19, ../sass/04-components/_network.scss */
+.network__user.yellow {
+  background-color: #ebe1ca;
+}
+/* line 22, ../sass/04-components/_network.scss */
+.network__user.red {
+  background-color: #ed4242;
+}
+/* line 25, ../sass/04-components/_network.scss */
+.network__user.purple {
+  background-color: #65566b;
+}
+/* line 28, ../sass/04-components/_network.scss */
+.network__user.green {
+  background-color: #45d16a;
+}
+
+/* line 1, ../sass/05-pages/_login.scss */
+body.login {
+  background: #a9cfc3;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a9cfc3), color-stop(20%, #a9cfc3), color-stop(20%, #ebe1ca), color-stop(40%, #ebe1ca), color-stop(40%, #ff8359), color-stop(60%, #ff8359), color-stop(60%, #ed4242), color-stop(80%, #ed4242), color-stop(80%, #65566b), color-stop(100%, #65566b));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9cfc3', endColorstr='#65566b',GradientType=1 );
+  /* IE6-9 */
+}
+/* line 12, ../sass/05-pages/_login.scss */
+body.login main:focus {
+  oultine: none;
+}
+/* line 17, ../sass/05-pages/_login.scss */
+body.login form {
+  position: relative;
+  width: 80%;
+  margin: 0 10%;
+}
+/* line 21, ../sass/05-pages/_login.scss */
+body.login form:focus {
+  outline: none;
+}
+/* line 25, ../sass/05-pages/_login.scss */
+body.login form input {
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+}
+/* line 33, ../sass/05-pages/_login.scss */
+body.login .email {
+  border-radius: 12px 12px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+/* line 36, ../sass/05-pages/_login.scss */
+body.login .email:focus {
+  outline: none;
+}
+/* line 41, ../sass/05-pages/_login.scss */
+body.login .password {
+  border-radius: 0 0 12px 12px;
+  border-width: 0 1px 1px  1px;
   border-style: solid;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+/* line 46, ../sass/05-pages/_login.scss */
+body.login .password:focus {
+  outline: none;
+}
+/* line 50, ../sass/05-pages/_login.scss */
+body.login .submit {
+  position: absolute;
+  right: -28px;
+  top: 32px;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #45d16a;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 63, ../sass/05-pages/_login.scss */
+body.login .icon--large {
+  display: block;
+  margin: 20% auto 10%;
+  width: 256px;
+  height: 256px;
+  background: red;
+}
+/* line 71, ../sass/05-pages/_login.scss */
+body.login .new-account {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  padding: 12px;
+  background-color: #FFF;
+  font-size: 1.5rem;
+  color: #5c5c5c;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
