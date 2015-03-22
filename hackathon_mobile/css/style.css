@@ -255,6 +255,42 @@ $greyscale-search-icon-position: 100%;
 /* Creates global layout parameters for layout-containers */
 /* Sets shadow() */
 /* _base */
+/* line 5, ../sass/02-base/_states.scss */
+.km-30 .shadow {
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 8, ../sass/02-base/_states.scss */
+.km-30 .text-shadow {
+  text-shadow: 0 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 17, ../sass/02-base/_states.scss */
+.km-50 .shadow {
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 20, ../sass/02-base/_states.scss */
+.km-50 .text-shadow {
+  text-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 27, ../sass/02-base/_states.scss */
+.km-80 .shadow {
+  box-shadow: 0 8px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 30, ../sass/02-base/_states.scss */
+.km-80 .text-shadow {
+  text-shadow: 0 8px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 37, ../sass/02-base/_states.scss */
+.km-120 .shadow {
+  box-shadow: 0 12px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 40, ../sass/02-base/_states.scss */
+.km-120 .text-shadow {
+  text-shadow: 0 12px 1px rgba(0, 0, 0, 0.15);
+}
+
 /*------------------------------------*\
     #RESET
 \*------------------------------------*/
@@ -580,59 +616,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 41, ../sass/02-base/_fontface.scss */
+/* line 42, ../sass/02-base/_fontface.scss */
 .icon-close:before {
   content: "x";
 }
 
-/* line 44, ../sass/02-base/_fontface.scss */
+/* line 45, ../sass/02-base/_fontface.scss */
 .icon-config:before {
   content: "c";
 }
 
-/* line 47, ../sass/02-base/_fontface.scss */
-.icon-inbox:before {
-  content: "d";
-}
-
-/* line 50, ../sass/02-base/_fontface.scss */
-.icon-leaf:before {
-  content: "e";
-}
-
-/* line 53, ../sass/02-base/_fontface.scss */
+/* line 48, ../sass/02-base/_fontface.scss */
 .icon-message:before {
   content: "f";
 }
 
-/* line 56, ../sass/02-base/_fontface.scss */
+/* line 51, ../sass/02-base/_fontface.scss */
 .icon-messages:before {
   content: "g";
 }
 
-/* line 59, ../sass/02-base/_fontface.scss */
+/* line 54, ../sass/02-base/_fontface.scss */
 .icon-reply:before {
   content: "h";
 }
 
-/* line 62, ../sass/02-base/_fontface.scss */
+/* line 57, ../sass/02-base/_fontface.scss */
 .icon-star:before {
   content: "i";
 }
 
-/* line 65, ../sass/02-base/_fontface.scss */
+/* line 60, ../sass/02-base/_fontface.scss */
 .icon-star-o:before {
   content: "j";
 }
 
-/* line 68, ../sass/02-base/_fontface.scss */
+/* line 63, ../sass/02-base/_fontface.scss */
 .icon-stats:before {
   content: "k";
 }
 
-/* line 71, ../sass/02-base/_fontface.scss */
+/* line 66, ../sass/02-base/_fontface.scss */
 .icon-arrow-right:before {
   content: "a";
+}
+
+/* line 69, ../sass/02-base/_fontface.scss */
+.icon-history:before {
+  content: "b";
+}
+
+/* line 72, ../sass/02-base/_fontface.scss */
+.icon-inbox:before {
+  content: "d";
+}
+
+/* line 75, ../sass/02-base/_fontface.scss */
+.icon-leaf:before {
+  content: "e";
+}
+
+/* line 78, ../sass/02-base/_fontface.scss */
+.icon-notify:before {
+  content: "l";
 }
 
 /*------------------------------------*\
@@ -725,17 +771,100 @@ h6,
   border-radius: 50%;
   background-color: #f2f2f2;
   margin: 16px;
-  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
   z-index: 9999;
 }
-/* line 14, ../sass/02-base/_buttons.scss */
+/* line 13, ../sass/02-base/_buttons.scss */
 .button.notification {
-  bottom: 12px;
-  right: 12px;
+  bottom: 95px;
+  right: 0;
 }
-/* line 19, ../sass/02-base/_buttons.scss */
+/* line 18, ../sass/02-base/_buttons.scss */
 .button.alert {
   right: 0;
+}
+
+/* line 24, ../sass/02-base/_buttons.scss */
+.button.alert {
+  background-color: #FFF;
+}
+/* line 27, ../sass/02-base/_buttons.scss */
+.button.alert .icon-inbox {
+  font-size: 2.1875rem;
+  color: #5c5c5c;
+  text-align: center;
+  margin: 20px 0 0 6px;
+  display: block;
+}
+
+/* line 37, ../sass/02-base/_buttons.scss */
+.button.notification {
+  background: none;
+  box-shadow: none;
+  margin-right: 12px;
+}
+/* line 42, ../sass/02-base/_buttons.scss */
+.button.notification .icon-leaf {
+  display: block;
+  margin-top: 8px;
+  font-size: 3.75rem;
+  color: #45d16a;
+  text-align: center;
+}
+
+/* line 1, ../sass/02-base/_icons.scss */
+.icon-star {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #FFF;
+  padding-top: 4px;
+}
+
+/* line 10, ../sass/02-base/_icons.scss */
+.icon-reply {
+  display: block;
+  font-size: 2.5rem;
+  color: #5c5c5c;
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* line 21, ../sass/02-base/_icons.scss */
+.icon.red {
+  background-color: #ed4242;
+}
+/* line 24, ../sass/02-base/_icons.scss */
+.icon.purple {
+  background-color: #65566b;
+}
+/* line 27, ../sass/02-base/_icons.scss */
+.icon.green {
+  background-color: #45d16a;
+}
+/* line 30, ../sass/02-base/_icons.scss */
+.icon.orange {
+  background-color: #ff8359;
+}
+/* line 33, ../sass/02-base/_icons.scss */
+.icon.yellow {
+  background-color: #ebe1ca;
+}
+
+/* line 37, ../sass/02-base/_icons.scss */
+.icon-inbox {
+  font-size: 2.1875rem;
+  color: #5c5c5c;
+  text-align: center;
+  margin: 20px 0 0 6px;
+  display: block;
+}
+
+/* line 46, ../sass/02-base/_icons.scss */
+.icon-close {
+  font-size: 1.5625rem;
+  color: #5c5c5c;
+  text-align: center;
+  margin: 26px 0 0;
+  display: block;
 }
 
 /* _componets */
@@ -751,7 +880,7 @@ h6,
   -o-transition: 0.25s ease-in-out;
   position: fixed;
   z-index: 600;
-  box-shadow: 0 5px 2px #EEE;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.15);
 }
 /* line 18, ../sass/03-layout/_layout.scss */
 .menu__top.open,
@@ -801,13 +930,13 @@ h6,
 /* line 57, ../sass/03-layout/_layout.scss */
 #map-page {
   height: calc(100% - 75px);
-  min-height: 495px !important;
+  min-height: 100% !important;
   overflow: hidden;
 }
 
 /* line 62, ../sass/03-layout/_layout.scss */
 #map-canvas {
-  height: 100% !important;
+  height: 595px !important;
 }
 
 /* _componets */
@@ -894,8 +1023,15 @@ h6,
   overflow: hidden;
   box-shadow: 0 3px 1px #EEE;
 }
+/* line 32, ../sass/04-components/_avatars.scss */
+.avatar .icon-star {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #FFF;
+  padding-top: 4px;
+}
 
-/* line 34, ../sass/04-components/_avatars.scss */
+/* line 42, ../sass/04-components/_avatars.scss */
 .icon {
   width: 12px;
   height: 12px;
@@ -923,64 +1059,102 @@ h6,
 }
 
 /* line 5, ../sass/04-components/_alerts.scss */
+.alerts ul {
+  border-width: 0 0 1px;
+  border-color: #f2f2f2;
+  border-style: solid;
+}
+/* line 9, ../sass/04-components/_alerts.scss */
 .alerts__item {
   display: block;
   height: 100px;
+  clear: both;
+  border-width: 1px 0 0;
+  border-color: #f2f2f2;
+  border-style: solid;
 }
-/* line 11, ../sass/04-components/_alerts.scss */
+/* line 17, ../sass/04-components/_alerts.scss */
+.alerts .button {
+  right: 0;
+  margin: 10px 6px 0 0;
+  box-shadow: none;
+}
+/* line 23, ../sass/04-components/_alerts.scss */
 .alerts__header {
   height: 100px;
   clear: both;
 }
-/* line 15, ../sass/04-components/_alerts.scss */
+/* line 27, ../sass/04-components/_alerts.scss */
 .alerts__header .button {
   position: absolute;
   top: 0;
-  right: 0;
-  box-shadow: 0 0 0;
+  left: 0;
+  box-shadow: none;
+  margin: 10px 0 0 6px;
 }
-/* line 23, ../sass/04-components/_alerts.scss */
+/* line 34, ../sass/04-components/_alerts.scss */
+.alerts__header .button.js-toggle__bottom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  box-shadow: none;
+  margin: 12px 6px 0 0;
+}
+/* line 46, ../sass/04-components/_alerts.scss */
 .alerts__title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1.625rem;
-  color: #000;
+  font-size: 2rem;
+  color: #5c5c5c;
   display: block;
   padding: 0;
-  float: left;
-  width: 50%;
+  margin-top: 18px;
 }
-/* line 36, ../sass/04-components/_alerts.scss */
+/* line 58, ../sass/04-components/_alerts.scss */
+.alerts__holder {
+  display: block;
+  width: 50%;
+  float: left;
+}
+/* line 64, ../sass/04-components/_alerts.scss */
 .alerts__details {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.75rem;
-  color: #000;
+  font-size: 1rem;
+  color: #5c5c5c;
   text-transform: uppercase;
   display: block;
   padding: 0;
-  float: left;
-  width: 50%;
 }
-/* line 50, ../sass/04-components/_alerts.scss */
+/* line 76, ../sass/04-components/_alerts.scss */
 .alerts .avatar {
   float: left;
+  margin: 6px 0 0 2px;
 }
 
 /* line 3, ../sass/04-components/_network.scss */
 .network {
   width: 100%;
-  height: 200px;
+  height: 75px;
   float: left;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
   display: block;
-  height: 75px;
+  top: 100%;
+  transform: translateY(75px);
 }
-/* line 14, ../sass/04-components/_network.scss */
+/* line 17, ../sass/04-components/_network.scss */
+.network.not-empty {
+  transform: translateY(0px);
+}
+/* line 21, ../sass/04-components/_network.scss */
 .network__user {
   height: 100%;
   width: 20%;
@@ -992,31 +1166,31 @@ h6,
   /* For IE7*/
   white-space: normal;
 }
-/* line 23, ../sass/04-components/_network.scss */
+/* line 30, ../sass/04-components/_network.scss */
 .network__user.color-1 {
   background-color: #abd1c6;
 }
-/* line 26, ../sass/04-components/_network.scss */
+/* line 33, ../sass/04-components/_network.scss */
 .network__user.color-2 {
   background-color: #ede3cb;
 }
-/* line 29, ../sass/04-components/_network.scss */
+/* line 36, ../sass/04-components/_network.scss */
 .network__user.color-3 {
   background-color: #ff8157;
 }
-/* line 32, ../sass/04-components/_network.scss */
+/* line 39, ../sass/04-components/_network.scss */
 .network__user.color-4 {
   background-color: #ee4242;
 }
-/* line 35, ../sass/04-components/_network.scss */
+/* line 42, ../sass/04-components/_network.scss */
 .network__user.color-5 {
   background-color: #66566c;
 }
-/* line 38, ../sass/04-components/_network.scss */
+/* line 45, ../sass/04-components/_network.scss */
 .network__user.color-6 {
   background-color: #42ee8d;
 }
-/* line 41, ../sass/04-components/_network.scss */
+/* line 48, ../sass/04-components/_network.scss */
 .network__user.color-7 {
   background-color: #57d4ff;
 }
@@ -1057,7 +1231,7 @@ body.login form:focus {
 /* line 25, ../sass/05-pages/_login.scss */
 body.login form input {
   width: 100%;
-  padding: 16px;
+  padding: 12px 16px;
   font-size: 24px;
 }
 /* line 33, ../sass/05-pages/_login.scss */
@@ -1097,10 +1271,17 @@ body.login .icon--large {
   display: block;
   margin: 20% auto 10%;
   width: 256px;
-  height: 256px;
-  background: red;
+  height: 210px;
+  color: #45d16a;
+  text-align: center;
 }
-/* line 71, ../sass/05-pages/_login.scss */
+/* line 73, ../sass/05-pages/_login.scss */
+body.login .icon-leaf {
+  font-size: 210px;
+  line-height: 1;
+  text-shadow: 0 12px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 79, ../sass/05-pages/_login.scss */
 body.login .new-account {
   position: absolute;
   display: block;

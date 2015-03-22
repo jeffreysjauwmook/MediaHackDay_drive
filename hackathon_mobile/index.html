@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -25,7 +26,7 @@
 <header class="menu__top notification">
     <span class="notification__avatar avatar">
         <span class="icon"></span>
-        <img src="img/bender-small.jpg" alt="Bender">
+        <img src="img/user_guy1.jpg" alt="MyAvatar">
     </span>
         <span class="notification__title">
             Thanks!
@@ -33,17 +34,24 @@
         <span class="notification__details">
             BMW Z4, red
         </span>
-    <span class="button notification__reply">
+    <span class="button shadow notification__reply">
         <span class="icon-reply"></span>
     </span>
 </header>
 <main class="main-content">
 
 
-    <span class="avatar road-owner"></span>
+    <span class="avatar road-owner">
+        <span class="icon icon-star"></span>
+        <img src="img/user_girl1.jpg" alt="User1" class="shadow">
+    </span>
 
-    <span class="button alert js-toggle__bottom"></span>
-    <span class="button notification js-toggle__top"></span>
+    <span class="button shadow alert js-toggle__bottom">
+        <span class="icon-inbox"></span>
+    </span>
+    <span class="button shadow notification js-toggle__top">
+        <span class="icon-leaf text-shadow"></span>
+    </span>
 
     <div data-role="page" id="map-page" data-url="map-page">
 
@@ -71,35 +79,67 @@
 </footer>
 <footer class="menu__bottom alerts">
     <header class="alerts__header">
-        <span class="icon">X</span>
-        <span class="button js-toggle__bottom"></span>
+       <span class="button"><span class="icon-inbox"></span></span>
+       <span class="button js-toggle__bottom">
+           <span class="icon-close"></span>
+       </span>
     </header>
     <ul>
         <li class="alerts__item">
            <span class="avatar">
-               <span class="icon"></span>
-               <img src="img/bender-small.jpg" alt="Bender">
+               <span class="icon yellow"></span>
+               <img src="img/user_girl1.jpg" alt="User#3">
            </span>
-            <span class="alerts__title">text in a list</span>
-           <span class="alerts__text">
-               Details here
-           </span>
+           <div class="alerts__holder">
+               <span class="alerts__title">Thanks!</span>
+               <span class="alerts__details">
+                   Details here
+               </span>
+           </div>
+           <span class="button"><span class="icon-reply"></span></span>
         </li>
-        <li class="alerts__item">
-            <span class="avatar"></span>
-            <span class="alerts__title">text in a list</span>
-           <span class="alerts__text">
-               Details here
+         <li class="alerts__item">
+           <span class="avatar">
+               <span class="icon green"></span>
+               <img src="img/user_guy1.jpg" alt="User#3">
            </span>
+           <div class="alerts__holder">
+               <span class="alerts__title">Thanks!</span>
+               <span class="alerts__details">
+                   Details here
+               </span>
+           </div>
+           <span class="button"><span class="icon-reply"></span></span>
         </li>
-        <li class="alerts__item">
-            <span class="avatar"></span>
-            <span class="alerts__title">text in a list</span>
-           <span class="alerts__text">
-               Details here
+         <li class="alerts__item">
+           <span class="avatar">
+               <span class="icon purple"></span>
+               <img src="img/user_girl2.jpg" alt="User#3">
            </span>
+           <div class="alerts__holder">
+               <span class="alerts__title">Thanks!</span>
+               <span class="alerts__details">
+                   Details here
+               </span>
+           </div>
+           <span class="button"><span class="icon-reply"></span></span>
         </li>
-    </ul>
+
+         <li class="alerts__item">
+           <span class="avatar">
+               <span class="icon orange"></span>
+               <img src="img/user_guy2.jpg" alt="User#3">
+           </span>
+           <div class="alerts__holder">
+               <span class="alerts__title">Thanks!</span>
+               <span class="alerts__details">
+                   Details here
+               </span>
+           </div>
+           <span class="button"><span class="icon-reply"></span></span>
+        </li>
+    </ul>  
+
 </footer>
 
 

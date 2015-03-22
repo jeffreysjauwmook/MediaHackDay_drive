@@ -2,14 +2,21 @@
 
 .network {
     width:100%;
-    height:200px;
+    height: 75px;
     float:left;
     overflow-x:scroll;
     overflow-y:hidden;
     white-space:nowrap;
 
+    @include transition();
     display: block;
-    height: 75px;
+    top:100%;
+    //margin-top:75px; //margin of main-content
+    transform: translateY(75px);
+
+    &.not-empty{
+        transform: translateY(0px);
+    }
 
     &__user {
         height: 100%;

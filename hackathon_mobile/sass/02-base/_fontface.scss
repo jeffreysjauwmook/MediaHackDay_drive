@@ -38,17 +38,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 .icon-close:before {
   content: "x";
 }
 .icon-config:before {
   content: "c";
-}
-.icon-inbox:before {
-  content: "d";
-}
-.icon-leaf:before {
-  content: "e";
 }
 .icon-message:before {
   content: "f";
@@ -70,4 +65,16 @@
 }
 .icon-arrow-right:before {
   content: "a";
+}
+.icon-history:before {
+  content: "b";
+}
+.icon-inbox:before {
+  content: "d";
+}
+.icon-leaf:before {
+  content: "e";
+}
+.icon-notify:before {
+  content: "l";
 }
