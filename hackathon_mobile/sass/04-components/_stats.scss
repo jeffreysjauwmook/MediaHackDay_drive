@@ -81,7 +81,7 @@
             time, p, i {
                 display: block;
                 @include font(
-                    $color: 'mh-grey-txt'
+                    $color: 'mh-gray-text'
                 );
                 margin:0;
             }
