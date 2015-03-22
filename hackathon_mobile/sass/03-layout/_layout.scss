@@ -22,7 +22,7 @@ $menu-height-large: 225;
 
 .menu__top {
     top: 0;
-    transform: translateY( unit(-$menu-height-small) );
+    transform: translateY(unit((-$menu-height-small - 10)));
 }
 
 .menu__bottom.reply {

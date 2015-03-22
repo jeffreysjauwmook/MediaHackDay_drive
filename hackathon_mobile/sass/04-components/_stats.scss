@@ -2,14 +2,15 @@
 
     .alerts__header:first-child{
         border-width: 0 0 1px;
-        border-color: #f2f2f2;
+        border-color: #5c5c5c;
         border-style: solid;
         margin:0 0 30px;
     }
 
     .alerts__header{
-        border-width: 1px 0 0;
-        border-color: #f2f2f2;
+        border-width: 1px 0 1px;
+        margin-bottom: -1px;
+        border-color: #5c5c5c;
         border-style: solid;
     }
 
@@ -81,7 +82,7 @@
             time, p, i {
                 display: block;
                 @include font(
-                    $color: 'mh-grey-txt'
+                    $color: 'mh-gray-text'
                 );
                 margin:0;
             }

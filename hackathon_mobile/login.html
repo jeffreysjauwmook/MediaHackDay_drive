@@ -14,15 +14,27 @@
 <body class="login km-30">
     <main>
         <span class="icon--large icon-leaf"></span>
-        <form action="post">
+        <form action="logged.html" method="post">
             <input type="email" class="email" placeholder="Email">
             <input type="password" class="password" placeholder="Password">
-            <input type="submit" class="submit" value="">
+            <button class="submit"><span class="icon-arrow-right"></span></button>
+
         </form>
         <a href="" class="new-account">Create account</a>
     </main>
 
 <script src="js/jquery.js"></script>
 <script src="js/animate.js"></script>
+<script>
+  $(function() {
+    $("form").on("submit", function (e) {
+      var username = $("input.email").val(),
+          password = $("input.password").val();
+
+      app.login(username, password);
+      e.preventDefault();
+    });
+  });
+</script>
 </body>
 </html>

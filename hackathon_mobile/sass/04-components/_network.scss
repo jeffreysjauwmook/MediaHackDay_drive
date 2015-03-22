@@ -2,7 +2,7 @@
 
 .network {
     width:100%;
-    height: 75px;
+    height: 76px;
     float:left;
     overflow-x:scroll;
     overflow-y:hidden;
@@ -12,7 +12,7 @@
     display: block;
     top:100%;
     //margin-top:75px; //margin of main-content
-    transform: translateY(75px);
+  //  transform: translateY(75px);.menu__top
 
     &.not-empty{
         transform: translateY(0px);

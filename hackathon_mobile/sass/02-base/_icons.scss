@@ -34,7 +34,7 @@
         @include bg('mh-yellow');
     }
 }
-.icon-inbox {
+.icon-inbox, .icon-messages {
     @include font(
         $size: 35,
         $color: 'mh-gray-text',
@@ -45,21 +45,27 @@
 }
 .icon-stats {
     @include font(
-        $size: 35,
+        $size: 36,
         $color: 'mh-gray-text',
         $align: center
     );
-    margin: 20px 0 0 6px;
+    margin: 20px 0 0 1px;
     display: block;
 }
 .button .icon-leaf {
     @include font(
         $size: 35,
-        $color: 'mh-gray-text',
+        $color: 'mh-green',
         $align: center
     );
     margin: 22px 0 0;
     display: block;
+
+    &.red {
+        @include font(
+            $color: 'mh-red'
+        );
+    }
 }
 
 .icon-close {
