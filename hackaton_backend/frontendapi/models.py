@@ -12,6 +12,7 @@ class User(AbstractUser):
     last_known_position = geosimple.GeohashField(blank=True, null=True)
     previous_known_position = geosimple.GeohashField(blank=True, null=True)
     social_score = models.IntegerField(blank=True, null=True)
+    eco_score = models.CharField(default='neutral', max_length=255)  # good, neutral, medium, bad
     current_behaviour = models.CharField(max_length=255, default='0')
     engine_status = models.CharField(max_length=255)
     vim = models.CharField(max_length=255)
