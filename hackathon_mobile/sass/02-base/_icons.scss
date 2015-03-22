@@ -34,7 +34,7 @@
         @include bg('mh-yellow');
     }
 }
-.icon-inbox {
+.icon-inbox, .icon-messages {
     @include font(
         $size: 35,
         $color: 'mh-gray-text',
