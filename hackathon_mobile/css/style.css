@@ -1117,14 +1117,15 @@ button:focus {
   border-bottom: 1px solid #5c5c5c;
 }
 /* line 28, ../sass/04-components/_alerts.scss */
-.alerts__header h1 {
+.alerts__header h1,
+.alerts__header h2 {
   padding: 32px 0;
   font-size: 1.75rem;
   color: #5c5c5c;
   font-family: "Source Sans Pro", Verdana, sans-serif;
   text-transform: uppercase;
 }
-/* line 38, ../sass/04-components/_alerts.scss */
+/* line 39, ../sass/04-components/_alerts.scss */
 .alerts__header .button {
   position: absolute;
   top: 0;
@@ -1132,7 +1133,7 @@ button:focus {
   box-shadow: none;
   margin: 10px 0 0 6px;
 }
-/* line 45, ../sass/04-components/_alerts.scss */
+/* line 46, ../sass/04-components/_alerts.scss */
 .alerts__header .button.js-toggle__bottom {
   position: absolute;
   top: 0;
@@ -1141,7 +1142,7 @@ button:focus {
   box-shadow: none;
   margin: 12px 6px 0 0;
 }
-/* line 55, ../sass/04-components/_alerts.scss */
+/* line 56, ../sass/04-components/_alerts.scss */
 .alerts__title {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1152,13 +1153,13 @@ button:focus {
   padding: 0;
   margin-top: 18px;
 }
-/* line 67, ../sass/04-components/_alerts.scss */
+/* line 68, ../sass/04-components/_alerts.scss */
 .alerts__holder {
   display: block;
   width: 50%;
   float: left;
 }
-/* line 73, ../sass/04-components/_alerts.scss */
+/* line 74, ../sass/04-components/_alerts.scss */
 .alerts__details {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1169,12 +1170,12 @@ button:focus {
   display: block;
   padding: 0;
 }
-/* line 85, ../sass/04-components/_alerts.scss */
+/* line 86, ../sass/04-components/_alerts.scss */
 .alerts .avatar {
   float: left;
   margin: 6px 0 0 2px;
 }
-/* line 90, ../sass/04-components/_alerts.scss */
+/* line 91, ../sass/04-components/_alerts.scss */
 .alerts.stats {
   z-index: 10000;
 }
