@@ -780,7 +780,7 @@ h6,
 }
 /* line 13, ../sass/02-base/_buttons.scss */
 .button.notification {
-  bottom: 95px;
+  bottom: 0;
   right: 0;
 }
 /* line 18, ../sass/02-base/_buttons.scss */
@@ -1185,7 +1185,6 @@ h6,
   -o-transition: 0.25s ease-in-out;
   display: block;
   top: 100%;
-  transform: translateY(75px);
 }
 /* line 17, ../sass/04-components/_network.scss */
 .network.not-empty {
