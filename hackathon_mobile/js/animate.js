@@ -10,6 +10,10 @@ $( ".notification__reply" ).click(function() {
 $( ".alert-reply" ).click(function() {
     $('.menu__bottom.reply').toggleClass("open");
 });
+$( ".reply-menu__option" ).click(function() {
+    $('.menu__bottom').removeClass("open");
+});
+
 
 $(window).on("resize", function () {
     networkWidth = $( ".network" ).width();

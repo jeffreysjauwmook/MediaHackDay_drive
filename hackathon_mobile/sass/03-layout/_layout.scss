@@ -29,7 +29,7 @@ $menu-height-large: 225;
     bottom: 0;
     height: unit($menu-height-large);
     transform: translateY( unit($menu-height-large) );
-    z-index: $z-index-6;
+    z-index: $z-index-7;
 
     &.open {
         transform: translateY(0);
