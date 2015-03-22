@@ -299,7 +299,7 @@ var ecoStyles = {
 function drawMap(latlng) {
     myOptions = {
         styles: ecoStyles.neutral,
-        zoom: 20, //23
+        zoom: 18, //23
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         zIndex: 1,
