@@ -1532,6 +1532,6 @@ body.show__btn_1 .btn-stats {
 }
 
 /* line 1, ../sass/05-pages/_inbox.scss */
-.home.inbox {
+.inbox {
   z-index: 10000;
 }
