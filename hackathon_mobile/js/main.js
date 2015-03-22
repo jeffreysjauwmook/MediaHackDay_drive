@@ -395,8 +395,8 @@ function createMarkers(nearByUsers) {
         }
 
     }
-    $('.network__user').onclick(function () {
-
+    $('.network__user').click(function () {
+        console.log($(this))
     })
 }
 function getNearbyUsers(lat, long) {
