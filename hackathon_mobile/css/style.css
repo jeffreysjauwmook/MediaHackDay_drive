@@ -1273,10 +1273,15 @@ h6,
   left: 6px;
 }
 /* line 66, ../sass/04-components/_stats.scss */
+.stats .alerts__item .alerts__holder {
+  width: auto;
+  float: none;
+}
+/* line 71, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title {
   margin-left: 90px;
 }
-/* line 77, ../sass/04-components/_stats.scss */
+/* line 82, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title i {
   font-style: none;
 }
