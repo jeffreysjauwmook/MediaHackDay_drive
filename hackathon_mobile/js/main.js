@@ -8,14 +8,7 @@ var myOptions;
 var userMarker;
 var userInfo;
 var markers = [];
-var colors = ['red', 'orange', 'green', 'yellow', 'purple'];
-var markerColors = {
-    red: null,
-    orange: null,
-    green: null,
-    yellow: null,
-    purple: null
-};
+
 
 var urls = {
     userStats: "http://backend.mediahackday.gehekt.nl/api/v1.0/user/1/?format=json",
@@ -360,28 +353,37 @@ function getUserStats() {
         userInfo = user;
         var position = user.previous_known_position;
         appSetLocation(position.latitude, position.longitude);
-
-        // switchTheme(user.eco_score);
+        setUserSpeed(user);
+        switchTheme(user.eco_score);
 
 
     });
-
 }
-function setUserSpeed() {
-
+function setUserSpeed(user) {
+    if (user.speed > 0 && user.speed < 50) {
+        $('body').removeClass('km-50').removeClass('km-80').removeClass('km-120').addClass('km-30');
+    } else if (user.speed >= 50 && user.speed < 80) {
+        $('body').removeClass('km-30').removeClass('km-80').removeClass('km-120').addClass('km-50');
+    } else if (user.speed >= 80 && user.speed < 120) {
+        $('body').removeClass('km-30').removeClass('km-50').removeClass('km-120').addClass('km-80');
+    } else {
+        $('body').removeClass('km-30').removeClass('km-50').removeClass('km-80').addClass('km-120');
+    }
 }
 
 function switchTheme(rating) {
-    map.setMapTypeId(rating);
+    if (ecoStyles[rating] != undefined) {
+        map.setMapTypeId(rating);
+    }
 
 }
 function createMarkers(nearByUsers) {
     var newUsers = [];
     $('.network').empty();
     for (var i = 0; i < nearByUsers.length; i++) {
-        newUsers.push(user.id);
         var user = nearByUsers[i];
         var userId = user.id;
+        newUsers.push(user.id);
         var position = user.previous_known_position;
         var userLocation = new google.maps.LatLng(position.latitude, position.longitude);
         var username = user.username;
@@ -396,12 +398,11 @@ function createMarkers(nearByUsers) {
             });
 
 
-            $('.network').append('<span class="network__user" data-userId="' + userId + '"></span>')
-
-
         } else {
             markers[userId].setPosition(userLocation);
+
         }
+        $('.network').append('<span class="network__user color-' + i + '" data-userId="' + userId + '"></span>');
 
     }
     $(newUsers).each(function () {
@@ -543,13 +544,18 @@ $(document).ready(function () {
     }, 500);
 
 });
+
+function onLocation(lat, lng) {
+    if (map === undefined) {
+        drawMap(new google.maps.LatLng(lat, lng));
+    }
+
+    appSetLocation(lat, lng);
+    getNearbyUsers(lat, lng);
+}
+
 if (window.app) {
     /* Note: Callback functions need to be global. */
-    app.setGestureCallback("onGesture");
+    // app.setGestureCallback("onGesture");
     app.setLocationCallback("onLocation");
-
-    var b = document.getElementById("b");
-    b.onclick = function () {
-        app.showMessage("You clicked the button.");
-    };
 }
