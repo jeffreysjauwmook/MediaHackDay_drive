@@ -21,7 +21,7 @@ class UserList(UserMixin, generics.ListCreateAPIView):
 class MessageList(MessageMixin, generics.ListCreateAPIView):
     """
     List of messages for current user
-    """    
+    """
     def get_queryset(self):
     	return Message.objects.filter(receiver = self.request.user)
 
@@ -39,8 +39,9 @@ class NearbyCarsList(generics.ListAPIView):
         try:
             return User.geo_objects.filter(
                 previous_known_position__approx_distance_lt=(user.previous_known_position, distance)
-            ).exclude(user)
+            ).exclude(pk=user.pk)
         except:
+            raise
             return User.objects.none()
 
 
