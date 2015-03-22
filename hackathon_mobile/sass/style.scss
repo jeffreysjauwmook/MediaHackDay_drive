@@ -4,6 +4,7 @@
 
 
 /* _base */
+@import '02-base/states';
 @import '02-base/reset';
 @import '02-base/main';
 @import '02-base/fontface';
@@ -14,7 +15,6 @@
 
 /* _componets */
 @import '03-layout/layout';
-@import '03-layout/states';
 
 /* _componets */
 @import '04-components/notification';

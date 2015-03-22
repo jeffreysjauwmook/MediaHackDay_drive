@@ -255,6 +255,42 @@ $greyscale-search-icon-position: 100%;
 /* Creates global layout parameters for layout-containers */
 /* Sets shadow() */
 /* _base */
+/* line 5, ../sass/02-base/_states.scss */
+.km-30 .shadow {
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 8, ../sass/02-base/_states.scss */
+.km-30 .text-shadow {
+  text-shadow: 0 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 17, ../sass/02-base/_states.scss */
+.km-50 .shadow {
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 20, ../sass/02-base/_states.scss */
+.km-50 .text-shadow {
+  text-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 27, ../sass/02-base/_states.scss */
+.km-80 .shadow {
+  box-shadow: 0 8px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 30, ../sass/02-base/_states.scss */
+.km-80 .text-shadow {
+  text-shadow: 0 8px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 37, ../sass/02-base/_states.scss */
+.km-120 .shadow {
+  box-shadow: 0 12px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 40, ../sass/02-base/_states.scss */
+.km-120 .text-shadow {
+  text-shadow: 0 12px 1px rgba(0, 0, 0, 0.15);
+}
+
 /*------------------------------------*\
     #RESET
 \*------------------------------------*/
@@ -580,59 +616,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 41, ../sass/02-base/_fontface.scss */
+/* line 42, ../sass/02-base/_fontface.scss */
 .icon-close:before {
   content: "x";
 }
 
-/* line 44, ../sass/02-base/_fontface.scss */
+/* line 45, ../sass/02-base/_fontface.scss */
 .icon-config:before {
   content: "c";
 }
 
-/* line 47, ../sass/02-base/_fontface.scss */
-.icon-inbox:before {
-  content: "d";
-}
-
-/* line 50, ../sass/02-base/_fontface.scss */
-.icon-leaf:before {
-  content: "e";
-}
-
-/* line 53, ../sass/02-base/_fontface.scss */
+/* line 48, ../sass/02-base/_fontface.scss */
 .icon-message:before {
   content: "f";
 }
 
-/* line 56, ../sass/02-base/_fontface.scss */
+/* line 51, ../sass/02-base/_fontface.scss */
 .icon-messages:before {
   content: "g";
 }
 
-/* line 59, ../sass/02-base/_fontface.scss */
+/* line 54, ../sass/02-base/_fontface.scss */
 .icon-reply:before {
   content: "h";
 }
 
-/* line 62, ../sass/02-base/_fontface.scss */
+/* line 57, ../sass/02-base/_fontface.scss */
 .icon-star:before {
   content: "i";
 }
 
-/* line 65, ../sass/02-base/_fontface.scss */
+/* line 60, ../sass/02-base/_fontface.scss */
 .icon-star-o:before {
   content: "j";
 }
 
-/* line 68, ../sass/02-base/_fontface.scss */
+/* line 63, ../sass/02-base/_fontface.scss */
 .icon-stats:before {
   content: "k";
 }
 
-/* line 71, ../sass/02-base/_fontface.scss */
+/* line 66, ../sass/02-base/_fontface.scss */
 .icon-arrow-right:before {
   content: "a";
+}
+
+/* line 69, ../sass/02-base/_fontface.scss */
+.icon-history:before {
+  content: "b";
+}
+
+/* line 72, ../sass/02-base/_fontface.scss */
+.icon-inbox:before {
+  content: "d";
+}
+
+/* line 75, ../sass/02-base/_fontface.scss */
+.icon-leaf:before {
+  content: "e";
+}
+
+/* line 78, ../sass/02-base/_fontface.scss */
+.icon-notify:before {
+  content: "l";
 }
 
 /*------------------------------------*\
@@ -725,24 +771,23 @@ h6,
   border-radius: 50%;
   background-color: #f2f2f2;
   margin: 16px;
-  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
   z-index: 9999;
 }
-/* line 14, ../sass/02-base/_buttons.scss */
+/* line 13, ../sass/02-base/_buttons.scss */
 .button.notification {
   bottom: 0;
   right: 0;
 }
-/* line 19, ../sass/02-base/_buttons.scss */
+/* line 18, ../sass/02-base/_buttons.scss */
 .button.alert {
   right: 0;
 }
 
-/* line 25, ../sass/02-base/_buttons.scss */
+/* line 24, ../sass/02-base/_buttons.scss */
 .button.alert {
   background-color: #FFF;
 }
-/* line 28, ../sass/02-base/_buttons.scss */
+/* line 27, ../sass/02-base/_buttons.scss */
 .button.alert .icon-inbox {
   font-size: 2.1875rem;
   color: #5c5c5c;
@@ -751,10 +796,11 @@ h6,
   display: block;
 }
 
-/* line 38, ../sass/02-base/_buttons.scss */
+/* line 37, ../sass/02-base/_buttons.scss */
 .button.notification {
   background: none;
   box-shadow: none;
+  margin-right: 12px;
 }
 /* line 42, ../sass/02-base/_buttons.scss */
 .button.notification .icon-leaf {
@@ -763,7 +809,6 @@ h6,
   font-size: 3.75rem;
   color: #45d16a;
   text-align: center;
-  text-shadow: 0 2px 2px #45d16a;
 }
 
 /* line 1, ../sass/02-base/_icons.scss */
@@ -885,7 +930,7 @@ h6,
 /* line 57, ../sass/03-layout/_layout.scss */
 #map-page {
   height: calc(100% - 75px);
-  min-height: 595px !important;
+  min-height: 100% !important;
   overflow: hidden;
 }
 
@@ -1045,7 +1090,7 @@ h6,
   top: 0;
   left: 0;
   box-shadow: none;
-  margin: 6px 0 0 6px;
+  margin: 10px 0 0 6px;
 }
 /* line 34, ../sass/04-components/_alerts.scss */
 .alerts__header .button.js-toggle__bottom {
