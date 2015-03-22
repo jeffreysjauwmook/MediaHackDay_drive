@@ -349,7 +349,7 @@ function appSetLocation(lat, long) {
 }
 function getUserStats() {
     $.ajax({
-        url: urls.userstats,
+        url: urls.userStats,
         method: "GET",
         data: {},
         cache: false,
