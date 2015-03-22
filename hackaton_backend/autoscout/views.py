@@ -4,13 +4,6 @@ from serializers import TripEntrySerializer
 from rest_framework import generics
 
 
-# Create your views here.
-class EntryMixin(object):
-    
+class EntryList(generics.ListCreateAPIView):
     queryset = trip_entry.objects.all()
     serializer_class = TripEntrySerializer
-
-
-
-class EntryList(EntryMixin, generics.ListCreateAPIView):
-    pass
