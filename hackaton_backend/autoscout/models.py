@@ -11,7 +11,3 @@ class trip_entry(models.Model):
     checked = models.BooleanField(default=False)
 
 
-
-
-
-

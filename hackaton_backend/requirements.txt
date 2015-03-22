@@ -3,3 +3,4 @@ https://github.com/dabapps/django-geosimple/archive/master.zip
 djangorestframework
 django-cors-headers==1.0.0
 Pillow==2.7.0
+requests

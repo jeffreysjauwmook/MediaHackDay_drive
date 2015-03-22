@@ -22,6 +22,8 @@ class User(AbstractUser):
         upload_to='user_avatars/',
         blank=True,
     )
+    km_total = models.IntegerField(default=0)
+    total_fuel_consumption = models.IntegerField(default=0)
 
     geo_objects = GeoUserManager()
 
