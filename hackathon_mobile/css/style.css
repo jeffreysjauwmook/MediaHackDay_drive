@@ -909,14 +909,15 @@ h6,
 .menu__bottom.alerts {
   bottom: 0;
   height: 100%;
+  overflow: auto;
   transform: translateY(100%);
 }
-/* line 42, ../sass/03-layout/_layout.scss */
+/* line 43, ../sass/03-layout/_layout.scss */
 .menu__bottom.alerts.open {
   transform: translateY(0);
 }
 
-/* line 47, ../sass/03-layout/_layout.scss */
+/* line 48, ../sass/03-layout/_layout.scss */
 .main-content {
   position: fixed;
   position: relative;
@@ -927,14 +928,14 @@ h6,
   background-image: url("/mediahackday//img/map.png");
 }
 
-/* line 57, ../sass/03-layout/_layout.scss */
+/* line 58, ../sass/03-layout/_layout.scss */
 #map-page {
   height: calc(100% - 75px);
   min-height: 100% !important;
   overflow: hidden;
 }
 
-/* line 62, ../sass/03-layout/_layout.scss */
+/* line 63, ../sass/03-layout/_layout.scss */
 #map-canvas {
   height: 595px !important;
 }

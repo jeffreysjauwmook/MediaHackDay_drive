@@ -25,7 +25,7 @@ $menu-height-large: 225;
     transform: translateY( unit(-$menu-height-small) );
 }
 
-.menu__bottom.reply {   
+.menu__bottom.reply {
     bottom: 0;
     height: unit($menu-height-large);
     transform: translateY( unit($menu-height-large) );
@@ -34,9 +34,10 @@ $menu-height-large: 225;
         transform: translateY(0);
     }
 }
-.menu__bottom.alerts {   
+.menu__bottom.alerts {
     bottom: 0;
     height: 100%;
+    overflow:auto;
 
     transform: translateY( 100% );
     &.open {
