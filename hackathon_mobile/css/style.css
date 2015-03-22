@@ -1093,7 +1093,7 @@ button:focus {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* line 19, ../sass/04-components/_reply.scss */
+/* line 20, ../sass/04-components/_reply.scss */
 .menu__bottom.reply {
   z-index: 10000;
 }
@@ -1197,17 +1197,18 @@ button:focus {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  background-color: #f2f2f2;
   -webkit-transition: 0.25s ease-in-out;
   -moz-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   display: block;
   top: 100%;
 }
-/* line 17, ../sass/04-components/_network.scss */
+/* line 18, ../sass/04-components/_network.scss */
 .network.not-empty {
   transform: translateY(0px);
 }
-/* line 21, ../sass/04-components/_network.scss */
+/* line 22, ../sass/04-components/_network.scss */
 .network__user {
   height: 100%;
   width: 20%;
@@ -1219,31 +1220,31 @@ button:focus {
   /* For IE7*/
   white-space: normal;
 }
-/* line 30, ../sass/04-components/_network.scss */
+/* line 31, ../sass/04-components/_network.scss */
 .network__user.color-1 {
   background-color: #abd1c6;
 }
-/* line 33, ../sass/04-components/_network.scss */
+/* line 34, ../sass/04-components/_network.scss */
 .network__user.color-2 {
   background-color: #ede3cb;
 }
-/* line 36, ../sass/04-components/_network.scss */
+/* line 37, ../sass/04-components/_network.scss */
 .network__user.color-3 {
   background-color: #ff8157;
 }
-/* line 39, ../sass/04-components/_network.scss */
+/* line 40, ../sass/04-components/_network.scss */
 .network__user.color-4 {
   background-color: #ee4242;
 }
-/* line 42, ../sass/04-components/_network.scss */
+/* line 43, ../sass/04-components/_network.scss */
 .network__user.color-5 {
   background-color: #66566c;
 }
-/* line 45, ../sass/04-components/_network.scss */
+/* line 46, ../sass/04-components/_network.scss */
 .network__user.color-6 {
   background-color: #42ee8d;
 }
-/* line 48, ../sass/04-components/_network.scss */
+/* line 49, ../sass/04-components/_network.scss */
 .network__user.color-7 {
   background-color: #57d4ff;
 }
