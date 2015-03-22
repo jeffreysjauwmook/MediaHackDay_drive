@@ -1,8 +1,10 @@
 from django.conf.urls import patterns, url
+from rest_framework import routers
 from . import views
 
+router = routers.SimpleRouter()
+
 urlpatterns = patterns('',
-    url(r'^user/?$', views.UserList.as_view()),
     url(r'^message/?$', views.MessageList.as_view()),
     url(r'^message-update/(?P<pk>\d+)/$', views.MessageUpdate.as_view()),
     url(r'^nearby-cars/?$', views.NearbyCarsList.as_view()),
@@ -12,3 +14,6 @@ urlpatterns = patterns('',
     url(r'^get-messages/?$', views.MessageList.as_view()),
     url(r'^car-status/?$', views.CarStatus.as_view()),
 )
+router.register(r'user', views.UserViewSet)
+
+urlpatterns += router.urls
