@@ -1,6 +1,7 @@
 package com.bosch.myspin.helloworld;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -13,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -29,8 +31,11 @@ import com.thalmic.myo.scanner.ScanActivity;
 public class MainActivity extends ActionBarActivity {
     private final static String TAG = MainActivity.class.getCanonicalName();
 
-    private final String EMULATOR_URL = "http://10.0.2.2/~p.hooijenga/mediahackday/";
-    private final String URL = "http://mediahackday.gehekt.nl/";
+    private final String URL = "http://mediahackday.gehekt.nl/hackathon_mobile/";
+    private final String EMULATOR_URL = "http://10.0.2.2/~p.hooijenga/mediahackday/hackathon_mobile/";
+
+    //    private final String EMULATOR_URL = URL;
+
     private final String API_URL = "http://backend.mediahackday.gehekt.nl/";
 
     private Handler handler;
@@ -91,11 +96,21 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().hide();
+
+//        if (getAction() != null) {
+//            getActionBar().hide();
+//        }
 
         handler = new Handler();
 
@@ -117,7 +132,7 @@ public class MainActivity extends ActionBarActivity {
         loggedIn = false;
         apiClient = new ApiClient(API_URL);
 
-        initMyo();
+        // initMyo();
         initMySpin();
         initLocation();
     }
@@ -215,12 +230,12 @@ public class MainActivity extends ActionBarActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
