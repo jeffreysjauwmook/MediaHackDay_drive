@@ -24,6 +24,7 @@ class User(AbstractUser):
     )
     km_total = models.IntegerField(default=0)
     total_fuel_consumption = models.IntegerField(default=0)
+    car_model = models.CharField(max_length=255, default='')
 
     geo_objects = GeoUserManager()
 
@@ -42,3 +43,11 @@ class Message(models.Model):
         'Message', blank=True, null=True, related_name='follow_up_message'
     )
 
+
+class Trip(models.Model):
+    started_at = models.DateTimeField()
+    ended_at = models.DateTimeField()
+    user = models.ForeignKey(User)
+    kilometers = models.IntegerField(default=0)
+    fuel_consumption = models.FloatField(default=0)
+    economy = models.CharField(default='economical', max_length=255)  # costly, economical
