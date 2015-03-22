@@ -5,7 +5,8 @@
 var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
 var map;
 var myOptions;
-var userMarker
+var userMarker;
+var userInfo;
 var markers = [];
 var colors = ['red', 'orange', 'green', 'yellow', 'purple'];
 var markerColors = {
@@ -13,6 +14,13 @@ var markerColors = {
     blue: null,
     green: null,
     black: null
+};
+var urls = {
+    userStats: "http://backend.mediahackday.gehekt.nl/api/v1.0/user/1/?format=json",
+    nearByUsers: "http://backend.mediahackday.gehekt.nl/api/v1.0/nearby-cars?format=json",
+    sendMessage: "",
+    checkNotifications: "",
+    lastNotifications: ""
 };
 var ecoStyles = {
     good: [
@@ -336,18 +344,22 @@ function drawMap(latlng) {
 function appSetLocation(lat, long) {
     var location = new google.maps.LatLng(lat, long);
     userMarker.setPosition(location);
+    map.setCenter(location)
 
 }
 function getUserStats() {
     $.ajax({
-        url: "http://backend.mediahackday.gehekt.nl/api/v1.0/user/1/?format=json",
+        url: urls.userStats,
         method: "GET",
         data: {},
         cache: false,
         dataType: 'json'
     }).done(function (user) {
-        console.log(user);
-        //userMarker.setPosition(user.previous_location);
+        userInfo = user;
+        var position = user.previous_known_position;
+        appSetLocation(position.latitude, position.longitude);
+        // switchTheme(user.eco_score);
+
 
     });
 
@@ -375,17 +387,22 @@ function createMarkers(nearByUsers) {
                 icon: image,
                 user: user
             });
-            google.maps.event.addListener(markers[userId], 'click', function () {
-                userMenu(markers[userId].user);
-            });
+            $('.network').append('<span class="network__user" data-userId="' + userId + '"></span>')
+
+
+        } else {
+            markers[userId].setPosition(userLocation);
         }
 
     }
+    $('.network__user').click(function () {
+        console.log($(this))
+    })
 }
 function getNearbyUsers(lat, long) {
 
     $.ajax({
-        url: "http://backend.mediahackday.gehekt.nl/api/v1.0/nearby-cars?format=json",
+        url: urls.nearByUsers,
         method: "GET",
         data: {},
         cache: false,
@@ -410,7 +427,7 @@ function userMenu(user) {
 }
 function sendMessage(user, msg) {
     $.ajax({
-        url: "test.json",
+        url: urls.sendMessage,
         method: "POST",
         data: {user: user, msg: msg},
         cache: false,
@@ -422,7 +439,7 @@ function sendMessage(user, msg) {
 }
 function checkForNotifications() {
     $.ajax({
-        url: "test.json",
+        url: urls.checkNotifications,
         method: "POST",
         data: {user: user},
         cache: false,
@@ -433,7 +450,7 @@ function checkForNotifications() {
 }
 function getLastNotifications() {
     $.ajax({
-        url: "test.json",
+        url: urls.lastNotifications,
         method: "POST",
         data: {user: user},
         cache: false,
@@ -501,11 +518,12 @@ $(document).ready(function () {
         $('.menu__bottom').removeClass('open');
     });
     setInterval(function () {
-        switchTheme('good')
-        getNearbyUsers('asdad', 'asdasd');
+        getUserStats();
+
+        getNearbyUsers();
 
 
-    }, 3000);
+    }, 500);
 
 });
 if (window.app) {
