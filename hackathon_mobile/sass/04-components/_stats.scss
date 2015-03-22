@@ -1,0 +1,82 @@
+.stats {
+
+    .alerts__header:first-child{
+        border-width: 0 0 1px;
+        border-color: #f2f2f2;
+        border-style: solid;
+        margin:0 0 30px;
+    }
+
+    .alerts__header:nth-child(2){
+        border-width: 1px 0 0;
+        border-color: #f2f2f2;
+        border-style: solid;
+    }
+
+    > .icon-leaf {
+        display: block;
+        margin:0 auto;
+        font-size: 90px;
+        text-align: center;
+        @include font(
+            $size: 90,
+            $color: 'mh-green',
+            $transform: uppercase
+        );
+
+        &.red{
+            @include font(
+                $color: 'mh-red'
+            );
+        }
+    }
+
+    > h3, > p {
+        text-align: center;
+        @include font(
+            $font: $heading-h1-font
+        );
+    }
+
+    > h3 {
+        @include font(
+            $size: 15,
+            $color: 'mh-gray-text',
+            $transform: uppercase
+        );
+    }
+
+    > p {
+        @include font(
+            $size: 38,
+            $color: 'mh-green',
+            $transform: uppercase
+        );
+        margin:5px 0 30px;
+    }
+
+    .alerts__item {
+        float: none;
+
+        .button{
+            right:auto;
+            left:6px;
+        }
+
+        .alerts__title {
+            margin-left:90px;
+
+            time {
+
+            }
+
+            p {
+
+            }
+
+            i {
+                font-style: none;
+            }
+        }
+    }
+}

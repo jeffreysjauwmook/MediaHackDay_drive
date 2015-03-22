@@ -1,7 +1,7 @@
 // alerts
 
 .alerts {
-    
+
     ul {
         @include border(0 0 1px, $color: 'mh-gray-button');
     }
@@ -11,9 +11,9 @@
         height: 100px;
         clear: both;
         @include border(1px 0 0, $color: 'mh-gray-button');
-        
+
     }
-    
+
     .button {
         right: 0;
         margin: 10px 6px 0 0;
@@ -23,6 +23,17 @@
     &__header {
         height: 100px;
         clear: both;
+        border-bottom: 1px solid #5c5c5c;
+
+        h2{
+            padding: 30px 0;
+            @include font(
+                $font: $heading-h1-font,
+                $transform: $heading-h1-transform,
+                $size: 32,
+                $color: 'mh-gray-text'
+            );
+        }
 
         .button {
             position: absolute;
@@ -35,14 +46,12 @@
             position: absolute;
             top: 0;
             right: 0;
-            left: auto; 
+            left: auto;
             box-shadow: none;
             margin: 12px 6px 0 0;
         }
-
-
     }
-    
+
     &__title {
         @include ellipsis();
         @include font(
@@ -52,7 +61,7 @@
         display: block;
         padding: 0;
         margin-top: 18px;
-       
+
     }
 
     &__holder {
@@ -70,16 +79,18 @@
         );
         display: block;
         padding: 0;
-        
+
 
     }
     .avatar {
         float: left;
         margin: 6px 0 0 2px;
 
-       
+
     }
 
-  
 
+    &.stats {
+        z-index:10000;
+    }
 }

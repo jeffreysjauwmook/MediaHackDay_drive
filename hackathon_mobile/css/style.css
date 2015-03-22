@@ -1093,8 +1093,17 @@ h6,
 .alerts__header {
   height: 100px;
   clear: both;
+  border-bottom: 1px solid #5c5c5c;
 }
-/* line 27, ../sass/04-components/_alerts.scss */
+/* line 28, ../sass/04-components/_alerts.scss */
+.alerts__header h2 {
+  padding: 30px 0;
+  font-size: 2rem;
+  color: #5c5c5c;
+  font-family: "Source Sans Pro", Verdana, sans-serif;
+  text-transform: uppercase;
+}
+/* line 38, ../sass/04-components/_alerts.scss */
 .alerts__header .button {
   position: absolute;
   top: 0;
@@ -1102,7 +1111,7 @@ h6,
   box-shadow: none;
   margin: 10px 0 0 6px;
 }
-/* line 34, ../sass/04-components/_alerts.scss */
+/* line 45, ../sass/04-components/_alerts.scss */
 .alerts__header .button.js-toggle__bottom {
   position: absolute;
   top: 0;
@@ -1111,7 +1120,7 @@ h6,
   box-shadow: none;
   margin: 12px 6px 0 0;
 }
-/* line 46, ../sass/04-components/_alerts.scss */
+/* line 55, ../sass/04-components/_alerts.scss */
 .alerts__title {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1122,13 +1131,13 @@ h6,
   padding: 0;
   margin-top: 18px;
 }
-/* line 58, ../sass/04-components/_alerts.scss */
+/* line 67, ../sass/04-components/_alerts.scss */
 .alerts__holder {
   display: block;
   width: 50%;
   float: left;
 }
-/* line 64, ../sass/04-components/_alerts.scss */
+/* line 73, ../sass/04-components/_alerts.scss */
 .alerts__details {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1139,10 +1148,14 @@ h6,
   display: block;
   padding: 0;
 }
-/* line 76, ../sass/04-components/_alerts.scss */
+/* line 85, ../sass/04-components/_alerts.scss */
 .alerts .avatar {
   float: left;
   margin: 6px 0 0 2px;
+}
+/* line 93, ../sass/04-components/_alerts.scss */
+.alerts.stats {
+  z-index: 10000;
 }
 
 /* line 3, ../sass/04-components/_network.scss */
@@ -1203,6 +1216,69 @@ h6,
 /* line 48, ../sass/04-components/_network.scss */
 .network__user.color-7 {
   background-color: #57d4ff;
+}
+
+/* line 3, ../sass/04-components/_stats.scss */
+.stats .alerts__header:first-child {
+  border-width: 0 0 1px;
+  border-color: #f2f2f2;
+  border-style: solid;
+  margin: 0 0 30px;
+}
+/* line 10, ../sass/04-components/_stats.scss */
+.stats .alerts__header:nth-child(2) {
+  border-width: 1px 0 0;
+  border-color: #f2f2f2;
+  border-style: solid;
+}
+/* line 16, ../sass/04-components/_stats.scss */
+.stats > .icon-leaf {
+  display: block;
+  margin: 0 auto;
+  font-size: 90px;
+  text-align: center;
+  font-size: 5.625rem;
+  color: #45d16a;
+  text-transform: uppercase;
+}
+/* line 27, ../sass/04-components/_stats.scss */
+.stats > .icon-leaf.red {
+  color: #ed4242;
+}
+/* line 34, ../sass/04-components/_stats.scss */
+.stats > h3, .stats > p {
+  text-align: center;
+  font-family: "Source Sans Pro", Verdana, sans-serif;
+}
+/* line 41, ../sass/04-components/_stats.scss */
+.stats > h3 {
+  font-size: 0.9375rem;
+  color: #5c5c5c;
+  text-transform: uppercase;
+}
+/* line 49, ../sass/04-components/_stats.scss */
+.stats > p {
+  font-size: 2.375rem;
+  color: #45d16a;
+  text-transform: uppercase;
+  margin: 5px 0 30px;
+}
+/* line 58, ../sass/04-components/_stats.scss */
+.stats .alerts__item {
+  float: none;
+}
+/* line 61, ../sass/04-components/_stats.scss */
+.stats .alerts__item .button {
+  right: auto;
+  left: 6px;
+}
+/* line 66, ../sass/04-components/_stats.scss */
+.stats .alerts__item .alerts__title {
+  margin-left: 90px;
+}
+/* line 77, ../sass/04-components/_stats.scss */
+.stats .alerts__item .alerts__title i {
+  font-style: none;
 }
 
 /* line 1, ../sass/05-pages/_login.scss */

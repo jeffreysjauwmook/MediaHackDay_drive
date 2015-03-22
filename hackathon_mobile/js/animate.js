@@ -24,14 +24,22 @@ $(window).on("resize", function () {
 
 //home
 
-$("body").delay(100).queue(function(){
+$("body.home").delay(100).queue(function(){
     $('body').addClass('open__profile').dequeue();
 });
-$('body').delay(150).queue(function(){
+$('body.home').delay(150).queue(function(){
     $(this).addClass('show__btn_1').dequeue();
 });
-$('body').delay(100).queue(function(){
+$('body.home').delay(100).queue(function(){
     $(this).addClass('show__btn_2').clearQueue();
+});
+
+$('body.home').delay(100).queue(function(){
+    $(this).addClass('show__btn_2').clearQueue();
+});
+
+$( ".home .btn-stats" ).click(function() {
+    $('.menu__bottom.stats').toggleClass("open");
 });
 
 
