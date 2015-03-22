@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import User,Message
+from models import User,Message, Trip
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -18,3 +18,7 @@ class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
 
+
+class TripSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Trip
