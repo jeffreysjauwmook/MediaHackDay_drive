@@ -1,4 +1,4 @@
-from models import User, Message, Trip
+from models import User, Message, Trip, TODAYS_GAS_PRICE
 from serializers import UserSerializer,MessageSerializer, TripSerializer
 from rest_framework import generics, views, response, mixins, viewsets
 from autoscout.models import trip_entry
@@ -106,3 +106,24 @@ class TripHistory(generics.ListAPIView):
 
     def get_queryset(self):
         return Trip.objects.filter(user__id=self.request.user.id).order_by('started_at')
+
+
+class Statistics(views.APIView):
+
+    def get(self, request):
+        average = request.user.average_usage
+        if average:
+            price_per_600_km = 600.0 / average * TODAYS_GAS_PRICE
+            total_cost = request.user.km_total / average * TODAYS_GAS_PRICE
+        else:
+            price_per_600_km = 0
+            total_cost = 0
+        d = dict(
+            price_per_600_km=price_per_600_km,
+            total_cost=total_cost,
+            average_usage=request.user.average_usage, # one in avrgusage
+            grand_total_km=request.user.km_total,
+        )
+        return response.Response(d)
+
+

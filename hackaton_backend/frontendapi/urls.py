@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     #FIXME make it real filtered messages, and set messages as read
     url(r'^get-messages/?$', views.MessageList.as_view()),
     url(r'^car-status/?$', views.CarStatus.as_view()),
-    #url(r'^statistics/?$', views.Statistics.as_view()),
+    url(r'^statistics/?$', views.Statistics.as_view()),
     url(r'^trip-history/?$', views.TripHistory.as_view()),
 
 )
