@@ -383,7 +383,7 @@ function createMarkers(nearByUsers) {
             //$('.network').append('<span class="network__user""></span>');
 
         } else {
-            markers[userId].setPosition(userLocation);
+            //markers[userId].setPosition(userLocation);
         }
 
     }
