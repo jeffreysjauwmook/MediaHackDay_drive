@@ -875,13 +875,17 @@ h6,
 /* line 55, ../sass/02-base/_icons.scss */
 .button .icon-leaf {
   font-size: 2.1875rem;
-  color: #5c5c5c;
+  color: #45d16a;
   text-align: center;
   margin: 22px 0 0;
   display: block;
 }
+/* line 64, ../sass/02-base/_icons.scss */
+.button .icon-leaf.red {
+  color: #ed4242;
+}
 
-/* line 65, ../sass/02-base/_icons.scss */
+/* line 71, ../sass/02-base/_icons.scss */
 .icon-close {
   font-size: 1.5625rem;
   color: #5c5c5c;
@@ -1234,17 +1238,18 @@ h6,
 /* line 3, ../sass/04-components/_stats.scss */
 .stats .alerts__header:first-child {
   border-width: 0 0 1px;
-  border-color: #f2f2f2;
+  border-color: #5c5c5c;
   border-style: solid;
   margin: 0 0 30px;
 }
 /* line 10, ../sass/04-components/_stats.scss */
 .stats .alerts__header {
-  border-width: 1px 0 0;
-  border-color: #f2f2f2;
+  border-width: 1px 0 1px;
+  margin-bottom: -1px;
+  border-color: #5c5c5c;
   border-style: solid;
 }
-/* line 16, ../sass/04-components/_stats.scss */
+/* line 17, ../sass/04-components/_stats.scss */
 .stats > .icon-leaf {
   display: block;
   margin: 0 auto;
@@ -1254,72 +1259,72 @@ h6,
   color: #45d16a;
   text-transform: uppercase;
 }
-/* line 27, ../sass/04-components/_stats.scss */
+/* line 28, ../sass/04-components/_stats.scss */
 .stats > .icon-leaf.red {
   color: #ed4242;
 }
-/* line 34, ../sass/04-components/_stats.scss */
+/* line 35, ../sass/04-components/_stats.scss */
 .stats > h3, .stats > p {
   text-align: center;
   font-family: "Source Sans Pro", Verdana, sans-serif;
 }
-/* line 41, ../sass/04-components/_stats.scss */
+/* line 42, ../sass/04-components/_stats.scss */
 .stats > h3 {
   font-size: 0.9375rem;
   color: #5c5c5c;
   text-transform: uppercase;
 }
-/* line 49, ../sass/04-components/_stats.scss */
+/* line 50, ../sass/04-components/_stats.scss */
 .stats > p {
   font-size: 2.375rem;
   color: #45d16a;
   text-transform: uppercase;
   margin: 5px 0 30px;
 }
-/* line 57, ../sass/04-components/_stats.scss */
+/* line 58, ../sass/04-components/_stats.scss */
 .stats > p.red {
   color: #ed4242;
 }
-/* line 64, ../sass/04-components/_stats.scss */
+/* line 65, ../sass/04-components/_stats.scss */
 .stats .alerts__item {
   float: none;
 }
-/* line 67, ../sass/04-components/_stats.scss */
+/* line 68, ../sass/04-components/_stats.scss */
 .stats .alerts__item .button {
   right: auto;
   left: 6px;
 }
-/* line 72, ../sass/04-components/_stats.scss */
+/* line 73, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__holder {
   width: auto;
   float: none;
 }
-/* line 77, ../sass/04-components/_stats.scss */
+/* line 78, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title {
   margin-left: 90px;
   margin-top: 10px;
 }
-/* line 81, ../sass/04-components/_stats.scss */
+/* line 82, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title time, .stats .alerts__item .alerts__title p, .stats .alerts__item .alerts__title i {
   display: block;
   color: #5c5c5c;
   margin: 0;
 }
-/* line 89, ../sass/04-components/_stats.scss */
+/* line 90, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title time, .stats .alerts__item .alerts__title i {
   font-size: 0.875rem;
   line-height: 20px;
 }
-/* line 96, ../sass/04-components/_stats.scss */
+/* line 97, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title time {
   text-transform: uppercase;
 }
-/* line 102, ../sass/04-components/_stats.scss */
+/* line 103, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title p {
   font-size: 1.625rem;
   text-transform: uppercase;
 }
-/* line 109, ../sass/04-components/_stats.scss */
+/* line 110, ../sass/04-components/_stats.scss */
 .stats .alerts__item .alerts__title i {
   text-transform: uppercase;
 }
@@ -1523,7 +1528,7 @@ body.home .user-info p {
 body.home .btn-inbox, body.home .btn-stats {
   position: absolute;
   bottom: 0;
-  margin: 0 -41px 0 0;
+  margin: 0 -38px 0 0;
   -webkit-transition: 0.5s ease-in-out;
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
@@ -1546,4 +1551,9 @@ body.home .btn-stats {
 /* line 80, ../sass/05-pages/_home.scss */
 body.show__btn_1 .btn-stats {
   transform: translateY(0px);
+}
+
+/* line 1, ../sass/05-pages/_inbox.scss */
+.inbox {
+  z-index: 10000;
 }
