@@ -360,19 +360,28 @@ function getUserStats() {
         userInfo = user;
         var position = user.previous_known_position;
         appSetLocation(position.latitude, position.longitude);
-
-        // switchTheme(user.eco_score);
+        setUserSpeed(user);
+        switchTheme(user.eco_score);
 
 
     });
-
 }
-function setUserSpeed() {
-
+function setUserSpeed(user) {
+    if (user.speed > 0 && user.speed < 50) {
+        $('body').removeClass('km-50').removeClass('km-80').removeClass('km-120').addClass('km-30');
+    } else if (user.speed >= 50 && user.speed < 80) {
+        $('body').removeClass('km-30').removeClass('km-80').removeClass('km-120').addClass('km-50');
+    } else if (user.speed >= 80 && user.speed < 120) {
+        $('body').removeClass('km-30').removeClass('km-50').removeClass('km-120').addClass('km-80');
+    } else {
+        $('body').removeClass('km-30').removeClass('km-50').removeClass('km-80').addClass('km-120');
+    }
 }
 
 function switchTheme(rating) {
-    map.setMapTypeId(rating);
+    if (ecoStyles[rating] != undefined) {
+        map.setMapTypeId(rating);
+    }
 
 }
 function createMarkers(nearByUsers) {
@@ -396,12 +405,11 @@ function createMarkers(nearByUsers) {
             });
 
 
-            $('.network').append('<span class="network__user" data-userId="' + userId + '"></span>')
-
-
         } else {
             markers[userId].setPosition(userLocation);
+
         }
+        $('.network').append('<span class="network__user" data-userId="' + userId + '"></span>')
 
     }
     $(newUsers).each(function () {
