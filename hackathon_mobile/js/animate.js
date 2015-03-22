@@ -42,6 +42,9 @@ $( ".home .btn-stats" ).click(function() {
     $('.menu__bottom.stats').toggleClass("open");
 });
 
+$( ".home .btn-inbox" ).click(function() {
+    $('.menu__bottom.inbox').toggleClass("open");
+});
 
 
 $( ".network" ).click(function() {
