@@ -55,6 +55,13 @@ body.home {
 
         p { font-size: 20px; margin:8px;}
 
+        a {
+            text-decoration: none;
+            @include font(
+                $color: 'mh-color-7'
+            );
+        }
+
     }
 
     .btn-inbox, .btn-stats {
