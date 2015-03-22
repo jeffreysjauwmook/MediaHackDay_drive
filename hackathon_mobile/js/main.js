@@ -536,7 +536,7 @@ $(document).ready(function () {
         getNearbyUsers();
 
 
-    }, 500);
+    }, 1000);
 
 });
 
