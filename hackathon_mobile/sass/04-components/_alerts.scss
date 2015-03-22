@@ -25,12 +25,12 @@
         clear: both;
         border-bottom: 1px solid #5c5c5c;
 
-        h2{
-            padding: 30px 0;
+        h1{
+            padding: 32px 0;
             @include font(
                 $font: $heading-h1-font,
                 $transform: $heading-h1-transform,
-                $size: 32,
+                $size: 28,
                 $color: 'mh-gray-text'
             );
         }

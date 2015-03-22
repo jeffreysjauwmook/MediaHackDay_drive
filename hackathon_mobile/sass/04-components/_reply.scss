@@ -1,6 +1,7 @@
 .reply-menu {
     @include border(1px 0 0, $color: 'gray-light-2');
     list-style: inside none;
+    z-index: $z-index-5;
 
     
     &__option {

@@ -7,7 +7,9 @@ $( ".js-toggle__bottom" ).click(function() {
 $( ".notification__reply" ).click(function() {
     $('.menu__bottom.reply').toggleClass("open");
 });
-
+$( ".alert-reply" ).click(function() {
+    $('.menu__bottom.reply').toggleClass("open");
+});
 
 $(window).on("resize", function () {
     networkWidth = $( ".network" ).width();
