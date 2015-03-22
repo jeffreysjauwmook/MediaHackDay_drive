@@ -94,3 +94,16 @@ body.login {
     }
 
 }
+@include screen(tablet, min) {
+    body.login {
+        
+        form {
+            max-width: 600px;
+            margin: 100px auto;
+        }
+        
+        .icon--large {
+            margin: 100px auto;
+        }
+    }
+}

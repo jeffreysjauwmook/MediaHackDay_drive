@@ -1432,6 +1432,17 @@ body.login .new-account {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+@media screen and (min-width: 601px) {
+  /* line 100, ../sass/05-pages/_login.scss */
+  body.login form {
+    max-width: 600px;
+    margin: 100px auto;
+  }
+  /* line 105, ../sass/05-pages/_login.scss */
+  body.login .icon--large {
+    margin: 100px auto;
+  }
+}
 @keyframes scroll-in {
   0% {
     transform: translateY(-40px);
