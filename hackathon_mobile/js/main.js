@@ -11,13 +11,15 @@ var markers = [];
 var colors = ['red', 'orange', 'green', 'yellow', 'purple'];
 var markerColors = {
     red: null,
-    blue: null,
+    orange: null,
     green: null,
-    black: null
+    yellow: null,
+    purple: null
 };
+
 var urls = {
     userStats: "http://backend.mediahackday.gehekt.nl/api/v1.0/user/1/?format=json",
-    nearByUsers: "http://backend.mediahackday.gehekt.nl/api/v1.0/nearby-cars?format=json",
+    nearByUsers: "http://backend.mediahackday.gehekt.nl/api/v1.0/nearby-cars/?format=json",
     sendMessage: "",
     checkNotifications: "",
     lastNotifications: ""
@@ -370,9 +372,10 @@ function switchTheme(rating) {
 
 }
 function createMarkers(nearByUsers) {
-
+    var newUsers = [];
+    $('.network').clear();
     for (var i = 0; i < nearByUsers.length; i++) {
-
+        newUsers.push(user.id);
         var user = nearByUsers[i];
         var userId = user.id;
         var position = user.previous_known_position;
@@ -387,6 +390,8 @@ function createMarkers(nearByUsers) {
                 icon: image,
                 user: user
             });
+
+
             $('.network').append('<span class="network__user" data-userId="' + userId + '"></span>')
 
 
@@ -395,6 +400,14 @@ function createMarkers(nearByUsers) {
         }
 
     }
+    $(newUsers).each(function () {
+        if (markers[newUser] != undefined) {
+            newUsers = jQuery.grep(newUsers, function (value) {
+                return value != newUser;
+            });
+
+        }
+    });
     $('.network__user').click(function () {
         console.log($(this))
     })
