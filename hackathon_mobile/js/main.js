@@ -8,14 +8,7 @@ var myOptions;
 var userMarker;
 var userInfo;
 var markers = [];
-var colors = ['red', 'orange', 'green', 'yellow', 'purple'];
-var markerColors = {
-    red: null,
-    orange: null,
-    green: null,
-    yellow: null,
-    purple: null
-};
+
 
 var urls = {
     userStats: "http://backend.mediahackday.gehekt.nl/api/v1.0/user/1/?format=json",
@@ -388,9 +381,9 @@ function createMarkers(nearByUsers) {
     var newUsers = [];
     $('.network').empty();
     for (var i = 0; i < nearByUsers.length; i++) {
-        newUsers.push(user.id);
         var user = nearByUsers[i];
         var userId = user.id;
+        newUsers.push(user.id);
         var position = user.previous_known_position;
         var userLocation = new google.maps.LatLng(position.latitude, position.longitude);
         var username = user.username;
@@ -409,7 +402,7 @@ function createMarkers(nearByUsers) {
             markers[userId].setPosition(userLocation);
 
         }
-        $('.network').append('<span class="network__user" data-userId="' + userId + '"></span>')
+        $('.network').append('<span class="network__user color-' + i + '" data-userId="' + userId + '"></span>');
 
     }
     $(newUsers).each(function () {
