@@ -1,11 +1,23 @@
 // alerts
 
 .alerts {
+    
+    ul {
+        @include border(0 0 1px, $color: 'mh-gray-button');
+    }
 
     &__item {
         display: block;
         height: 100px;
+        clear: both;
+        @include border(1px 0 0, $color: 'mh-gray-button');
         
+    }
+    
+    .button {
+        right: 0;
+        margin: 10px 6px 0 0;
+        box-shadow: none;
     }
 
     &__header {
@@ -15,40 +27,59 @@
         .button {
             position: absolute;
             top: 0;
-            right: 0;
-            box-shadow: 0 0 0;
+            left: 0;
+            box-shadow: none;
+            margin: 6px 0 0 6px;
         }
+        .button.js-toggle__bottom {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: auto; 
+            box-shadow: none;
+            margin: 12px 6px 0 0;
+        }
+
+
     }
     
     &__title {
         @include ellipsis();
         @include font(
-            $size: 26,
-            $color: 'black'
+            $size: 32,
+            $color: 'mh-gray-text'
         );
         display: block;
         padding: 0;
-        float: left;
-        width: 50%;
+        margin-top: 18px;
        
+    }
+
+    &__holder {
+        display: block;
+        width: 50%;
+        float: left;
     }
 
     &__details {
         @include ellipsis();
         @include font(
-            $size: 12,
-            $color: 'black',
+            $size: 16,
+            $color: 'mh-gray-text',
             $transform: uppercase
         );
         display: block;
         padding: 0;
-        float: left;
-        width: 50%;
         
 
     }
     .avatar {
         float: left;
+        margin: 6px 0 0 2px;
+
+       
     }
+
+  
 
 }

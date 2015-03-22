@@ -12,11 +12,41 @@
     z-index: $z-index-6;
 
     &.notification {
-        bottom: 12px;
-        right: 12px;
+        bottom: 0;
+        right: 0;
     }
 
     &.alert {
         right: 0;
+    }
+}
+
+// exceptions 
+.button.alert {
+    @include bg('white');
+
+    .icon-inbox {
+        @include font(
+            $size: 35,
+            $color: 'mh-gray-text',
+            $align: center
+        );
+        margin: 20px 0 0 6px;
+        display: block;
+    }
+}
+.button.notification {
+    background: none;
+    box-shadow: none;
+
+    .icon-leaf{
+        display: block;
+        margin-top: 8px;
+        @include font(
+            $size: 60,
+            $align: center,
+            $color: 'mh-green'
+        );
+        text-shadow: 0 2px 2px color('mh-green');
     }
 }

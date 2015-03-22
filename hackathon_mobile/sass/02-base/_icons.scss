@@ -1,0 +1,54 @@
+.icon-star {
+    text-align: center;
+    @include font(
+        $color: 'white',
+        $size: 14
+    );
+    padding-top: 4px;
+}
+
+.icon-reply {
+    display: block;
+    @include font(
+        $size: 40,
+        $color: 'mh-gray-text',
+        $align: center
+    );
+    margin-top: 18px; 
+}
+
+.icon {
+    &.red {
+        @include bg('mh-red');
+    }
+    &.purple {
+        @include bg('mh-purple');
+    }
+    &.green {
+        @include bg('mh-green');
+    }
+    &.orange {
+        @include bg('mh-orange');
+    }
+    &.yellow {
+        @include bg('mh-yellow');
+    }
+}
+.icon-inbox {
+    @include font(
+        $size: 35,
+        $color: 'mh-gray-text',
+        $align: center
+    );
+    margin: 20px 0 0 6px;
+    display: block;
+}
+.icon-close {
+    @include font(
+        $size: 25,
+        $color: 'mh-gray-text',
+        $align: center
+    );
+    margin: 26px 0 0;
+    display: block;
+}
