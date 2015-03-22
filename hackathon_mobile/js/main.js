@@ -351,6 +351,7 @@ function getUserStats() {
         userInfo = user;
         var position = user.previous_known_position;
         appSetLocation(position.latitude, position.longitude);
+        switchTheme(user.eco_score);
 
 
     });
@@ -379,9 +380,10 @@ function createMarkers(nearByUsers) {
                 icon: image,
                 user: user
             });
-            google.maps.event.addListener(markers[userId], 'click', function () {
-                userMenu(markers[userId].user);
-            });
+            $('.network').append('<span class="network__user" onclick="' + userMenu(markers[userId].user) + '"></span>')
+            
+        } else {
+            markers[userId].setPosition(userLocation);
         }
 
     }
@@ -506,8 +508,8 @@ $(document).ready(function () {
     });
     setInterval(function () {
         getUserStats();
-        switchTheme('good');
-        getNearbyUsers('asdad', 'asdasd');
+
+        getNearbyUsers();
 
 
     }, 500);
