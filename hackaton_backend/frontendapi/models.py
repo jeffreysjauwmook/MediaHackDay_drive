@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 import geosimple
 
 
-TODAYS_GAS_PRICE = 1.436 # euro
+TODAYS_GAS_PRICE = 1.43 # euro
 
 
 class GeoUserManager(UserManager, geosimple.GeoManager):
@@ -25,8 +25,8 @@ class User(AbstractUser):
         upload_to='user_avatars/',
         blank=True,
     )
-    km_total = models.IntegerField(default=0)
-    total_fuel_consumption = models.IntegerField(default=0)
+    km_total = models.IntegerField(default=0)  # set by auscout api vies
+    total_fuel_consumption = models.IntegerField(default=0)  # set by auscout api vies
     car_model = models.CharField(max_length=255, default='')
     average_usage =  models.IntegerField(default=0) # 1 / average_usage
 
@@ -57,7 +57,9 @@ class Trip(models.Model):
     economy = models.CharField(default='economical', max_length=255)  # costly, economical
 
     def save(self, *args, **kwargs):
-        # FIXME update statistics
+        # calculate average usage
+        if self.user.total_fuel_consumption:
+            self.user.average_usage = self.user.km_total / self.user.total_fuel_consumption
         return super(Trip, self).save(*args, **kwargs)
 
 

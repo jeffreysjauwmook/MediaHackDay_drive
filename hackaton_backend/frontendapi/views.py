@@ -123,6 +123,7 @@ class Statistics(views.APIView):
             total_cost=total_cost,
             average_usage=request.user.average_usage, # one in avrgusage
             grand_total_km=request.user.km_total,
+            todays_gas_price=TODAYS_GAS_PRICE
         )
         return response.Response(d)
 
