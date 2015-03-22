@@ -526,7 +526,6 @@ th {
 
 /* line 1, ../sass/02-base/_main.scss */
 body {
-  background: red;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -536,12 +535,12 @@ body {
   font-weight: 100;
 }
 
-/* line 20, ../sass/02-base/_main.scss */
+/* line 19, ../sass/02-base/_main.scss */
 .content {
   overflow: hidden;
 }
 
-/* line 25, ../sass/02-base/_main.scss */
+/* line 24, ../sass/02-base/_main.scss */
 .footer {
   background: blue;
 }
@@ -858,4 +857,98 @@ h6,
 /* line 50, ../sass/04-components/_alerts.scss */
 .alerts .avatar {
   float: left;
+}
+
+/* line 1, ../sass/05-pages/_login.scss */
+body.login {
+  background: #a9cfc3;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a9cfc3), color-stop(20%, #a9cfc3), color-stop(20%, #ebe1ca), color-stop(40%, #ebe1ca), color-stop(40%, #ff8359), color-stop(60%, #ff8359), color-stop(60%, #ed4242), color-stop(80%, #ed4242), color-stop(80%, #65566b), color-stop(100%, #65566b));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #a9cfc3 0%, #a9cfc3 20%, #ebe1ca 20%, #ebe1ca 40%, #ff8359 40%, #ff8359 60%, #ed4242 60%, #ed4242 80%, #65566b 80%, #65566b 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9cfc3', endColorstr='#65566b',GradientType=1 );
+  /* IE6-9 */
+}
+/* line 12, ../sass/05-pages/_login.scss */
+body.login main:focus {
+  oultine: none;
+}
+/* line 17, ../sass/05-pages/_login.scss */
+body.login form {
+  position: relative;
+  width: 80%;
+  margin: 0 10%;
+}
+/* line 21, ../sass/05-pages/_login.scss */
+body.login form:focus {
+  outline: none;
+}
+/* line 25, ../sass/05-pages/_login.scss */
+body.login form input {
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+}
+/* line 33, ../sass/05-pages/_login.scss */
+body.login .email {
+  border-radius: 12px 12px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+/* line 36, ../sass/05-pages/_login.scss */
+body.login .email:focus {
+  outline: none;
+}
+/* line 41, ../sass/05-pages/_login.scss */
+body.login .password {
+  border-radius: 0 0 12px 12px;
+  border-width: 0 1px 1px  1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+/* line 46, ../sass/05-pages/_login.scss */
+body.login .password:focus {
+  outline: none;
+}
+/* line 50, ../sass/05-pages/_login.scss */
+body.login .submit {
+  position: absolute;
+  right: -28px;
+  top: 32px;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #45d16a;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.15);
+}
+/* line 63, ../sass/05-pages/_login.scss */
+body.login .icon--large {
+  display: block;
+  margin: 20% auto 10%;
+  width: 256px;
+  height: 256px;
+  background: red;
+}
+/* line 71, ../sass/05-pages/_login.scss */
+body.login .new-account {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  padding: 12px;
+  background-color: #FFF;
+  font-size: 1.5rem;
+  color: #5c5c5c;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
